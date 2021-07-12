@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    
     function checkWindowWidth() {
         windowWidth = window.innerWidth;
     
@@ -36,11 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 $(tabsContent[i]).appendTo((tabs[i]));
             }
         }
+    }
+    
+    function initTabs() {
+        checkWindowWidth();
+    
         hideTabContent();
         showTabContent();
     }
     
-    checkWindowWidth();
+    
+    initTabs();
     
     if (tabParent != null) {
         tabParent.addEventListener('click', (e) => {
@@ -56,7 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    window.addEventListener('resize', checkWindowWidth);
+    window.addEventListener('resize', () => {
+        checkWindowWidth();
+    
+        tabs.forEach((item, i) => {
+            if (item.classList.contains('active')) {
+                tabsContent[i].style.maxHeight = tabsContent[i].scrollHeight + "px";
+            }
+        });
+    });
     
     /* var rtime;
     var timeout = false;
