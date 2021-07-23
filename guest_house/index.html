@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
+    
+    
+    <!-- Useful meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="robots" content="index, follow, noodp">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="web site">
+    
+    <!-- Favicon -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff"> -->
+    
+    <title>Guest House</title>
+    
+    <script defer src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+</head>
+
+<body>
+
+    <div class="page">
+
+        
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <a class="header__logo" href="index.html">
+                        <span>Valentina</span>
+                        Guest House
+                    </a>
+        
+                    <div class="header__burger">
+                        <img src="assets/img/burger.svg" alt="navigation button">
+                    </div>
+        
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a class="nav__link active" href="index.html">ГЛАВНАЯ</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="rooms.html">НОМЕРА И ЦЕНЫ</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">СТАТЬИ</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="about.html">ИНФОРМАЦИЯ</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">ПОЛНЫЙ ПАНСИОН</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main">
+            <section class="promo">
+                <img class="promo__img" src="assets/img/bg.jpg" alt="promo">
+        
+                <div class="promo__inner">
+                    <form class="promoform">
+                        <div class="promoform__group">
+                            <div class="promoform__title">Дата заезда</div>
+                            <div class="promoform__input"></div>
+                            <div class="calendar">
+                                <div class="calendar__top">
+                                    <button class="calendar__arrow calendar__arrow--left">
+                                        <img src="assets/img/arrow-left.png" alt="">
+                                    </button>
+                                    <div class="calendar__month"></div>
+                                    <button class="calendar__arrow calendar__arrow--right">
+                                        <img src="assets/img/arrow-right.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="calendar__bottom"></div>
+                            </div>
+                        </div>
+                        <div class="promoform__group">
+                            <div class="promoform__title">Дата выезда</div>
+                            <div class="promoform__input"></div>
+                            <div class="calendar">
+                                <div class="calendar__top">
+                                    <button class="calendar__arrow calendar__arrow--left">
+                                        <img src="assets/img/arrow-left.png" alt="">
+                                    </button>
+                                    <div class="calendar__month"></div>
+                                    <button class="calendar__arrow calendar__arrow--right">
+                                        <img src="assets/img/arrow-right.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="calendar__bottom"></div>
+                            </div>
+                        </div>
+                        <div class="promoform__group">
+                            <div class="promoform__title">Гостей</div>
+                            <div class="promoform__select">1</div>
+                            <ul class="select">
+                                <li class="select__item"><span class="select__num">1</span> гость</li>
+                                <li class="select__item"><span class="select__num">2</span> гостя</li>
+                                <li class="select__item"><span class="select__num">3</span> гостя</li>
+                                <li class="select__item"><span class="select__num">4</span> гостя</li>
+                            </ul>
+                        </div>
+        
+                        <div class="promoform__group-btn">
+                            <button class="promoform__btn">Проверить</button>
+                        </div>
+                    </form>
+                </div>
+        
+                <div class="promo__bottom">
+                    <img src="assets/img/bg-bottom.svg" alt="">
+                </div>
+            </section>
+        
+            <section class="house">
+                <div class="container">
+                    <h1 class="house__title">Наши номера</h1>
+                    <div class="house__box">
+                        <ul class="house__list">
+                            <li class="house__item">
+                                <a class="house__link" href="#">
+                                    <div class="house__img">
+                                        <img  src="assets/img/rooms/room-1.jpg" loading="lazy" alt="room">
+                                    </div>
+                                    <div class="house__descr">
+                                        <h2 class="house__name">2-х местный</h2>
+                                        <div class="house__info">
+                                            <p>-Площадь номера: 11 м2</p>
+                                            <p>-1 двуспальная кровать или 2 односпальные кровати</p>
+                                            <p>-Кондиционер</p>
+                                            <p>-Интернет</p>
+                                            <p>-Телевизор</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="house__item">
+                                <a class="house__link" href="#">
+                                    <div class="house__img">
+                                        <img src="assets/img/rooms/room-2.jpg" loading="lazy" alt="room">
+                                    </div>
+                                    <div class="house__descr">
+                                        <h2 class="house__name">Семейный</h2>
+                                        <div class="house__info">
+                                            <p>-Площадь номера: 18 м2</p>
+                                            <p>-1 двуспальная кровать или 1 односпальные кровати</p>
+                                            <p>-Кондиционер</p>
+                                            <p>-Интернет</p>
+                                            <p>-Телевизор</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="house__item">
+                                <a class="house__link" href="#">
+                                    <div class="house__img">
+                                        <img src="assets/img/rooms/room-3.jpg" loading="lazy" alt="room">
+                                    </div>
+                                    <div class="house__descr">
+                                        <h2 class="house__name">Deluxe</h2>
+                                        <div class="house__info">
+                                            <p>-Площадь номера: 30 м2</p>
+                                            <p>-1 двуспальная кровать или 1 раскладной диван</p>
+                                            <p>-Кондиционер</p>
+                                            <p>-Интернет</p>
+                                            <p>-Телевизор</p>
+                                            <p>-2 комнаты</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="house__item">
+                                <a class="house__link" href="#">
+                                    <div class="house__img">
+                                        <img src="assets/img/rooms/room-4.jpg" loading="lazy" alt="room">
+                                    </div>
+                                    <div class="house__descr">
+                                        <h2 class="house__name">Deluxe Plus</h2>
+                                        <div class="house__info">
+                                            <p>-Площадь номера: 45 м2</p>
+                                            <p>-2 односпальные кровати, 1 двуспальная кровать, 1 диван</p>
+                                            <p>-Кондиционер</p>
+                                            <p>-Интернет</p>
+                                            <p>-Телевизор</p>
+                                            <p>-3 комнаты</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="house__tutorial">
+                        <h2 class="house__title">ГОСТЕВОЙ ДОМ <span>«Valentina Guest House» , Абхазия</span></h2>
+            
+                        <div class="house__content">
+                            <div class="house__content-img">
+                                <img width="388" height="267" loading="lazy" src="assets/img/woman.jpg" alt="woman"></img>
+                            </div>
+                            <div class="house__content-info">
+                                <p class="house__content-text">Дорогие гости,
+                                    Безопасность и комфорт гостей и персонала – это приоритет нашей работы.
+                                </p>
+                                <p class="house__content-text">
+                                    Мы круглосуточно следим за тем, что Министерство здравоохранения Российской Федерации,
+                                    Федеральная служба по надзору в сфере защиты прав потребителей и Всемирная организация
+                                    здравоохранения сообщают о распространении нового типа коронавируса (COVID-19) и беспрекословно
+                                    выполняем рекомендации этих организаций и местных органов здравоохранения.
+                                </p>
+                                <p class="house__content-text">
+                                    Мы искренне сочувствуем всем, кого коснулось это бедствие и с огромным уважением относимся к
+                                    врачам, местным сообществам и правительствам, которые задействованы в прямой борьбе с
+                                    распространением коронавируса
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <h2 class="house__title">Отзывы о нас</h2>
+        
+                    <div class="reviews-slider">
+                        <div class="swiper-container reviews-slider__inner">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide reviews-slider__item">
+                                    <div class="reviews-slider__text">Отель расположен в самом центре города, прекрасный
+                                        персонал. Стильные номера 👌🏻</div>
+                                    <div class="reviews-slider__name">Гордон</div>
+                                    <img class="reviews-slider__img" loading="lazy" src="assets/img/slider/slider-reviews/2.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide reviews-slider__item">
+                                    <div class="reviews-slider__text">Все было прекрасно! Отличный номер, уютный и комфортный; в
+                                        номере чисто, все в рабочем состоянии!</div>
+                                    <div class="reviews-slider__name">Дмитрий</div>
+                                    <img class="reviews-slider__img" loading="lazy" src="assets/img/slider/slider-reviews/1.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide reviews-slider__item">
+                                    <div class="reviews-slider__text">Было очень круто провести время у вас! Комфортно, красиво
+                                        и спокойно!) Самое топовое место для далеких поездок!) Надеемся не последний раз!</div>
+                                    <div class="reviews-slider__name">Ильич</div>
+                                    <img class="reviews-slider__img" loading="lazy" src="assets/img/slider/slider-reviews/3.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews-slider__arrow reviews-slider__arrow--left">
+                            <img src="assets/img/slider-arrow-left.svg" alt="slider arrow prev">
+                        </div>
+                        <div class="reviews-slider__arrow reviews-slider__arrow--right">
+                            <img src="assets/img/slider-arrow-right.svg" alt="slider arrow next">
+                        </div>
+                    </div>
+        
+                </div>
+            </section>
+        </main>
+        
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__map">
+                        <h2 class="footer__title">Геолокация</h2>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5799.309306339137!2d40.033678804661584!3d43.38424455933755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f5949e672f9c5d%3A0x4f35b42935423ba7!2sValentina%20Guest%20House!5e0!3m2!1sru!2sua!4v1626189396198!5m2!1sru!2sua"
+                            width="245px" height="175px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+        
+                    <div class="footer__contacts">
+                        <h2 class="footer__title">Контакты</h2>
+                        <ul class="footer__contacts-list">
+                            <li class="footer__contacts-item footer__contacts-item--tel">
+                                <a class="footer__contacts-link" href="tel:88622795689">8 (862) 279-56-89</a>
+                            </li>
+                            <li class="footer__contacts-item footer__contacts-item--home">
+                                Абхазия, Цандрыпш
+                            </li>
+                            <li class="footer__contacts-item footer__contacts-item--label">
+                                ул.Октябрьская, д.492
+                            </li>
+                            <li class="footer__contacts-item footer__contacts-item--mail">
+                                <a class="footer__contacts-link"
+                                    href="mailto:booking@valentinahouse.ru">booking@valentinahouse.ru</a>
+                            </li>
+                        </ul>
+                        <ul class="social">
+                            <li class="social__item">
+                                <a class="social__link" href="#" target="_blank">
+                                    <img class="social__icon" width="24" height="24" src="assets/img/social-1.svg" alt="social icon">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="#" target="_blank">
+                                    <img class="social__icon" width="24" height="24" src="assets/img/social-2.svg" alt="social icon">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="#" target="_blank">
+                                    <img class="social__icon" width="24" height="24" src="assets/img/social-3.svg" alt="social icon">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="#" target="_blank">
+                                    <img class="social__icon" width="24" height="24" src="assets/img/social-4.svg" alt="social icon">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="#" target="_blank">
+                                    <img class="social__icon" width="24" height="24" src="assets/img/social-5.svg" alt="social icon">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="footer__info">
+                        <h2 class="footer__title">Информация</h2>
+                        <ul class="footer__info-list">
+                            <li class="footer__info-item">Заезд: с 16:00</li>
+                            <li class="footer__info-item">Выезд: до 12:00</li>
+                            <li class="footer__info-item">Бесплатный WI-FI</li>
+                            <li class="footer__info-item">Бесплатная парковка</li>
+                            <li class="footer__info-item">
+                                <a class="footer__info-link" href="#">О нас</a>
+                            </li>
+                            <li class="footer__info-item">
+                                <a class="footer__info-link" href="#">Условия бронирования</a>
+                            </li>
+                            <li class="footer__info-item">
+                                <a class="footer__info-link" href="#">Политика конфиденциальности</a>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="footer__weather">
+                        <h2 class="footer__title">Погода</h2>
+                        <div class="footer__weather-item">Яндекс.Погода : <span class="footer__weather-value">+17</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">© 2015–2021 – VALENTINA GUEST HOUSE</div>
+        </footer>
+
+    </div>
+
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

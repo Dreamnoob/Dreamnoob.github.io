@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
+    
+    
+    <!-- Useful meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="robots" content="index, follow, noodp">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="web site">
+    
+    <!-- Favicon -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff"> -->
+    
+    <title>Guest House</title>
+    
+    <script defer src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+</head>
+
+<body>
+
+    <div class="page">
+
+        
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <a class="header__logo" href="index.html">
+                        <span>Valentina</span>
+                        Guest House
+                    </a>
+        
+                    <div class="header__burger">
+                        <img src="assets/img/burger.svg" alt="navigation button">
+                    </div>
+        
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a class="nav__link" href="index.html">ГЛАВНАЯ</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link active" href="rooms.html">НОМЕРА И ЦЕНЫ</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">СТАТЬИ</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="about.html">ИНФОРМАЦИЯ</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">ПОЛНЫЙ ПАНСИОН</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main">
+            <section class="rooms">
+                <div class="container">
+                    <div class="rooms__inner">
+                        <form class="promoform">
+                            <div class="promoform__group">
+                                <div class="promoform__title">Дата заезда</div>
+                                <div class="promoform__input"></div>
+                                <div class="calendar">
+                                    <div class="calendar__top">
+                                        <button class="calendar__arrow calendar__arrow--left">
+                                            <img src="assets/img/arrow-left.png" alt="">
+                                        </button>
+                                        <div class="calendar__month"></div>
+                                        <button class="calendar__arrow calendar__arrow--right">
+                                            <img src="assets/img/arrow-right.png" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="calendar__bottom"></div>
+                                </div>
+                            </div>
+                            <div class="promoform__group">
+                                <div class="promoform__title">Дата выезда</div>
+                                <div class="promoform__input"></div>
+                                <div class="calendar">
+                                    <div class="calendar__top">
+                                        <button class="calendar__arrow calendar__arrow--left">
+                                            <img src="assets/img/arrow-left.png" alt="">
+                                        </button>
+                                        <div class="calendar__month"></div>
+                                        <button class="calendar__arrow calendar__arrow--right">
+                                            <img src="assets/img/arrow-right.png" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="calendar__bottom"></div>
+                                </div>
+                            </div>
+                            <div class="promoform__group">
+                                <div class="promoform__title">Гостей</div>
+                                <div class="promoform__select">1</div>
+                                <ul class="select">
+                                    <li class="select__item"><span class="select__num">1</span> гость</li>
+                                    <li class="select__item"><span class="select__num">2</span> гостя</li>
+                                    <li class="select__item"><span class="select__num">3</span> гостя</li>
+                                    <li class="select__item"><span class="select__num">4</span> гостя</li>
+                                </ul>
+                            </div>
+        
+                            <div class="promoform__group-btn">
+                                <button class="promoform__btn">Проверить</button>
+                            </div>
+                        </form>
+        
+                        <ul class="rooms__list">
+                            <li class="rooms__item">
+                                <div class="rooms__photo">
+                                    <img class="rooms__img" src="assets/img/rooms/room-5.jpg" alt="">
+                                    <div class="rooms__available">В наличии 6 номеров</div>
+                                </div>
+                                <div class="rooms__content">
+                                    <h2 class="rooms__title">2-Х МЕСТНЫЙ</h2>
+                                    <div class="rooms__descr">Небольшой и очень уютный светлый номер
+                                        на 1 этаже, что очень удобно
+                                        для пожилых людей.</div>
+                                    <p class="rooms__info"><span>Площадь номера:</span> 11 м2</p>
+                                    <p class="rooms__info"><span>Спальные места:</span> 2 односпальные или
+                                        1 двуспальная кровать</p>
+                                    <p class="rooms__info"><span>Максимальное количество гостей:</span> 2</p>
+                                    <p class="rooms__info"><span>Оснащение номера:</span> Комплект банных принадлежностей,
+                                        мини-холодильник, современный телевизор с кабельными каналами, кондиционер</p>
+                                    <p class="rooms__info"><span>Оплата:</span> Взимается 30 процентов от общей стоимости
+                                        проживания</p>
+                                    <div class="rooms__capacity">
+                                        <span class="rooms__capacity-num">2</span>
+                                    </div>
+                                </div>
+                                <div class="rooms__buttons">
+                                    <div class="rooms__buttons-item">
+                                        <div class="rooms__buttons-info">
+                                            Начиная с
+                                            <span class="rooms__buttons-price">1 498,00 руб</span>
+                                            за 1 ночь, за номер
+                                            <a class="rooms__btn" href="#">Выбрать</a>
+                                            Без питания
+                                        </div>
+                                    </div>
+                                    <div class="rooms__buttons-item">
+                                        <div class="rooms__buttons-info">
+                                            Начиная с
+                                            <span class="rooms__buttons-price">1 598,00 руб</span>
+                                            за 1 ночь, за номер
+                                            <a class="rooms__btn" href="#">Выбрать</a>
+                                            С питанием для 2-х
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="rooms__btn-mobile"></button>
+                            </li>
+                            <li class="rooms__item">
+                                <div class="rooms__photo">
+                                    <img class="rooms__img" src="assets/img/rooms/room-6.jpg" alt="">
+                                    <div class="rooms__available">В наличии 7 номеров</div>
+                                </div>
+                                <div class="rooms__content">
+                                    <h2 class="rooms__title">Семейный</h2>
+                                    <div class="rooms__descr">Идеальный выбор для семейного отдыха в Абхазии! Просторный
+                                        трехместный номер с возможностью установки дополнительной кровати позволяет это!</div>
+                                    <p class="rooms__info"><span>Площадь номера:</span> 18 м2</p>
+                                    <p class="rooms__info"><span>Спальные места:</span> 1 односпальная и
+                                        1 двуспальная кровать</p>
+                                    <p class="rooms__info"><span>Максимальное количество гостей:</span> 4</p>
+                                    <p class="rooms__info"><span>Оснащение номера:</span> Комплект банных принадлежностей,
+                                        мини-холодильник, современный телевизор с кабельными каналами, кондиционер</p>
+                                    <p class="rooms__info"><span>Оплата:</span> Взимается 30 процентов от общей стоимости
+                                        проживания</p>
+                                    <div class="rooms__capacity">
+                                        <span class="rooms__capacity-num">4</span>
+                                    </div>
+                                </div>
+                                <div class="rooms__buttons">
+                                    <div class="rooms__buttons-item">
+                                        <div class="rooms__buttons-info">
+                                            Начиная с
+                                            <span class="rooms__buttons-price">2 247,00 руб</span>
+                                            за 1 ночь, за номер
+                                            <a class="rooms__btn" href="#">Выбрать</a>
+                                            Без питания
+                                        </div>
+                                    </div>
+                                    <div class="rooms__buttons-item">
+                                        <div class="rooms__buttons-info">
+                                            Начиная с
+                                            <span class="rooms__buttons-price">2 397,00 руб</span>
+                                            за 1 ночь, за номер
+                                            <a class="rooms__btn" href="#">Выбрать</a>
+                                            С питанием для 3-х
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="rooms__btn-mobile"></button>
+                            </li>
+                            <li class="rooms__item">
+                                <div class="rooms__photo">
+                                    <img class="rooms__img" src="assets/img/rooms/room-7.jpg" alt="">
+                                    <div class="rooms__available">В наличии 8 номеров</div>
+                                </div>
+                                <div class="rooms__content">
+                                    <h2 class="rooms__title">deluxe</h2>
+                                    <div class="rooms__descr">Двухкомнатный просторный номер площадью 30 квадратных метров</div>
+                                    <p class="rooms__info"><span>Площадь номера:</span> 30 м2</p>
+                                    <p class="rooms__info"><span>Спальные места:</span> 1 раскладной диван и
+                                        1 двуспальная кровать</p>
+                                    <p class="rooms__info"><span>Максимальное количество гостей:</span> 4</p>
+                                    <p class="rooms__info"><span>Оснащение номера:</span> Комплект банных принадлежностей,
+                                        мини-холодильник, современный телевизор с кабельными каналами, кондиционер</p>
+                                    <p class="rooms__info"><span>Оплата:</span> Взимается 30 процентов от общей стоимости
+                                        проживания</p>
+                                    <div class="rooms__capacity">
+                                        <span class="rooms__capacity-num">4</span>
+                                    </div>
+                                </div>
+                                <div class="rooms__buttons">
+                                    <div class="rooms__buttons-item">
+                                        <div class="rooms__buttons-info">
+                                            Начиная с
+                                            <span class="rooms__buttons-price">2 995,00 руб</span>
+                                            за 1 ночь, за номер
+                                            <a class="rooms__btn" href="#">Выбрать</a>
+                                            Без питания
+                                        </div>
+                                    </div>
+                                    <div class="rooms__buttons-item">
+                                        <div class="rooms__buttons-info">
+                                            Начиная с
+                                            <span class="rooms__buttons-price">3 196,00 руб</span>
+                                            за 1 ночь, за номер
+                                            <a class="rooms__btn" href="#">Выбрать</a>
+                                            С питанием для 4-х
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="rooms__btn-mobile"></button>
+                            </li>
+                            <li class="rooms__item">
+                                <div class="rooms__photo">
+                                    <img class="rooms__img" src="assets/img/rooms/room-8.jpg" alt="">
+                                    <div class="rooms__available">В наличии 5 номеров</div>
+                                </div>
+                                <div class="rooms__content">
+                                    <h2 class="rooms__title">deluxe+</h2>
+                                    <div class="rooms__descr">Небольшой и очень уютный светлый номер
+                                        расположен на 1 этаже, что очень удобно
+                                        для пожилых людей. </div>
+                                    <p class="rooms__info"><span>Площадь номера:</span> 11 м2</p>
+                                    <p class="rooms__info"><span>Спальные места:</span> 2 односпальные или
+                                        1 двуспальная кровать</p>
+                                    <p class="rooms__info"><span>Максимальное количество гостей:</span> 2</p>
+                                    <p class="rooms__info"><span>Оснащение номера:</span> Комплект банных принадлежностей,
+                                        мини-холодильник, современный телевизор с кабельными каналами, кондиционер</p>
+                                    <p class="rooms__info"><span>Оплата:</span> Взимается 30 процентов от общей стоимости
+                                        проживания</p>
+                                    <div class="rooms__capacity">
+                                        <span class="rooms__capacity-num">7</span>
+                                    </div>
+                                </div>
+                                <div class="rooms__buttons">
+                                    <div class="rooms__buttons-item">
+                                        <div class="rooms__buttons-info">
+                                            Начиная с
+                                            <span class="rooms__buttons-price">2 995,00 руб</span>
+                                            за 1 ночь, за номер
+                                            <a class="rooms__btn" href="#">Выбрать</a>
+                                            Без питания
+                                        </div>
+                                    </div>
+                                    <div class="rooms__buttons-item">
+                                        <div class="rooms__buttons-info">
+                                            Начиная с
+                                            <span class="rooms__buttons-price">3 196,00 руб</span>
+                                            за 1 ночь, за номер
+                                            <a class="rooms__btn" href="#">Выбрать</a>
+                                            С питанием для 4-х
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="rooms__btn-mobile"></button>
+                            </li>
+                        </ul>
+        
+                        <div class="rooms__services">
+                            <div class="rooms__service rooms__service--left">
+                                <h3 class="rooms__service-title">Услуги и оснащение</h3>
+                                <div class="rooms__service-content">
+                                    <div class="rooms__service-content__item">
+                                        <span class="rooms__service-name">Общие:</span>
+                                        Кондиционер, Отопление, Семейные номера, Номера для
+                                        некурящих
+                                    </div>
+                                    <div class="rooms__service-content__item">
+                                        <span class="rooms__service-name">Активный отдых:</span>
+                                        Детская игровая площадка
+                                    </div>
+                                    <div class="rooms__service-content__item">
+                                        <span class="rooms__service-name">Услуги:</span>
+                                        Общий лаундж/гостиная с телевизором,
+                                        Услуги по глажению одежды (оплачивается отдельно),
+                                        Прачечная (оплачивается отдельно).
+                                    </div>
+                                    <div class="rooms__service-content__item">
+                                        <span class="rooms__service-name">Интернет:</span>
+                                        Wi-Fi предоставляется в номерах отеля бесплатно.
+                                    </div>
+                                    <div class="rooms__service-content__item">
+                                        <span class="rooms__service-name">Парковка:</span>
+                                        Бесплатная частная парковка на месте.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rooms__service rooms__service--right">
+                                <h3 class="rooms__service-title">Правила</h3>
+                                <div class="rooms__service-content">
+                                    <div class="rooms__service-content__item">
+                                        <span class="rooms__service-name">Заезд:</span>
+                                        С 16:00
+                                    </div>
+                                    <div class="rooms__service-content__item">
+                                        <span class="rooms__service-name">Выезд:</span>
+                                        До 12:00
+                                    </div>
+                                    <div class="rooms__service-content__item">
+                                        <span class="rooms__service-name">Отмена / Предоплата:</span>
+                                        Оплата бронирования гостевого дома производится
+                                        после подтверждения бронирования. Вы можете сделать предоплату в размере 30% от
+                                        суммы бронирования или полностью. При оплате 30% проживания доплату за оставшиеся
+                                        сутки можно произвести по прибытии в наш гостевой дом. В случае отмены
+                                        бронирования, предоплата не возвращается. В низкий сезон, а также при наличии
+                                        Договора на корпоративное обслуживание бронирование гостевого дома возможно
+                                        без предоплаты. Все возможные вытекающие обязательства и права Сторон возникают
+                                        исключительно между отправителем и получателем платежа — клиентом и гостевым домом.
+                                    </div>
+                                    <div class="rooms__service-content__item">
+                                        <span class="rooms__service-name">Дети и дополнительные спальные места:</span>
+                                        Разрешается проживание детей
+                                        любого возраста. При размещении всех детей младше 2 лет на детских кроватках
+                                        проживание им предоставляется бесплатно . При размещении всех детей младше 6 лет
+                                        на дополнительных кроватях взимается RUB 1000 за ночь. При дополнительном
+                                        размещении всех детей старшего возраста или взрослых на дополнительных кроватях
+                                        взимается RUB 1000 за ночь. Максимальное количество дополнительных кроватей в
+                                        номере - 1. Дополнительные кровати и детские кроватки предоставляются по запросу.
+                                        Требуется подтверждение со стороны отеля о предоставлении данной услуги.
+                                        Дополнительные услуги не включаются автоматически в общую стоимость и оплачиваются
+                                        отдельно во время вашего проживания.
+        
+                                    </div>
+                                    <div class="rooms__service-content__item">
+                                        <span class="rooms__service-name">Животные:</span>
+                                        Размещение домашних животных допускается по предварительному запросу.
+                                        Данная услуга может быть платной.
+        
+                                    </div>
+                                    <div class="rooms__service-content__item">
+                                        <span class="rooms__service-name">Принимаемые кредитные карты:</span>
+                                        Этот объект размещения принимает только наличные.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__map">
+                        <h2 class="footer__title">Геолокация</h2>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5799.309306339137!2d40.033678804661584!3d43.38424455933755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f5949e672f9c5d%3A0x4f35b42935423ba7!2sValentina%20Guest%20House!5e0!3m2!1sru!2sua!4v1626189396198!5m2!1sru!2sua"
+                            width="245px" height="175px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+        
+                    <div class="footer__contacts">
+                        <h2 class="footer__title">Контакты</h2>
+                        <ul class="footer__contacts-list">
+                            <li class="footer__contacts-item footer__contacts-item--tel">
+                                <a class="footer__contacts-link" href="tel:88622795689">8 (862) 279-56-89</a>
+                            </li>
+                            <li class="footer__contacts-item footer__contacts-item--home">
+                                Абхазия, Цандрыпш
+                            </li>
+                            <li class="footer__contacts-item footer__contacts-item--label">
+                                ул.Октябрьская, д.492
+                            </li>
+                            <li class="footer__contacts-item footer__contacts-item--mail">
+                                <a class="footer__contacts-link"
+                                    href="mailto:booking@valentinahouse.ru">booking@valentinahouse.ru</a>
+                            </li>
+                        </ul>
+                        <ul class="social">
+                            <li class="social__item">
+                                <a class="social__link" href="#" target="_blank">
+                                    <img class="social__icon" src="assets/img/social-1.svg" alt="social icon">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="#" target="_blank">
+                                    <img class="social__icon" src="assets/img/social-2.svg" alt="social icon">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="#" target="_blank">
+                                    <img class="social__icon" src="assets/img/social-3.svg" alt="social icon">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="#" target="_blank">
+                                    <img class="social__icon" src="assets/img/social-4.svg" alt="social icon">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="#" target="_blank">
+                                    <img class="social__icon" src="assets/img/social-5.svg" alt="social icon">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="footer__info">
+                        <h2 class="footer__title">Информация</h2>
+                        <ul class="footer__info-list">
+                            <li class="footer__info-item">Заезд: с 16:00</li>
+                            <li class="footer__info-item">Выезд: до 12:00</li>
+                            <li class="footer__info-item">Бесплатный WI-FI</li>
+                            <li class="footer__info-item">Бесплатная парковка</li>
+                            <li class="footer__info-item">
+                                <a class="footer__info-link" href="#">О нас</a>
+                            </li>
+                            <li class="footer__info-item">
+                                <a class="footer__info-link" href="#">Условия бронирования</a>
+                            </li>
+                            <li class="footer__info-item">
+                                <a class="footer__info-link" href="#">Политика конфиденциальности</a>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="footer__weather">
+                        <h2 class="footer__title">Погода</h2>
+                        <div class="footer__weather-item">Яндекс.Погода : <span class="footer__weather-value">+17</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">© 2015–2021 – VALENTINA GUEST HOUSE</div>
+        </footer>
+
+    </div>
+
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
