@@ -9,9 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
         filterBtn.addEventListener('click', (e) => {
             e.preventDefault();
 
-            catalog.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const elementPosition = catalog.getBoundingClientRect().top;
+            const offsetPosition = elementPosition;
+
+            window.scrollBy({
+                top: offsetPosition,
+            behavior: 'smooth'
             });
         });
     }
