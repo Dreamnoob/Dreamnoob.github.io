@@ -86,6 +86,10 @@ button {
     cursor: pointer;
 }
 
+input {
+    box-shadow: none;
+}
+
 .basket__minus-btn {
     display: inline-block;
 }
