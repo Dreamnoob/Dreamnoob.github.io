@@ -2433,7 +2433,7 @@ button.swiper-pagination-bullet {
 }
 
 .rating_body {
-    height: 14px;
+    height: 16px;
     overflow: hidden;
     position: relative;
 }
@@ -2468,7 +2468,7 @@ button.swiper-pagination-bullet {
 
 .rating__items {
     display: flex;
-    height: 14px;
+    height: 16px;
     width: 100%;
     position: absolute;
     top: 0;
