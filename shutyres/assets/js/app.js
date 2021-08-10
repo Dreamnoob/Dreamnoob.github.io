@@ -416,22 +416,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initTabs() {
         const tabsParent = document.querySelector('.tabs');
+        const btnPrev = document.querySelector('.tabs__btn-prev');
+        const btnNext = document.querySelector('.tabs__btn-next');
         const tabs = document.querySelectorAll('.tab__item');
         const tabsContent = document.querySelectorAll('.tabs__content-item');
 
+        let count = 0;
         tabsParent.addEventListener('click', (e) => {
             const target = e.target;
 
             if (target && target.classList.contains('tab__item')) {
                 tabs.forEach((item, i) => {
                     if (item == target) {
+                        count = i;
                         hideTabs();
                         showTabs(i);
+                        checkCount(count);
                     }
                 });
             }
-        });
 
+            if (target && target == btnPrev) {
+                count--;
+                checkCount(count);
+                prevTab(count);
+            }
+
+            if (target && target == btnNext) {
+                count++;
+                checkCount(count);
+                nextTab(count);
+            }
+        });
 
         function hideTabs() {
             tabs.forEach((item, i) => {
@@ -447,8 +463,32 @@ document.addEventListener('DOMContentLoaded', () => {
             tabsContent[i].classList.add('tabs__anim');
         }
 
+        function prevTab(count) {
+            hideTabs();
+            showTabs(count);
+        }
+
+        function nextTab(count) {
+            hideTabs();
+            showTabs(count);
+        }
+
+        function checkCount(count) {
+            if (count == 0) {
+                btnPrev.classList.add('disabled');
+                btnNext.classList.remove('disabled');
+            } else if (count == tabs.length - 1) {
+                btnNext.classList.add('disabled');
+                btnPrev.classList.remove('disabled');
+            } else if (count != 0 && count != tabs.length - 1) {
+                btnPrev.classList.remove('disabled');
+                btnNext.classList.remove('disabled');
+            }
+        }
+
         hideTabs();
         showTabs();
+        checkCount(count);
     }
 
     try {
@@ -518,14 +558,37 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnMenuOpen = document.querySelector('.header__mobile-btn_open');
         const btnMenuClose = document.querySelector('.header__mobile-btn_close');
 
+        function toggleMenu() {
+            document.addEventListener('click', (e) => {
+                const target = e.target;
 
-        btnMenuOpen.addEventListener('click', () => {
-            navMenu.classList.add('active');
-        });
+                if (target && target == btnMenuOpen) {
+                    navMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+                if (target && target == btnMenuClose) {
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
 
-        btnMenuClose.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        });
+                if (target && target == navMenu) {
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            })
+        }
+
+        toggleMenu();
+
+        /*  btnMenuOpen.addEventListener('click', () => {
+             navMenu.classList.add('active');
+         });
+
+         btnMenuClose.addEventListener('click', () => {
+             navMenu.classList.remove('active');
+         }); */
+
+
     }
 
     try {
