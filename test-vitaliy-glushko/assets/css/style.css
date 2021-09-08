@@ -268,7 +268,8 @@ body {
     height: 100%;
     border-radius: 50%;
     background-color: #ffcb46;
-    // filter: blur(76px);
+    -webkit-backdrop-filter: blur(76px);
+    backdrop-filter: blur(76px);
 }
 
 .circle__wheel {
@@ -498,7 +499,8 @@ body {
     }
 
     .circle__inner {
-/*          filter: blur(46.3568px);*/
+        -webkit-backdrop-filter: blur(46.3568px);
+        backdrop-filter: blur(46.3568px);
     }
 
     .circle__wheel {
