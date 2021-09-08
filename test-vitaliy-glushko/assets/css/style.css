@@ -498,7 +498,7 @@ body {
     }
 
     .circle__inner {
-        filter: blur(46.3568px);
+/*          filter: blur(46.3568px);*/
     }
 
     .circle__wheel {
