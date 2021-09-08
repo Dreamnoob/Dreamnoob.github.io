@@ -271,6 +271,7 @@ body {
     -moz-filter: blur(76px);
     -ms-filter: blur(76px);
     -o-filter: blur(76px);
+    -webkit-filter: blur(76px);
     filter: blur(76px);
 }
 
@@ -505,8 +506,7 @@ body {
         -ms-filter: blur(46.3568px);
         -o-filter: blur(46.3568px);
         filter: blur(46.3568px);
-         /*-webkit-backdrop-filter: blur(46.3568px);
-        backdrop-filter: blur(46.3568px);*/
+        -webkit-filter: blur(46.3568px);
     }
 
     .circle__wheel {
