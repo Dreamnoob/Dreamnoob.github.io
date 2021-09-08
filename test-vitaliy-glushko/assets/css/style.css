@@ -72,7 +72,6 @@ body {
 /* Blocks */
 .page {
     display: flex;
-    flex-direction: column;
     min-height: 100vh;
     position: relative;
     overflow: hidden;
@@ -81,6 +80,8 @@ body {
 .header {
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .lang {
@@ -271,10 +272,9 @@ body {
     -moz-filter: blur(76px);
     -ms-filter: blur(76px);
     -o-filter: blur(76px);
-    -webkit-filter: blur(76px);
     filter: blur(76px);
-    -webkit-backdrop-filter: blur(76px);
-    backdrop-filter: blur(76px);
+  /* -webkit-backdrop-filter: blur(76px);
+    backdrop-filter: blur(76px); */
 }
 
 .circle__wheel {
@@ -507,10 +507,9 @@ body {
         -moz-filter: blur(46.3568px);
         -ms-filter: blur(46.3568px);
         -o-filter: blur(46.3568px);
-        -webkit-filter: blur(46.3568px);
         filter: blur(46.3568px);
-        -webkit-backdrop-filter: blur(46.3568px);
-    backdrop-filter: blur(46.3568px);
+    /* -webkit-backdrop-filter: blur(46.3568px);
+        backdrop-filter: blur(46.3568px); */
     }
 
     .circle__wheel {
@@ -535,6 +534,69 @@ body {
 
     .ticker {
         transform: rotate(-61deg);
+    }
+
+    .ticker__item {
+        margin: 10px 0;
+    }
+
+    .ticker__text {
+        font-size: 28px;
+        line-height: 30.8px;
+    }
+}
+
+@media (max-height: 500px) {
+    .burger {
+        opacity: 1;
+        pointer-events: visible;
+    }
+
+    .header__logo-text {
+        font-size: 18px;
+        line-height: 19.8px;
+    }
+
+    .lang__item {
+        margin-left: 6px;
+    }
+
+    .circle {
+        width: 260px;
+        height: 260px;
+    }
+
+    .circle__inner {
+        -moz-filter: blur(46.3568px);
+        -ms-filter: blur(46.3568px);
+        -o-filter: blur(46.3568px);
+        filter: blur(46.3568px);
+    /* -webkit-backdrop-filter: blur(46.3568px);
+        backdrop-filter: blur(46.3568px); */
+    }
+
+    .circle__wheel {
+        bottom: -11px;
+        right: 11px;
+    }
+
+    .circle__img {
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    .page__link {
+        display: none;
+    }
+
+    .title {
+        max-width: 218px;
+        font-size: 30px;
+        line-height: 34.4px;
+    }
+
+    .ticker {
+        transform: rotate(-29deg);
     }
 
     .ticker__item {
