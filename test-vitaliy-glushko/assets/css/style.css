@@ -273,8 +273,8 @@ body {
     -ms-filter: blur(76px);
     -o-filter: blur(76px);
     filter: blur(76px);
-  /* -webkit-backdrop-filter: blur(76px);
-    backdrop-filter: blur(76px); */
+    -webkit-backdrop-filter: blur(76px);
+    backdrop-filter: blur(76px);
 }
 
 .circle__wheel {
@@ -508,8 +508,8 @@ body {
         -ms-filter: blur(46.3568px);
         -o-filter: blur(46.3568px);
         filter: blur(46.3568px);
-    /* -webkit-backdrop-filter: blur(46.3568px);
-        backdrop-filter: blur(46.3568px); */
+        -webkit-backdrop-filter: blur(46.3568px);
+        backdrop-filter: blur(46.3568px); 
     }
 
     .circle__wheel {
