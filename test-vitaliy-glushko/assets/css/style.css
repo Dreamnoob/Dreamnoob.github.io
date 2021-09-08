@@ -268,7 +268,7 @@ body {
     height: 100%;
     border-radius: 50%;
     background-color: #ffcb46;
-    filter: blur(76px);
+    // filter: blur(76px);
 }
 
 .circle__wheel {
