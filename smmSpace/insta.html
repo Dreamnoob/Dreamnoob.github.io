@@ -1,0 +1,820 @@
+<!DOCservices html>
+    <html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">        <link rel="shortcut icon" href="img/favicon.ico" services="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <title>Page</title>
+        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+     
+
+    <body>
+        <div class="page">
+            <!-- add class authorized to see user navigation -->
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo" href="/">
+                <img src="img/header-logo.svg" alt="">
+            </a>
+            <div class="substrate"></div>
+
+            <nav class="nav">
+                <p class="menu-title">Меню</p>
+                <button class="close-menu">
+                    <img src="img/close-grey.svg" alt="">
+                </button>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link active" href="#">
+                            Услуги
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link " href="#">
+                            Отзывы
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link " href="#">
+                            Помощь
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link " href="#">
+                            Контакты
+                        </a>
+                    </li>
+                    <li class="nav__item nav__item--exit">
+                        <button class="exit-button">Выйти</button>
+                    </li>
+                </ul>
+                <div class="nav__another">
+                    <button class="sign-in__btn btn btn--trans">Войти</button>
+                    <button class="sign-up__btn btn btn--white">Создать аккаунт</button>
+
+                    <div class="balance-header">
+                        <p class="balance-header__text">Баланс:</p>
+                        <p class="balance-header__sum">1200₽</p>
+                        <button class="balance-header__add">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="user-mob">
+                        <svg class="user-mob__icon">
+                            <use xlink:href="img/sprite.svg#user"></use>
+                        </svg>
+                    </div>
+
+                    <div class="user" data-da=".header__inner, 1023, 1">
+                        <p class="user__login" data-da=".user-mob, 1023, 0">user1234@gmail.com</p>
+                        <button class="user__btn alert">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#user"></use>
+                            </svg>
+                        </button>
+                        <div class="user__menu">
+                            <div class="user__balance">
+                                Баланс:
+                                <p class="user__balance-sum">5 000 ₽</p>
+                            </div>
+                            <ul class="user__list">
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Панель управлени</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Пополнить баланс</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">История заказов</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Настройки</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Помощь</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Партнерская программа</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Чаты</a>
+                                </li>
+                                <li class="user__item">
+                                    <button class="user__exit">Выход</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <button class="burger">
+                <img src="img/burger.svg" alt="">
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="popup popup--sign-in">
+    <div class="popup__inner  popup__inner--sign-in">
+        <button class="popup__close scale">
+            <img src="img/close.svg" alt="">
+        </button>
+        <form class="form" action="">
+            <div class="popup__login-via">
+                <p class="popup__login-via-title">Быстрый вход</p>
+                <div class="popup__login-via-block">
+                    <button class="popup__login-via-btn scale">
+                        <img src="img/login-icon.svg" alt="">
+                    </button>
+                    <button class="popup__login-via-btn scale">
+                        <img src="img/login-icon2.svg" alt="">
+                    </button>
+                    <button class="popup__login-via-btn scale">
+                        <img src="img/login-icon3.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <h2 class="popup__title">Вход</h2>
+
+            <div class="form__group">
+                <p class="form__name">E-mail</p>
+                <input class="input" type="text" name="email" placeholder="Введите почту">
+            </div>
+
+            <div class="form__group form__group--password">
+                <p class="form__name">Пароль</p>
+                <button class="forgot-password" type="button">Забыли пароль?</button>
+                <input class="input" type="password" name="password" placeholder="Введите пароль">
+                <button class="btn__view-password" type="button">
+                    <img src="img/view.svg" alt="">
+                </button>
+            </div>
+
+            <div class="form__group">
+                <img class="captcha-fake" src="img/captcha.jpg" alt="">
+            </div>
+
+            <button class="popup__btn-sign-in btn btn--blue">Войти</button>
+
+            <p class="popup__block-sign-up">
+                Нет аккаунта?
+                <button class="call__sign-up-popup" type="button">Регистрация</button>
+            </p>
+        </form>
+    </div>
+</div>
+
+<div class="popup popup--sign-up">
+    <div class="popup__inner  popup__inner--sign-up">
+        <button class="popup__close scale">
+            <img src="img/close.svg" alt="">
+        </button>
+        <form class="form" action="">
+            <div class="quick-registration">
+                <p class="quick-registration__title">Быстрая регистрация</p>
+                <div class="quick-registration__block">
+                    <button class="quick-registration__btn scale">
+                        <img src="img/login-icon.svg" alt="">
+                    </button>
+                    <button class="quick-registration__btn scale">
+                        <img src="img/login-icon2.svg" alt="">
+                    </button>
+                    <button class="quick-registration__btn scale">
+                        <img src="img/login-icon3.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <h2 class="popup__title">Регистрация</h2>
+
+            <div class="form__group">
+                <p class="form__name">E-mail</p>
+                <input class="input" type="text" name="email" placeholder="Введите почту">
+            </div>
+
+            <div class="form__group">
+                <img class="captcha-fake" src="img/captcha.jpg" alt="">
+            </div>
+
+            <label class="checkbox checkbox--popup">
+                <input class="checkbox__input" type="checkbox">
+                <div class="checkbox__fake"></div>
+                <p class="checkbox__text">Я принимаю условия обслуживания и <a class="popup__link" href="#">политику конфиденциальности</a></p>
+            </label>
+
+            <button class="popup__btn-sign-up btn btn--blue">Регистрация</button>
+            <div class="popup__block-sign-in">
+                Есть аккаунт?
+                <button class="call__sign-in-popup" type="button">Войти</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="popup popup--restore-password">
+    <div class="popup__inner  popup__inner--restore-password">
+        <button class="popup__close scale">
+            <img src="img/close.svg" alt="">
+        </button>
+        <form class="form" action="">
+            <h2 class="popup__title">Восстановление пароля</h2>
+
+            <p class="popup__descr">Укажите Email, привязанный к аккаунту.
+                Мы пришлем ссылку для сброса пароля в течение 5 минут.</p>
+
+            <div class="form__group">
+                <p class="form__name">E-mail</p>
+                <input class="input" type="text" name="email" placeholder="Введите почту">
+            </div>
+
+            <button class="popup__btn-submit btn btn--blue">Отправить письмо</button>
+            <div class="popup__block-sign-in">
+                Вспомнили пароль?
+                <button class="call__sign-in-popup" type="button">Войти</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+            <main>
+                <section class="services services--ceo">
+                    <div class="services__intro background">
+                        <div class="container">
+                            <div class="services__intro-inner">
+                                <h1 class="main-title">
+                                    Накрутка Инстаграм онлайн
+                                </h1>
+                                <h2 class="services__subtitle subtitle">
+                                    Полный спектр услуг для накрутки в Instagram.
+                                    Живые пользователи, быстрый запуск и низкие цены.
+                                </h2>
+                                <div class="services__photo">
+                                    <img src="img/services-photo.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services__content">
+                        <div class="container">
+                            <form class="order__inner" action="/">
+                                <div class="order__title title">
+                                    <h2>Быстрый заказ</h2>
+                                    <p>Регистрация не требуется.</p>
+                                </div>
+                                <div class="order-wrapper">
+                                    <p class="order__menu-title order__menu-title--mob">Выберите площадку</p>
+                                    <div class="order__box swiper">
+                                        <img class="order__img" src="img/social/instagram.svg" alt="">
+                                        <input class="order-input order-input--social" type="text" name="area" value="instagram" readonly placeholder="">
+                                        <ul class="order__list swiper-wrapper">
+                                            <li class="order__item swiper-slide active" data-id="1">
+                                                <img src="img/social/instagram.svg" alt="social icon">
+                                                <p class="order__name">instagram</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="2">
+                                                <img src="img/social/telegram.svg" alt="social icon">
+                                                <p class="order__name">telegram</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="3">
+                                                <img src="img/social/tik-tok.svg" alt="social icon">
+                                                <p class="order__name">tikTok</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="4">
+                                                <img src="img/social/youtube.svg" alt="social icon">
+                                                <p class="order__name">youtube</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="5">
+                                                <img src="img/social/vk.svg" alt="social icon">
+                                                <p class="order__name">vkontakte</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="6">
+                                                <img src="img/social/discord.svg" alt="social icon">
+                                                <p class="order__name">discord</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="7">
+                                                <img src="img/social/likee.svg" alt="social icon">
+                                                <p class="order__name">likee</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="8">
+                                                <img src="img/social/odnoklassniki.svg" alt="social icon">
+                                                <p class="order__name">odnoklassniki</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="9">
+                                                <img src="img/social/twitter.svg " alt="social icon">
+                                                <p class="order__name">twitter</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="10">
+                                                <img src="img/social/app-store.svg " alt="social icon">
+                                                <p class="order__name">app store</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="11">
+                                                <img src="img/social/pinterest.svg" alt="social icon">
+                                                <p class="order__name">pinterest</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="12">
+                                                <img src="img/social/facebook.svg" alt="social icon">
+                                                <p class="order__name">facebook</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="13">
+                                                <img src="img/social/web-traffic.svg" alt="social icon">
+                                                <p class="order__name">web-traffic</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="14">
+                                                <img src="img/social/periscope.svg" alt="social icon">
+                                                <p class="order__name">periscope</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="15">
+                                                <img src="img/social/spotify.svg" alt="social icon">
+                                                <p class="order__name">spotify</p>
+                                            </li>
+                                            <li class="order__item swiper-slide" data-id="16">
+                                                <img src="img/social/video.svg" alt="social icon">
+                                                <p class="order__name">vimeo</p>
+                                            </li>
+                                        </ul>
+                                        <button class="order__btn-left" type="button"></button>
+                                        <button class="order__btn-right" type="button"></button>
+                                    </div>
+                                    <p class="prompt prompt--order" id="1">instagram</p>
+                                    <p class="prompt prompt--order" id="2">telegram</p>
+                                    <p class="prompt prompt--order" id="3">tikTok</p>
+                                    <p class="prompt prompt--order" id="4">youtube</p>
+                                    <p class="prompt prompt--order" id="5">vkontakte</p>
+                                    <p class="prompt prompt--order" id="6">discord</p>
+                                    <p class="prompt prompt--order" id="7">likee</p>
+                                    <p class="prompt prompt--order" id="8">odnoklassniki</p>
+                                    <p class="prompt prompt--order" id="9">twitter</p>
+                                    <p class="prompt prompt--order" id="10">App Store</p>
+                                    <p class="prompt prompt--order" id="11">pinterest</p>
+                                    <p class="prompt prompt--order" id="12">facebook</p>
+                                    <p class="prompt prompt--order" id="13">web traffic</p>
+                                    <p class="prompt prompt--order" id="14">periscope</p>
+                                    <p class="prompt prompt--order" id="15">spotify</p>
+                                    <p class="prompt prompt--order" id="16">vimeo</p>
+                                </div>
+                                <div class="order__menu">
+                                    <div class="order__services">
+                                        <p class="order__menu-title">Выберите тип услуги</p>
+                                        <input class="order-input order-input--services" type="text" name="services" value="Подписчики" readonly placeholder="">
+                                        <ul class="order__services-list">
+                                            <li class="order__services-item active">
+                                                <div class="order__services-img">
+                                                    <img src="img/services/followers.svg" alt="">
+                                                </div>
+                                                <p class="order__services-name">Подписчики</p>
+                                            </li>
+                                            <li class="order__services-item">
+                                                <div class="order__services-img">
+                                                    <img src="img/services/love.svg" alt="">
+                                                </div>
+                                                <p class="order__services-name">Лайки</p>
+                                            </li>
+                                            <li class="order__services-item">
+                                                <div class="order__services-img">
+                                                    <img src="img/services/video-camera.svg" alt="">
+                                                </div>
+                                                <p class="order__services-name">Трансляции</p>
+                                            </li>
+                                            <li class="order__services-item">
+                                                <div class="order__services-img">
+                                                    <img src="img/services/igtv.svg" alt="">
+                                                </div>
+                                                <p class="order__services-name">IGTV</p>
+                                            </li>
+                                            <li class="order__services-item">
+                                                <div class="order__services-img">
+                                                    <img src="img/services/chat.svg" alt="">
+                                                </div>
+                                                <p class="order__services-name">Комментарии</p>
+                                            </li>
+                                            <li class="order__services-item">
+                                                <div class="order__services-img">
+                                                    <img src="img/services/bookmark.svg" alt="">
+                                                </div>
+                                                <p class="order__services-name">Сохранения</p>
+                                            </li>
+                                            <li class="order__services-item">
+                                                <div class="order__services-img">
+                                                    <img src="img/services/customer.svg" alt="">
+                                                </div>
+                                                <p class="order__services-name">Визиты</p>
+                                            </li>
+                                            <li class="order__services-item">
+                                                <div class="order__services-img">
+                                                    <img src="img/services/clock.svg" alt="">
+                                                </div>
+                                                <p class="order__services-name">Reels</p>
+                                            </li>
+                                            <li class="order__services-item">
+                                                <div class="order__services-img">
+                                                    <img src="img/services/clock.svg" alt="">
+                                                </div>
+                                                <p class="order__services-name">Истории</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="order__results">
+                                        <p class="order__menu-title">Ваш итоговый заказ</p>
+                                        <div class="order__results-group">
+                                            <p class="order__results-title">Выберите тариф</p>
+                                            <button class="order__results-btn" type="button">Подробнее о тарифах</button>
+                                            <div class="select">
+                                                <label class="select__top">
+                                                    <input class="select__main-input" type="text" value='"Супер Эконом":  0.23₽ / 1 шт 🛡 🚀 🥇' placeholder="Выберите тариф" name="select" readonly>
+                                                </label>
+    
+                                                <div class="select__content">
+                                                    <label class="select__content-item">
+                                                        <input class="select__content-input" type="radio" name="SelectItem" checked>
+                                                        <div class="select__content-box">
+                                                            <p class="select__content-name">"Супер Эконом": 0.23₽ / 1 шт 🛡 🚀 🥇</p>
+                                                        </div>
+                                                    </label>
+                                                    <label class="select__content-item">
+                                                        <input class="select__content-input" type="radio" name="SelectItem">
+                                                        <div class="select__content-box">
+                                                            <p class="select__content-name">"Стандарт": 0.23₽ / 1 шт 🛡 🚀 🥇</p>
+                                                        </div>
+                                                    </label>
+                                                    <label class="select__content-item">
+                                                        <input class="select__content-input" type="radio" name="SelectItem">
+                                                        <div class="select__content-box">
+                                                            <p class="select__content-name">"Супер Эконом": 0.23₽ / 1 шт 🛡 🚀 🥇</p>
+                                                        </div>
+                                                    </label>
+                                                    <label class="select__content-item">
+                                                        <input class="select__content-input" type="radio" name="SelectItem">
+                                                        <div class="select__content-box">
+                                                            <p class="select__content-name">"Стандарт": 0.23₽ / 1 шт 🛡 🚀 🥇</p>
+                                                        </div>
+                                                    </label>
+                                                    <label class="select__content-item">
+                                                        <input class="select__content-input" type="radio" name="SelectItem">
+                                                        <div class="select__content-box">
+                                                            <p class="select__content-name">"Супер Эконом": 0.23₽ / 1 шт 🛡 🚀 🥇</p>
+                                                        </div>
+                                                    </label>
+                                                    <label class="select__content-item">
+                                                        <input class="select__content-input" type="radio" name="SelectItem">
+                                                        <div class="select__content-box">
+                                                            <p class="select__content-name">"Стандарт": 0.23₽ / 1 шт 🛡 🚀 🥇</p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order__results-group error">
+                                            <p class="order__results-title">Ссылка</p>
+                                            <p class="error__text">Ссылка введена некорректно</p>
+                                            <input class="input" type="text" placeholder="https://www.instagram.com/?hl=ru">
+                                        </div>
+                                        <div class="order__results-group">
+                                            <div class="order__range-box">
+                                                <p class="order__results-title">Количество</p>
+                                                <input type="text" class="js-input input" name="quantity" id="rangeInput" value="0" autocomplete="off" />
+                                                <button class="order__range-btn order__range-btn--minus" type="button" data-minus="100">
+                                                    <img src="img/minus.svg" alt="">
+                                                </button>
+                                                <button class="order__range-btn order__range-btn--plus" type="button" data-plus="100">
+                                                    <img src="img/plus.svg" alt="">
+                                                </button>
+                                            </div>
+                                            <div class="order__range-box">
+                                                <p class="order__results-title">Итого</p>
+                                                <div class="order__results-value">280 руб</div>
+                                            </div>
+                                            <div class="range-slider">
+                                                <input type="text" class="js-range-slider" id="range" name="range" value="" data-min="500" data-max="10000" data-from="1200" />
+                                            </div>
+                                        </div>
+                                        <div class="order__results-group">
+                                            <p class="order__results-title">Промокод</p>
+                                            <input class="input" type="text" placeholder="Введите, если есть">
+                                            <button class="order-promo-code__activate">Активировать</button>
+                                        </div>
+                                        <div class="order__results-btns">
+                                            <button id="showPayment" class="order__results-continue btn btn--blue" type="button">
+                                                Продолжить
+                                                <!-- <p class="prompt prompt--continue">Средства спишутся с баланса личного кабинета"</p> -->
+                                            </button>
+                                            <!-- <button class="quick-order__btn btn btn--blue" id="showPayment" type="button">
+                                                Быстрый заказ
+                                                <p class="prompt prompt--quick-order">Быстрый заказ "Оплатить заказ отдельно, без пополнения баланса</p>
+                                            </button> -->
+                                            <div class="order__discount">
+                                                <a class="order__discount-link scale" href="#">
+                                                    <img src="img/telegram-blue.svg" alt="">
+                                                </a>
+                                                <p class="order__discount-text">Скидки для
+                                                    подписчиков</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="information">
+                                    <button class="information__btn btn btn--blue" type="button">Вернуться к заказу</button>
+                                    <button class="information__btn information__btn--mob btn btn--blue" type="button"></button>
+                                    <h2 class="information__title">Информация об услугах</h2>
+                                    <ul class="information__list">
+                                        <li class="information__item">
+                                            <p class="information__name">Лайки на пост "Эконом"</p>
+                                            <p class="information__text">Активные пользователи лайкают Вашу онлайн трансляцию. Мгновенный старт и огромные объемы.</p>
+                                            <div class="information__descr">
+                                                <p class="information__descr-item">🚀 Высокая скорость</p>
+                                                <p class="information__descr-item">🥇 Высокое качество</p>
+                                                <p class="information__descr-item">🛡 Гарантия</p>
+                                            </div>
+                                        </li>
+                                        <li class="information__item">
+                                            <p class="information__name">Лайки на пост "Стандарт"</p>
+                                            <p class="information__text">Активные пользователи лайкают Вашу онлайн трансляцию. Мгновенный старт и огромные объемы.</p>
+                                            <div class="information__descr">
+                                                <p class="information__descr-item">🚀 Высокая скорость</p>
+                                                <p class="information__descr-item">🥇 Высокое качество</p>
+                                                <p class="information__descr-item">🛡 Гарантия</p>
+                                            </div>
+                                        </li>
+                                        <li class="information__item">
+                                            <p class="information__name">Лайки на пост "Премиум"</p>
+                                            <p class="information__text">Активные пользователи лайкают Вашу онлайн трансляцию. Мгновенный старт и огромные объемы.</p>
+                                            <div class="information__descr">
+                                                <p class="information__descr-item">🚀 Высокая скорость</p>
+                                                <p class="information__descr-item">🥇 Высокое качество</p>
+                                                <p class="information__descr-item">🛡 Гарантия</p>
+                                            </div>
+                                        </li>
+                                        <li class="information__item">
+                                            <p class="information__name">Лайки на пост "Эконом"</p>
+                                            <p class="information__text">Активные пользователи лайкают Вашу онлайн трансляцию. Мгновенный старт и огромные объемы.</p>
+                                            <div class="information__descr">
+                                                <p class="information__descr-item">🚀 Высокая скорость</p>
+                                                <p class="information__descr-item">🥇 Высокое качество</p>
+                                                <p class="information__descr-item">🛡 Гарантия</p>
+                                            </div>
+                                        </li>
+                                        <li class="information__item">
+                                            <p class="information__name">Лайки на пост "Стандарт"</p>
+                                            <p class="information__text">Активные пользователи лайкают Вашу онлайн трансляцию. Мгновенный старт и огромные объемы.</p>
+                                            <div class="information__descr">
+                                                <p class="information__descr-item">🚀 Высокая скорость</p>
+                                                <p class="information__descr-item">🥇 Высокое качество</p>
+                                                <p class="information__descr-item">🛡 Гарантия</p>
+                                            </div>
+                                        </li>
+                                        <li class="information__item">
+                                            <p class="information__name">Лайки на пост "Премиум"</p>
+                                            <p class="information__text">Активные пользователи лайкают Вашу онлайн трансляцию. Мгновенный старт и огромные объемы.</p>
+                                            <div class="information__descr">
+                                                <p class="information__descr-item">🚀 Высокая скорость</p>
+                                                <p class="information__descr-item">🥇 Высокое качество</p>
+                                                <p class="information__descr-item">🛡 Гарантия</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+    
+                                <div class="fast-payment">
+                                    <button class="fast-payment__btn-back btn btn--trans-blue" type="button">Изменить заказ</button>
+                                    <h2 class="fast-payment__title">Быстрая оплата</h2>
+                                    <div class="payment-method__list">
+                                        <label class="payment-method__item">
+                                            <input class="payment-method__input" type="radio" name="payment-method" checked>
+                                            <div class="payment-method__content">
+                                                <div class="payment-method__icon">
+                                                    <img src="img/card.png" alt="">
+                                                </div>
+                                                <div class="payment-method__wrapper">
+                                                    <p class="payment-method__name">Банковская карта</p>
+                                                    <p class="payment-method__commission">Комиссия 0%</p>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="payment-method__item">
+                                            <input class="payment-method__input" type="radio" name="payment-method">
+                                            <div class="payment-method__content">
+                                                <div class="payment-method__icon">
+                                                    <img src="img/money.png" alt="">
+                                                </div>
+                                                <div class="payment-method__wrapper">
+                                                    <p class="payment-method__name">ЮMoney</p>
+                                                    <p class="payment-method__commission">Комиссия 0%</p>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="payment-method__item">
+                                            <input class="payment-method__input" type="radio" name="payment-method">
+                                            <div class="payment-method__content">
+                                                <div class="payment-method__icon">
+                                                    <img src="img/qiwi.png" alt="">
+                                                </div>
+                                                <div class="payment-method__wrapper">
+                                                    <p class="payment-method__name">QIWI</p>
+                                                    <p class="payment-method__commission">Комиссия 0%</p>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="payment-method__item">
+                                            <input class="payment-method__input" type="radio" name="payment-method">
+                                            <div class="payment-method__content">
+                                                <div class="payment-method__icon">
+                                                    <img src="img/webmoney.png" alt="">
+                                                </div>
+                                                <div class="payment-method__wrapper">
+    
+                                                    <p class="payment-method__name">WebMoney</p>
+                                                    <p class="payment-method__commission">Комиссия 0%</p>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="fast-payment__block">
+                                        <button class="fast-payment__btn-pay btn btn--blue">Оплатить 120.23₽ </button>
+                                        <div class="fast-payment__group error">
+                                            <p class="fast-payment__input-name">Ваш E-mail</p>
+                                            <input class="fast-payment__input input" placeholder="Ваш E-mail" type="text" name="email">
+                                            <p class="fast-payment__error-text">Введите почту</p>
+                                        </div>
+                                    </div>
+                                    <div class="fast-payment__data">
+                                        <p class="fast-payment__data-title">Данные о заказе</p>
+                                        <div class="fast-payment__data-info">
+                                            <div class="fast-payment__data-item">
+                                                <p class="fast-payment__data-name">Количество</p>
+                                                <p class="fast-payment__data-field">500</p>
+                                            </div>
+                                            <div class="fast-payment__data-item">
+                                                <p class="fast-payment__data-name">Цена</p>
+                                                <p class="fast-payment__data-field">500</p>
+                                            </div>
+                                            <div class="fast-payment__data-item">
+                                                <p class="fast-payment__data-name">Ссылка</p>
+                                                <p class="fast-payment__data-field">https://www.instagram.com/?hl=ru</p>
+                                            </div>
+                                            <div class="fast-payment__data-item">
+                                                <p class="fast-payment__data-name">Лайки на пост "Эконом"</p>
+                                                <p class="fast-payment__data-descr">Активные пользователи лайкают Вашу онлайн трансляцию. Мгновенный старт и огромные объемы.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="services__info">
+                                <div class="services__info-item">
+                                    <p>
+                                        Вы - начинающий блогер, который хочет стать популярнее? А может, владелец бизнеса, желающий увеличить количество подписчиков и продавать через соцсети? Сервис накрутки инстаграм SmmCraft поможет в достижении этих целей! За небольшую плату вы получаете качественное и безопасное продвижение страницы.
+                                    </p>
+                                    <b>
+                                        Раскрутить страницу и вывести ее в топ возможно даже при минимальных усилиях и маленьком бюджете. Пользуясь сервисом SmmCraft вы получаете полный спектр услуг для накрутки instagram:
+                                    </b>
+                                    <ul>
+                                        <li>
+                                            Лайки на пост;
+                                        </li>
+                                        <li>
+                                            Живые подписчики;
+                                        </li>
+                                        <li>
+                                            Просмотры историй, видео и IGTV
+                                        </li>
+                                        <li>
+                                            Посещения профиля;
+                                        </li>
+                                        <li>
+                                            Лайки от ТОП аккаунтов;
+                                        </li>
+                                        <li>
+                                            Комментарии от реальных пользователей;
+                                        </li>
+                                    </ul>
+
+                                    <p>
+                                        Вы получаете активную аудиторию в инстаграм: без банов, ботов и пустых страниц. SmmCraft предлагает только настоящие страницы с фотографиями и заполненным профилем. Есть несколько тарифов: от “Супер Эконом” до “Премиум”. Экономный обеспечивает продвижение при минимальных затратах, а премиум - настоящие аккаунты без списаний. Выбирайте пользователей из России или привлекайте того, кто не просто подпишется, а будет реагировать на публикации.
+                                    </p>
+
+                                    <p>
+                                        Небольшой совет: продвигать лучше и аккаунт в инстаграме, и отдельные публикации. Это обеспечит доверие будущих клиентов, ведь профили с тысячами фолловеров и без лайков не привлекают, а настораживают. С нашим сервисом вы сможете раскрутить пост, добавить реакций и поднять охваты. Ролики и stories смотрят настоящие люди. Можно достичь до 1.000.000 просмотров видео в сутки. Закажите позитивные или нейтральные комментарии, чтобы вывести посты в рекомендованные публикации.
+                                    </p>
+
+                                </div>
+                                <div class="services__info-item">
+                                    <ul>
+                                        <li>
+                                            Удобный и простой интерфейс;
+                                        </li>
+                                        <li>
+                                            Привлечение реальных людей;
+                                        </li>
+                                        <li>
+                                            Просмотры историй, видео и IGTV
+                                        </li>
+                                        <li>
+                                            Высокая надежность и стабильное качество;
+                                        </li>
+                                        <li>
+                                            Запуск сразу после оплаты;
+                                        </li>
+                                    </ul>
+
+                                    <p>
+                                        Чтобы раскрутить соцсеть не обязательно быть SMM-гуру или таргетологом. Не нужно устраивать сомнительные конкурсы и тратить огромные суммы на таргетированную рекламу. Получайте новых клиентов и подписчиков каждый день вместе с SmmCraft.
+                                        Начните уже сегодня!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__intro">
+        <a class="footer__logo" href="/">
+          <img src="img/logo.svg" alt="logo">
+        </a>
+        <p class="footer__descr">Сервис раскрутки Instagram, Telegram и других площадок.</p>
+        <div class="footer__block">
+          <a class="footer__social-link" href="#" target="_blank">
+            <img src="img/telegram.svg" alt="">
+          </a>
+          <a class="footer__social-link" href="#" target="_blank">
+            <img src="img/email.svg" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="footer__nav">
+        <div class="footer__nav-block">
+          <h2 class="footer__title">Навигация</h2>
+          <a class="footer__nav-link" href="#">Каталог услуг</a>
+          <a class="footer__nav-link" href="#">Отзывы клиентов</a>
+          <a class="footer__nav-link" href="#">Помощь</a>
+          <a class="footer__nav-link" href="#">Контакты</a>
+        </div>
+        <div class="footer__nav-block">
+          <h2 class="footer__title">Личный кабинет</h2>
+          <a class="footer__nav-link" href="#">Кабинет</a>
+          <a class="footer__nav-link" href="#">Пополнить баланс</a>
+          <a class="footer__nav-link" href="#">История заказов</a>
+          <a class="footer__nav-link" href="#">Настройки</a>
+        </div>
+      </div>
+      <div class="footer__payment">
+        <h2 class="footer__title">Принимаем к оплате:</h2>
+        <ul class="footer__payment-list">
+          <li class="footer__payment-item">
+            <img src="img/payment-icon1.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon2.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon3.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon4.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon5.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon6.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon7.svg" alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__wrapper">
+        <a class="footer__another-link" href="#">Публичная оферта</a>
+        <a class="footer__another-link" href="#">Политика cookies</a>
+        <a class="footer__another-link" href="#">Политика конфиденциальности</a>
+      </div>            
+      <p class="footer__copyright">© 2021 All rights reserved</p>
+    </div>
+  </div>
+</footer>
+        </div>
+        <script src="js/vendor.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+
+    </html>

@@ -1,0 +1,632 @@
+<!DOCservices html>
+    <html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">        <link rel="shortcut icon" href="img/favicon.ico" reviews="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <title>Page</title>
+        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    
+    
+
+    <body>
+        <div class="page">
+            <!-- add class authorized to see user navigation -->
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo" href="/">
+                <img src="img/header-logo.svg" alt="">
+            </a>
+            <div class="substrate"></div>
+
+            <nav class="nav">
+                <p class="menu-title">Меню</p>
+                <button class="close-menu">
+                    <img src="img/close-grey.svg" alt="">
+                </button>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link " href="#">
+                            Услуги
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link active" href="#">
+                            Отзывы
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link " href="#">
+                            Помощь
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link " href="#">
+                            Контакты
+                        </a>
+                    </li>
+                    <li class="nav__item nav__item--exit">
+                        <button class="exit-button">Выйти</button>
+                    </li>
+                </ul>
+                <div class="nav__another">
+                    <button class="sign-in__btn btn btn--trans">Войти</button>
+                    <button class="sign-up__btn btn btn--white">Создать аккаунт</button>
+
+                    <div class="balance-header">
+                        <p class="balance-header__text">Баланс:</p>
+                        <p class="balance-header__sum">1200₽</p>
+                        <button class="balance-header__add">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="user-mob">
+                        <svg class="user-mob__icon">
+                            <use xlink:href="img/sprite.svg#user"></use>
+                        </svg>
+                    </div>
+
+                    <div class="user" data-da=".header__inner, 1023, 1">
+                        <p class="user__login" data-da=".user-mob, 1023, 0">user1234@gmail.com</p>
+                        <button class="user__btn alert">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#user"></use>
+                            </svg>
+                        </button>
+                        <div class="user__menu">
+                            <div class="user__balance">
+                                Баланс:
+                                <p class="user__balance-sum">5 000 ₽</p>
+                            </div>
+                            <ul class="user__list">
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Панель управлени</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Пополнить баланс</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">История заказов</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Настройки</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Помощь</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Партнерская программа</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Чаты</a>
+                                </li>
+                                <li class="user__item">
+                                    <button class="user__exit">Выход</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <button class="burger">
+                <img src="img/burger.svg" alt="">
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="popup popup--sign-in">
+    <div class="popup__inner  popup__inner--sign-in">
+        <button class="popup__close scale">
+            <img src="img/close.svg" alt="">
+        </button>
+        <form class="form" action="">
+            <div class="popup__login-via">
+                <p class="popup__login-via-title">Быстрый вход</p>
+                <div class="popup__login-via-block">
+                    <button class="popup__login-via-btn scale">
+                        <img src="img/login-icon.svg" alt="">
+                    </button>
+                    <button class="popup__login-via-btn scale">
+                        <img src="img/login-icon2.svg" alt="">
+                    </button>
+                    <button class="popup__login-via-btn scale">
+                        <img src="img/login-icon3.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <h2 class="popup__title">Вход</h2>
+
+            <div class="form__group">
+                <p class="form__name">E-mail</p>
+                <input class="input" type="text" name="email" placeholder="Введите почту">
+            </div>
+
+            <div class="form__group form__group--password">
+                <p class="form__name">Пароль</p>
+                <button class="forgot-password" type="button">Забыли пароль?</button>
+                <input class="input" type="password" name="password" placeholder="Введите пароль">
+                <button class="btn__view-password" type="button">
+                    <img src="img/view.svg" alt="">
+                </button>
+            </div>
+
+            <div class="form__group">
+                <img class="captcha-fake" src="img/captcha.jpg" alt="">
+            </div>
+
+            <button class="popup__btn-sign-in btn btn--blue">Войти</button>
+
+            <p class="popup__block-sign-up">
+                Нет аккаунта?
+                <button class="call__sign-up-popup" type="button">Регистрация</button>
+            </p>
+        </form>
+    </div>
+</div>
+
+<div class="popup popup--sign-up">
+    <div class="popup__inner  popup__inner--sign-up">
+        <button class="popup__close scale">
+            <img src="img/close.svg" alt="">
+        </button>
+        <form class="form" action="">
+            <div class="quick-registration">
+                <p class="quick-registration__title">Быстрая регистрация</p>
+                <div class="quick-registration__block">
+                    <button class="quick-registration__btn scale">
+                        <img src="img/login-icon.svg" alt="">
+                    </button>
+                    <button class="quick-registration__btn scale">
+                        <img src="img/login-icon2.svg" alt="">
+                    </button>
+                    <button class="quick-registration__btn scale">
+                        <img src="img/login-icon3.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <h2 class="popup__title">Регистрация</h2>
+
+            <div class="form__group">
+                <p class="form__name">E-mail</p>
+                <input class="input" type="text" name="email" placeholder="Введите почту">
+            </div>
+
+            <div class="form__group">
+                <img class="captcha-fake" src="img/captcha.jpg" alt="">
+            </div>
+
+            <label class="checkbox checkbox--popup">
+                <input class="checkbox__input" type="checkbox">
+                <div class="checkbox__fake"></div>
+                <p class="checkbox__text">Я принимаю условия обслуживания и <a class="popup__link" href="#">политику конфиденциальности</a></p>
+            </label>
+
+            <button class="popup__btn-sign-up btn btn--blue">Регистрация</button>
+            <div class="popup__block-sign-in">
+                Есть аккаунт?
+                <button class="call__sign-in-popup" type="button">Войти</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="popup popup--restore-password">
+    <div class="popup__inner  popup__inner--restore-password">
+        <button class="popup__close scale">
+            <img src="img/close.svg" alt="">
+        </button>
+        <form class="form" action="">
+            <h2 class="popup__title">Восстановление пароля</h2>
+
+            <p class="popup__descr">Укажите Email, привязанный к аккаунту.
+                Мы пришлем ссылку для сброса пароля в течение 5 минут.</p>
+
+            <div class="form__group">
+                <p class="form__name">E-mail</p>
+                <input class="input" type="text" name="email" placeholder="Введите почту">
+            </div>
+
+            <button class="popup__btn-submit btn btn--blue">Отправить письмо</button>
+            <div class="popup__block-sign-in">
+                Вспомнили пароль?
+                <button class="call__sign-in-popup" type="button">Войти</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+            <main>
+                <section class="reviews">
+                    <div class="reviews__intro background">
+                        <div class="container">
+                            <div class="reviews__intro-inner">
+                                <div class="reviews__intro-content">
+                                    <h1 class="main-title">
+                                        Отзывы клиентов
+                                    </h1>
+                                    <h2 class="reviews__subtitle subtitle">
+                                        Ознакомьтесь с отзывами наших клиентов
+                                        или напишите свой.
+                                    </h2>
+                                </div>
+                                <div class="reviews__regulations">
+                                    <p class="reviews__regulations-title">Правила публикации:</p>
+                                    <ul class="reviews__regulations-list">
+                                        <li class="reviews__regulations-item">без ссылок</li>
+                                        <li class="reviews__regulations-item">без нецензурной лексики</li>
+                                        <li class="reviews__regulations-item">без спама</li>
+                                    </ul>
+                                </div>
+                                <div class="reviews__photo">
+                                    <img src="img/reviews-photo.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__content">
+                        <div class="container">
+                            <h2 class="reviews__title">Напишите свой отзыв</h2>
+                            <form class="reviews__messenger">
+                                <textarea class="reviews__textarea" placeholder="Введите текст..."></textarea>
+                                <div class="reviews__nav">
+                                    <button class="btn btn--blue">Отправить</button>
+                                    <div class="reviews__authorization">
+                                        <button class="reviews__authorization-btn" type="button">Авторизуйтесь,</button>
+                                        чтобы оставить отзыв
+                                    </div>
+                                </div>
+                            </form>
+                            <h2 class="reviews__title">Отзывы</h2>
+                            <ul class="reviews__list">
+                                <li class="reviews__item">
+                                    <div class="reviews-main__info">
+                                        <div class="reviews-main__avatar">
+                                            <img src="img/reviews/icon1.png" alt="">
+                                        </div>
+                                        <div class="reviews-main__details">
+                                            <p class="reviews-main__name">Анна Никитина</p>
+                                            <div class="rating">
+                                                <div class="rating__wrapper" data-total-value='3'>
+                                                    <div class="rating__item" data-rating-value='5'>
+                                                        <svg class="rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="4">
+                                                        <svg class="rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="3">
+                                                        <svg class="rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="2">
+                                                        <svg class="rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="1">
+                                                        <svg class="rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rating__total">
+                                                    <span class="rating__current"></span>/5
+                                                </div>
+                                            </div>
+                                            <p class="reviews-main__date">12 декабря в 21:54</p>
+                                        </div>
+                                    </div>
+                                    <p class="reviews__descr">С другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки модели развития. Не следует, однако забывать, что консультация с широким активом позволяет оценить значение форм развития.
+                                        <br> <br>
+                                        Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.</p>
+                                </li>
+                                <li class="reviews__item">
+                                    <div class="reviews-main__info">
+                                        <div class="reviews-main__avatar">
+                                            <img src="img/reviews/icon1.png" alt="">
+                                        </div>
+                                        <div class="reviews-main__details">
+                                            <p class="reviews-main__name">Анна Никитина</p>
+                                            <div class="rating">
+                                                <div class="rating__wrapper" data-total-value='3'>
+                                                    <div class="rating__item" data-rating-value='5'>
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="4">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="3">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="2">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="1">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rating__total">
+                                                    <span class="rating__current"></span>/5
+                                                </div>
+                                            </div>
+                                            <p class="reviews-main__date">12 декабря в 21:54</p>
+                                        </div>
+                                    </div>
+                                    <p class="reviews__descr">С другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки модели развития. Не следует, однако забывать, что консультация с широким активом позволяет оценить значение форм развития.
+                                        <br> <br>
+                                        Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.</p>
+                                </li>
+                                <li class="reviews__item">
+                                    <div class="reviews-main__info">
+                                        <div class="reviews-main__avatar">
+                                            <img src="img/reviews/icon1.png" alt="">
+                                        </div>
+                                        <div class="reviews-main__details">
+                                            <p class="reviews-main__name">Анна Никитина</p>
+                                            <div class="rating">
+                                                <div class="rating__wrapper" data-total-value='3'>
+                                                    <div class="rating__item" data-rating-value='5'>
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="4">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="3">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="2">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="1">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rating__total">
+                                                    <span class="rating__current"></span>/5
+                                                </div>
+                                            </div>
+                                            <p class="reviews-main__date">12 декабря в 21:54</p>
+                                        </div>
+                                    </div>
+                                    <p class="reviews__descr">С другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки модели развития. Не следует, однако забывать, что консультация с широким активом позволяет оценить значение форм развития.
+                                        <br> <br>
+                                        Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.</p>
+                                </li>
+                                <li class="reviews__item">
+                                    <div class="reviews-main__info">
+                                        <div class="reviews-main__avatar">
+                                            <img src="img/reviews/icon1.png" alt="">
+                                        </div>
+                                        <div class="reviews-main__details">
+                                            <p class="reviews-main__name">Анна Никитина</p>
+                                            <div class="rating">
+                                                <div class="rating__wrapper" data-total-value='3'>
+                                                    <div class="rating__item" data-rating-value='5'>
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="4">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="3">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="2">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="1">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rating__total">
+                                                    <span class="rating__current"></span>/5
+                                                </div>
+                                            </div>
+                                            <p class="reviews-main__date">12 декабря в 21:54</p>
+                                        </div>
+                                    </div>
+                                    <p class="reviews__descr">С другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки модели развития. Не следует, однако забывать, что консультация с широким активом позволяет оценить значение форм развития.
+                                        <br> <br>
+                                        Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.</p>
+                                </li>
+                                <li class="reviews__item">
+                                    <div class="reviews-main__info">
+                                        <div class="reviews-main__avatar">
+                                            <img src="img/reviews/icon1.png" alt="">
+                                        </div>
+                                        <div class="reviews-main__details">
+                                            <p class="reviews-main__name">Анна Никитина</p>
+                                            <div class="rating">
+                                                <div class="rating__wrapper" data-total-value='3'>
+                                                    <div class="rating__item" data-rating-value='5'>
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="4">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="3">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="2">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="rating__item" data-rating-value="1">
+                                                        <svg class="rating__icon rating__icon">
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="rating__total">
+                                                    <span class="rating__current"></span>/5
+                                                </div>
+                                            </div>
+                                            <p class="reviews-main__date">12 декабря в 21:54</p>
+                                        </div>
+                                    </div>
+                                    <p class="reviews__descr">С другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки модели развития. Не следует, однако забывать, что консультация с широким активом позволяет оценить значение форм развития.
+                                        <br> <br>
+                                        Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.</p>
+                                </li>
+                            </ul>
+                            <nav class="pagination">
+                                <ul class="pagination__list">
+                                    <li class="pagination__item">
+                                        <a class="pagination__link" href="#">1</a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a class="pagination__link" href="#">2</a>
+                                    </li>
+                                    <li class="pagination__item active">
+                                        <a class="pagination__link" href="#">3</a>
+                                    </li>
+                                    <li class="pagination__item disabled">
+                                        <span class="pagination__link">...</span>
+                                    </li>
+                                    <li class="pagination__item ">
+                                        <a class="pagination__link" href="#">12</a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a class="pagination__link pagination__link--btn" href="#">Следующая</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__intro">
+        <a class="footer__logo" href="/">
+          <img src="img/logo.svg" alt="logo">
+        </a>
+        <p class="footer__descr">Сервис раскрутки Instagram, Telegram и других площадок.</p>
+        <div class="footer__block">
+          <a class="footer__social-link" href="#" target="_blank">
+            <img src="img/telegram.svg" alt="">
+          </a>
+          <a class="footer__social-link" href="#" target="_blank">
+            <img src="img/email.svg" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="footer__nav">
+        <div class="footer__nav-block">
+          <h2 class="footer__title">Навигация</h2>
+          <a class="footer__nav-link" href="#">Каталог услуг</a>
+          <a class="footer__nav-link" href="#">Отзывы клиентов</a>
+          <a class="footer__nav-link" href="#">Помощь</a>
+          <a class="footer__nav-link" href="#">Контакты</a>
+        </div>
+        <div class="footer__nav-block">
+          <h2 class="footer__title">Личный кабинет</h2>
+          <a class="footer__nav-link" href="#">Кабинет</a>
+          <a class="footer__nav-link" href="#">Пополнить баланс</a>
+          <a class="footer__nav-link" href="#">История заказов</a>
+          <a class="footer__nav-link" href="#">Настройки</a>
+        </div>
+      </div>
+      <div class="footer__payment">
+        <h2 class="footer__title">Принимаем к оплате:</h2>
+        <ul class="footer__payment-list">
+          <li class="footer__payment-item">
+            <img src="img/payment-icon1.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon2.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon3.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon4.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon5.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon6.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon7.svg" alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__wrapper">
+        <a class="footer__another-link" href="#">Публичная оферта</a>
+        <a class="footer__another-link" href="#">Политика cookies</a>
+        <a class="footer__another-link" href="#">Политика конфиденциальности</a>
+      </div>            
+      <p class="footer__copyright">© 2021 All rights reserved</p>
+    </div>
+  </div>
+</footer>
+        </div>
+        <script src="js/vendor.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+
+    </html>

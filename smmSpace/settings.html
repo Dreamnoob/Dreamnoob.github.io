@@ -1,0 +1,477 @@
+<!DOCservices html>
+    <html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">        <link rel="shortcut icon" href="img/favicon.ico" services="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <title>Page</title>
+        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    
+    
+
+    <body>
+        <div class="page page-private">
+            <!-- add class authorized to see user navigation -->
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo" href="/">
+                <img src="img/header-logo.svg" alt="">
+            </a>
+            <div class="substrate"></div>
+
+            <nav class="nav">
+                <p class="menu-title">Меню</p>
+                <button class="close-menu">
+                    <img src="img/close-grey.svg" alt="">
+                </button>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link @nav__link1" href="#">
+                            Услуги
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link @nav__link2" href="#">
+                            Отзывы
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link @nav__link3" href="#">
+                            Помощь
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link @nav__link4" href="#">
+                            Контакты
+                        </a>
+                    </li>
+                    <li class="nav__item nav__item--exit">
+                        <button class="exit-button">Выйти</button>
+                    </li>
+                </ul>
+                <div class="nav__another">
+                    <button class="sign-in__btn btn btn--trans">Войти</button>
+                    <button class="sign-up__btn btn btn--white">Создать аккаунт</button>
+
+                    <div class="balance-header">
+                        <p class="balance-header__text">Баланс:</p>
+                        <p class="balance-header__sum">1200₽</p>
+                        <button class="balance-header__add">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="user-mob">
+                        <svg class="user-mob__icon">
+                            <use xlink:href="img/sprite.svg#user"></use>
+                        </svg>
+                    </div>
+
+                    <div class="user" data-da=".header__inner, 1023, 1">
+                        <p class="user__login" data-da=".user-mob, 1023, 0">user1234@gmail.com</p>
+                        <button class="user__btn alert">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#user"></use>
+                            </svg>
+                        </button>
+                        <div class="user__menu">
+                            <div class="user__balance">
+                                Баланс:
+                                <p class="user__balance-sum">5 000 ₽</p>
+                            </div>
+                            <ul class="user__list">
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Панель управлени</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Пополнить баланс</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">История заказов</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Настройки</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Помощь</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Партнерская программа</a>
+                                </li>
+                                <li class="user__item">
+                                    <a class="user__link" href="#">Чаты</a>
+                                </li>
+                                <li class="user__item">
+                                    <button class="user__exit">Выход</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <button class="burger">
+                <img src="img/burger.svg" alt="">
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="popup popup--sign-in">
+    <div class="popup__inner  popup__inner--sign-in">
+        <button class="popup__close scale">
+            <img src="img/close.svg" alt="">
+        </button>
+        <form class="form" action="">
+            <div class="popup__login-via">
+                <p class="popup__login-via-title">Быстрый вход</p>
+                <div class="popup__login-via-block">
+                    <button class="popup__login-via-btn scale">
+                        <img src="img/login-icon.svg" alt="">
+                    </button>
+                    <button class="popup__login-via-btn scale">
+                        <img src="img/login-icon2.svg" alt="">
+                    </button>
+                    <button class="popup__login-via-btn scale">
+                        <img src="img/login-icon3.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <h2 class="popup__title">Вход</h2>
+
+            <div class="form__group">
+                <p class="form__name">E-mail</p>
+                <input class="input" type="text" name="email" placeholder="Введите почту">
+            </div>
+
+            <div class="form__group form__group--password">
+                <p class="form__name">Пароль</p>
+                <button class="forgot-password" type="button">Забыли пароль?</button>
+                <input class="input" type="password" name="password" placeholder="Введите пароль">
+                <button class="btn__view-password" type="button">
+                    <img src="img/view.svg" alt="">
+                </button>
+            </div>
+
+            <div class="form__group">
+                <img class="captcha-fake" src="img/captcha.jpg" alt="">
+            </div>
+
+            <button class="popup__btn-sign-in btn btn--blue">Войти</button>
+
+            <p class="popup__block-sign-up">
+                Нет аккаунта?
+                <button class="call__sign-up-popup" type="button">Регистрация</button>
+            </p>
+        </form>
+    </div>
+</div>
+
+<div class="popup popup--sign-up">
+    <div class="popup__inner  popup__inner--sign-up">
+        <button class="popup__close scale">
+            <img src="img/close.svg" alt="">
+        </button>
+        <form class="form" action="">
+            <div class="quick-registration">
+                <p class="quick-registration__title">Быстрая регистрация</p>
+                <div class="quick-registration__block">
+                    <button class="quick-registration__btn scale">
+                        <img src="img/login-icon.svg" alt="">
+                    </button>
+                    <button class="quick-registration__btn scale">
+                        <img src="img/login-icon2.svg" alt="">
+                    </button>
+                    <button class="quick-registration__btn scale">
+                        <img src="img/login-icon3.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <h2 class="popup__title">Регистрация</h2>
+
+            <div class="form__group">
+                <p class="form__name">E-mail</p>
+                <input class="input" type="text" name="email" placeholder="Введите почту">
+            </div>
+
+            <div class="form__group">
+                <img class="captcha-fake" src="img/captcha.jpg" alt="">
+            </div>
+
+            <label class="checkbox checkbox--popup">
+                <input class="checkbox__input" type="checkbox">
+                <div class="checkbox__fake"></div>
+                <p class="checkbox__text">Я принимаю условия обслуживания и <a class="popup__link" href="#">политику конфиденциальности</a></p>
+            </label>
+
+            <button class="popup__btn-sign-up btn btn--blue">Регистрация</button>
+            <div class="popup__block-sign-in">
+                Есть аккаунт?
+                <button class="call__sign-in-popup" type="button">Войти</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="popup popup--restore-password">
+    <div class="popup__inner  popup__inner--restore-password">
+        <button class="popup__close scale">
+            <img src="img/close.svg" alt="">
+        </button>
+        <form class="form" action="">
+            <h2 class="popup__title">Восстановление пароля</h2>
+
+            <p class="popup__descr">Укажите Email, привязанный к аккаунту.
+                Мы пришлем ссылку для сброса пароля в течение 5 минут.</p>
+
+            <div class="form__group">
+                <p class="form__name">E-mail</p>
+                <input class="input" type="text" name="email" placeholder="Введите почту">
+            </div>
+
+            <button class="popup__btn-submit btn btn--blue">Отправить письмо</button>
+            <div class="popup__block-sign-in">
+                Вспомнили пароль?
+                <button class="call__sign-in-popup" type="button">Войти</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+            <main>
+                <section class="private">
+                    <div class="container">
+                        <div class="private-bg background"></div>
+                        <div class="private__board">
+                            <nav class="private__nav">
+                                <ul class="private__list">
+                                    <li class="private__item">
+                                        <a class="private__btn" href="control-panel.html">Панель управления</a>
+                                    </li>
+                                    <li class="private__item">
+                                        <a class="private__btn" href="balance.html">Пополнить баланс</a>
+                                    </li>
+                                    <li class="private__item">
+                                        <a class="private__btn" href="purchase-history.html">История</a>
+                                    </li>
+                                    <li class="private__item">
+                                        <a class="private__btn active" href="settings.html">Настройки</a>
+                                    </li>
+                                    <li class="private__item">
+                                        <a class="private__btn" href="affiliate-program.html">Партнерская программа</a>
+                                    </li>
+                                    <li class="private__item">
+                                        <a class="private__btn" href="#">Чаты</a>
+                                    </li>
+                                    <li class="private__item">
+                                        <button class="private__log-off">
+                                            <svg class="private__log-off-icon">
+                                                <use xlink:href="img/sprite.svg#log-off"></use>
+                                            </svg>
+                                            Выйти
+                                        </button>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <form class="private__content settings">
+                                <p class="private__title private__title--settings">Настройки аккаунта</p>
+                                <p class="settings__subtitle">Измените пароль или укажите другие данные.</p>
+                                <div class="settings__content">
+                                    <div class="settings__password">
+                                        <p class="settings__content-title">Смена пароля</p>
+                                        <div class="settings__group">
+                                            <p class="settings__name">Старый пароль</p>
+                                            <input class="input input--settings" type="password" name="old-password" placeholder="Введите пароль">
+                                        </div>
+                                        <div class="settings__group">
+                                            <p class="settings__name">Новый пароль</p>
+                                            <input class="input input--settings" type="password" name="new-password" placeholder="Введите новый пароль">
+                                        </div>
+                                        <div class="settings__group">
+                                            <p class="settings__name">Повторите новый пароль</p>
+                                            <input class="input input--settings" type="password" name="new-password-repeat" placeholder="Введите новый пароль">
+                                        </div>
+                                        <button class="settings__btn btn btn--blue">Сохранить</button>
+                                    </div>
+                                    <div class="settings__info">
+                                        <p class="settings__content-title">Персональная информация</p>
+                                        <div class="settings__group">
+                                            <p class="settings__name">E-mail</p>
+                                            <input class="input input--settings" type="text" name="email" placeholder="Введите E-mail">
+                                        </div>
+                                        <div class="settings__group">
+                                            <p class="settings__name">Имя Фамилия</p>
+                                            <input class="input input--settings" type="text" name="data" placeholder="Введите данные">
+                                        </div>
+                                        <div class="settings__group">
+                                            <p class="settings__name">Телефон</p>
+                                            <input class="input input--settings" type="text" name="tel" placeholder="Введите номер">
+                                        </div>
+                                        <button class="settings__btn btn btn--blue">Сохранить</button>
+                                    </div>
+                                    <div class="settings__notification">
+                                        <p class="settings__content-title">Настройка уведомлений</p>
+                                        <div class="settings__board">
+                                            <div class="settings__board-top">
+                                                <div class="settings__column">Событие</div>
+                                                <div class="settings__column">
+                                                    <span>Сообщение на сайте</span>
+                                                    <span>На сайте</span>
+                                                </div>
+                                                <div class="settings__column">
+                                                    <span>На эл. почту</span>
+                                                    <span>На почту</span>
+                                                </div>
+                                                <div class="settings__column">
+                                                    <span>push-уведомление</span>
+                                                    <span>push</span>
+                                                </div>
+                                            </div>
+                                            <div class="settings__row">
+                                                <div class="settings__column">
+                                                    <span>Новости и предложения</span>
+                                                    <span>Новости</span>
+                                                </div>
+                                                <div class="settings__column">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" name="newsAndOffers" type="radio">
+                                                        <div class="checkbox__fake checkbox__fake--black"></div>
+                                                    </label>
+                                                </div>
+                                                <div class="settings__column">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" name="newsAndOffers" type="radio">
+                                                        <div class="checkbox__fake checkbox__fake--black"></div>
+                                                    </label>
+                                                </div>
+                                                <div class="settings__column">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" name="newsAndOffers" type="radio">
+                                                        <div class="checkbox__fake checkbox__fake--black"></div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="settings__row">
+                                                <div class="settings__column">
+                                                    <span>Новые рефералы</span>
+                                                    <span>Рефералы</span>
+                                                </div>
+                                                <div class="settings__column">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" name="NewReferrals" type="radio">
+                                                        <div class="checkbox__fake checkbox__fake--black"></div>
+                                                    </label>
+                                                </div>
+                                                <div class="settings__column">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" name="NewReferrals" type="radio">
+                                                        <div class="checkbox__fake checkbox__fake--black"></div>
+                                                    </label>
+                                                </div>
+                                                <div class="settings__column">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" name="NewReferrals" type="radio">
+                                                        <div class="checkbox__fake checkbox__fake--black"></div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="settings__btn btn btn--blue">Сохранить</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__intro">
+        <a class="footer__logo" href="/">
+          <img src="img/logo.svg" alt="logo">
+        </a>
+        <p class="footer__descr">Сервис раскрутки Instagram, Telegram и других площадок.</p>
+        <div class="footer__block">
+          <a class="footer__social-link" href="#" target="_blank">
+            <img src="img/telegram.svg" alt="">
+          </a>
+          <a class="footer__social-link" href="#" target="_blank">
+            <img src="img/email.svg" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="footer__nav">
+        <div class="footer__nav-block">
+          <h2 class="footer__title">Навигация</h2>
+          <a class="footer__nav-link" href="#">Каталог услуг</a>
+          <a class="footer__nav-link" href="#">Отзывы клиентов</a>
+          <a class="footer__nav-link" href="#">Помощь</a>
+          <a class="footer__nav-link" href="#">Контакты</a>
+        </div>
+        <div class="footer__nav-block">
+          <h2 class="footer__title">Личный кабинет</h2>
+          <a class="footer__nav-link" href="#">Кабинет</a>
+          <a class="footer__nav-link" href="#">Пополнить баланс</a>
+          <a class="footer__nav-link" href="#">История заказов</a>
+          <a class="footer__nav-link" href="#">Настройки</a>
+        </div>
+      </div>
+      <div class="footer__payment">
+        <h2 class="footer__title">Принимаем к оплате:</h2>
+        <ul class="footer__payment-list">
+          <li class="footer__payment-item">
+            <img src="img/payment-icon1.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon2.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon3.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon4.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon5.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon6.svg" alt="">
+          </li>
+          <li class="footer__payment-item">
+            <img src="img/payment-icon7.svg" alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__wrapper">
+        <a class="footer__another-link" href="#">Публичная оферта</a>
+        <a class="footer__another-link" href="#">Политика cookies</a>
+        <a class="footer__another-link" href="#">Политика конфиденциальности</a>
+      </div>            
+      <p class="footer__copyright">© 2021 All rights reserved</p>
+    </div>
+  </div>
+</footer>
+        </div>
+        <script src="js/vendor.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+
+    </html>
