@@ -480,7 +480,7 @@ select {
   width: 55px;
   height: 55px;
   fill: #FDC200;
-  transform: rotate(180deg);
+  transform: rotate(450deg);
   transition: filter 0.2s linear;
   z-index: 2;
 }
