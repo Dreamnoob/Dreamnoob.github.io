@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Page</title>
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <div class="preloader">
+    <style type="text/css">
+        .preloader {
+            width: 100vw;
+            height: 100vh;
+
+            background-color: #fff;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+    </style>
+    <script>
+        var keys = {
+            37: 1,
+            38: 1,
+            39: 1,
+            40: 1
+        };
+
+        function preventDefault(e) {
+            e.preventDefault();
+        }
+
+        function preventDefaultForScrollKeys(e) {
+            if (keys[e.keyCode]) {
+                preventDefault(e);
+                return false;
+            }
+        }
+
+        // modern Chrome requires { passive: false } when adding event
+        var supportsPassive = false;
+        try {
+            window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function () {
+                    supportsPassive = true;
+                }
+            }));
+        } catch (e) {}
+
+        var wheelOpt = supportsPassive ? {
+            passive: false
+        } : false;
+        var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+        // call this to Disable
+        function disableScroll() {
+            window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+            window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+            window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+            window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
+
+        // call this to Enable
+        function enableScroll() {
+            window.removeEventListener('DOMMouseScroll', preventDefault, false);
+            window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+            window.removeEventListener('touchmove', preventDefault, wheelOpt);
+            window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
+
+        disableScroll();
+
+    </script>
+</div>
+    
+    <div class="page page-contact">
+        <header class="header header--black">
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo" href="/">
+                <svg viewBox="0 0 110 32" xmlns="http://www.w3.org/2000/svg">
+                    <path class="header__logo-text" d="M36.3293 5.58823V7.91765H40.494V19H43.2822V7.91765H47.4469V5.58823H36.3293ZM48.9583 9.41765H46.2759V19H48.9759V14.0412C48.9759 12.4176 49.7877 11.8529 51.4641 11.8529H52.1524V9.20588C50.2994 9.20588 49.3288 10.4235 48.9583 11.9235V9.41765ZM58.9472 14.8706C58.9472 16.5118 58.3648 17.3235 57.2354 17.3235C56.1236 17.3235 55.506 16.5647 55.506 14.9059V14.8706V9.41765H52.806V15.4529V15.4882C52.806 17.6059 53.7413 19.2118 55.9648 19.2118C57.6413 19.2118 58.5413 18.2588 58.9825 17.1118V19H61.6472V9.41765H58.9472V14.8706ZM72.4119 14.2529C72.4119 11.2353 70.5413 9.20588 67.5766 9.20588C64.6648 9.20588 62.706 11.2529 62.706 14.2C62.706 17.1471 64.5942 19.2118 67.5766 19.2118C69.8707 19.2118 71.5648 18.1882 72.2001 16.1588H69.4825C69.1472 16.9353 68.6354 17.3765 67.5942 17.3765C66.4825 17.3765 65.6531 16.6176 65.4589 15.0118H72.3589C72.3942 14.7471 72.4119 14.4824 72.4119 14.2529ZM67.5766 11.0412C68.706 11.0412 69.5178 11.8529 69.6589 13.2118H65.4766C65.706 11.7118 66.5001 11.0412 67.5766 11.0412ZM78.2569 18.4706L74.551 5.58823H71.551L75.6099 19H80.8687L84.9452 5.58823H81.9452L78.2569 18.4706ZM88.1515 8.12941V5.58823H85.3633V8.12941H88.1515ZM88.0986 19V9.41765H85.3986V19H88.0986ZM92.3732 19V5.58823H89.6732V19H92.3732ZM96.6478 19V5.58823H93.9478V19H96.6478ZM107.416 14.2529C107.416 11.2353 105.546 9.20588 102.581 9.20588C99.6694 9.20588 97.7106 11.2529 97.7106 14.2C97.7106 17.1471 99.5988 19.2118 102.581 19.2118C104.875 19.2118 106.569 18.1882 107.205 16.1588H104.487C104.152 16.9353 103.64 17.3765 102.599 17.3765C101.487 17.3765 100.658 16.6176 100.464 15.0118H107.364C107.399 14.7471 107.416 14.4824 107.416 14.2529ZM102.581 11.0412C103.711 11.0412 104.522 11.8529 104.664 13.2118H100.481C100.711 11.7118 101.505 11.0412 102.581 11.0412Z"/>
+                    <path d="M7.67603 0H15.5882L7.91221 11.7818H0L7.67603 0Z"  />
+                    <path d="M7.91235 11.7812L15.5884 11.7813L7.91233 23.2722H0.236328L7.91235 11.7812Z"  />
+                    <path d="M23.5005 0H15.5883L23.2643 11.7818H31.1765L23.5005 0Z"  />
+                    <path d="M23.2642 11.7812H15.5883L23.2644 23.2722H30.9402L23.2642 11.7812Z"  />
+                </svg>
+            </a>
+
+            <nav class="nav">
+                <button class="nav__close">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#close"></use>
+                    </svg>
+                </button>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="index.html">
+                            Головна
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="investments.html">
+                            Інвестиції
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="cottages.html">
+                            Котеджі
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="news.html">
+                            Новини
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 active" href="contacts.html">
+                            Контакти
+                        </a>
+                    </li>
+                </ul>
+                <ul class="lang">
+                    <li class="lang__item">
+                        <a class="lang__link body-3 active" href="#"> UA</a>
+                    </li>
+                    <li class="lang__item">
+                        <a class="lang__link body-3" href="#"> RU</a>
+                    </li>
+                    <li class="lang__item">
+                        <a class="lang__link body-3" href="#"> AR</a>
+                    </li>
+                </ul>
+                <a class="header__btn btn btn--green body-3" href="booking.html">
+                    Придбати
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                    </svg>
+                </a>
+            </nav>
+
+            <button class="burger">
+                <svg>
+                    <use xlink:href="img/sprite.svg#burger"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+        <main>
+            <section class="contact">
+                <div class="container">
+                    <h1 class="contact__title heading-2">
+                        Ми завжди на зв’язку
+                    </h1>
+                    <div class="contact__content">
+                        <p class="contact__name body-1">Відділ продажу</p>
+                        <p class="contact__address heading-3">м. Івано-Франківськ, вул.Гетьмана Мазепи, 106А</p>
+                        <a class="contact__phone heading-3" href="tel:+380930808089">+38 093 080 80 89</a>
+                        <a class="contact__mail body-2" href="mailto:developer@trueville.com.ua">developer@trueville.com.ua</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="interactive">
+                <div class="interactive__maps">
+                    <div class="interactive__item active" id="interactiveMap">
+                        <div class="interactive__google-map" id="map"></div>
+                    </div>
+                    <div class="interactive__item" id="interactiveDron">
+                        <div class="interactive__item-inner">
+                            <div class="interactive__map">
+                                <img class="interactive__map-img" src="img/maps/2.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="interactive__tabs tabs body-3">
+                        <button class="interactive__tab tabs__item active body-3" data-id="interactiveMap" type="button">
+                            Відділ продажів TrueVille
+                        </button>
+                        <button class="interactive__tab tabs__item body-3" data-id="interactiveDron" type="button">
+                            Карта розташування (дрон)
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feedback feedback--light">
+                <div class="container">
+                    <div class="feedback__inner">
+                        <h2 class="feedback__title title heading-2">
+                            Зворотній зв’язок
+                        </h2>
+                        <div class="feedback__wrapper">
+                            <form class="feedback__form" action="/">
+                                <div class="feedback__text body-2">
+                                    <p>
+                                        Будь-ласка заповніть форму нижче і наш менеджер зв'яжеться з вами, щоб домовитись про зустріч.
+                                    </p>
+                                    <p>
+                                        Будем раді зустрітися!
+                                    </p>
+                                </div>
+
+                                <label class="feedback__field field">
+                                    <input class="heading-3" type="text" placeholder="Ім'я" name="name">
+                                </label>
+                                <label class="feedback__field field">
+                                    <input class="heading-3" type="email" placeholder="E-mail адреса" name="email">
+                                </label>
+                                <label class="feedback__field field">
+                                    <input class="heading-3 field-error" type="tel" placeholder="Телефон" name="phone">
+                                </label>
+
+                                <button class="btn btn--green body-3" type="submit">
+                                    <span>
+                                        Надіслати заявку
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                        <svg class="feedback__bg" viewBox="0 0 740 408" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M675.551 102.493L608.573 0.966708L674.607 0.960397L741.585 102.487L675.551 102.493Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M269.894 306L336.853 204.461L270.819 204.467L203.86 306.007L269.894 306Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M271.552 102.533L338.51 0.994229L272.476 1.00054L205.518 102.54L271.552 102.533Z" stroke="#43705E" />
+                            <path d="M673.896 305.956L606.918 204.43L674.53 204.423L739.941 305.95L673.896 305.956Z" stroke="#43705E" />
+                            <path d="M138.535 102.54L71.5577 1.01358L137.592 1.00727L204.569 102.534L138.535 102.54Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M806.912 305.949L873.87 204.41L808.625 204.416L740.884 305.956L806.912 305.949Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M0.658097 306.02L67.6162 204.481L2.37148 204.487L-65.3699 306.026L0.658097 306.02Z" stroke="#43705E" />
+                            <path d="M674.737 204.222L608.543 102.695L675.372 102.689L741.566 204.215L674.737 204.222Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M269.151 407.721L336.892 306.182L270.075 306.188L203.9 407.727L269.151 407.721Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M270.806 204.254L338.548 102.715L271.732 102.721L206.341 204.26L270.806 204.254Z" stroke="#43705E" />
+                            <path d="M674.662 407.682L606.902 306.156L673.717 306.15L739.128 407.676L674.662 407.682Z" stroke="#43705E" />
+                            <path d="M136.933 204.267L71.5223 102.74L138.357 102.734L204.552 204.26L136.933 204.267Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M806.167 407.672L873.908 306.133L807.091 306.139L740.916 407.678L806.167 407.672Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M-0.0862192 407.75L67.6552 306.211L0.837938 306.217L-65.3369 407.757L-0.0862192 407.75Z" stroke="#43705E" />
+                            <path d="M540.152 102.498L607.11 0.959073L541.076 0.965384L474.118 102.505L540.152 102.498Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M405.294 305.983L338.316 204.457L405.929 204.45L471.34 305.977L405.294 305.983Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M406.946 102.513L339.969 0.986239L406.003 0.979929L472.98 102.506L406.946 102.513Z" stroke="#43705E" />
+                            <path d="M538.5 305.973L605.458 204.434L539.424 204.44L472.466 305.979L538.5 305.973Z" stroke="#43705E" />
+                            <path d="M3.13661 102.553L70.0947 1.01376L4.06075 1.02007L-62.8974 102.559L3.13661 102.553Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M136.055 306.007L69.0772 204.48L136.69 204.474L202.101 306L136.055 306.007Z" stroke="#43705E" />
+                            <path d="M539.338 204.227L607.079 102.688L540.262 102.694L474.087 204.233L539.338 204.227Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M406.125 407.704L338.364 306.178L405.182 306.171L471.376 407.698L406.125 407.704Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M406.203 204.243L340.009 102.717L406.838 102.71L473.032 204.237L406.203 204.243Z" stroke="#43705E" />
+                            <path d="M537.684 407.696L605.426 306.156L538.608 306.163L472.434 407.702L537.684 407.696Z" stroke="#43705E" />
+                            <path d="M2.32198 204.28L70.0634 102.74L3.24614 102.747L-62.9287 204.286L2.32198 204.28Z" stroke="#43705E" stroke-opacity="0.2" />
+                            <path d="M136.887 407.729L69.1262 306.203L135.943 306.197L202.138 407.723L136.887 407.729Z" stroke="#43705E" />
+                        </svg>
+                    </div>
+                </div>
+                <svg class="feedback__bg-mob" viewBox="0 0 375 147" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M211.854 36.8281L187.793 0.355371L211.515 0.353104L235.576 36.8258L211.854 36.8281Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M66.1433 109.938L90.1976 73.4609L66.4753 73.4632L42.421 109.941L66.1433 109.938Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M355.766 109.911L379.821 73.4336L356.098 73.4358L332.044 109.913L355.766 109.911Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M356.362 36.8132L380.416 0.335904L356.694 0.338171L332.64 36.8155L356.362 36.8132Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M66.7371 36.8406L90.7914 0.363248L67.0691 0.365515L43.0148 36.8429L66.7371 36.8406Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M211.26 109.926L187.199 73.453L211.488 73.4507L234.987 109.923L211.26 109.926Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M308.577 36.8203L284.515 0.347559L308.238 0.345292L332.299 36.818L308.577 36.8203Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M18.9535 36.8515L-5.10774 0.378809L18.6146 0.376542L42.6758 36.8493L18.9535 36.8515Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M259.045 109.919L283.099 73.4414L259.66 73.4436L235.325 109.921L259.045 109.919Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M211.561 73.375L187.781 36.9022L211.789 36.9L235.569 73.3727L211.561 73.375Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M65.8774 146.485L90.213 110.008L66.2094 110.01L42.4364 146.487L65.8774 146.485Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M355.499 146.458L379.835 109.98L355.831 109.983L332.059 146.46L355.499 146.458Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M356.094 73.3562L380.43 36.8789L356.427 36.8812L332.935 73.3584L356.094 73.3562Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M66.4711 73.3875L90.8068 36.9101L66.8037 36.9124L43.3122 73.3897L66.4711 73.3875Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M211.535 146.469L187.192 109.996L211.195 109.994L234.694 146.466L211.535 146.469Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M308.002 73.3633L284.503 36.8905L308.513 36.8882L332.293 73.361L308.002 73.3633Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M18.3767 73.3907L-5.12179 36.9179L18.8883 36.9156L42.6682 73.3883L18.3767 73.3907Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M258.778 146.466L283.113 109.988L259.11 109.991L235.337 146.468L258.778 146.466Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M163.214 36.8328L187.268 0.355435L163.546 0.357702L139.491 36.835L163.214 36.8328Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M114.785 109.934L90.7233 73.4608L115.013 73.4585L138.511 109.931L114.785 109.934Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M115.378 36.8359L91.3171 0.363184L115.039 0.360917L139.101 36.8337L115.378 36.8359Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M162.619 109.93L186.673 73.4531L162.951 73.4554L138.897 109.933L162.619 109.93Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M259.934 36.825L283.989 0.347623L260.266 0.34989L236.212 36.8272L259.934 36.825Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M18.0629 109.945L-5.99837 73.4726L18.291 73.4702L41.7895 109.943L18.0629 109.945Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M307.685 109.914L283.624 73.4413L307.913 73.439L331.412 109.912L307.685 109.914Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M162.92 73.3797L187.256 36.9023L163.252 36.9046L139.539 73.3819L162.92 73.3797Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M115.083 146.477L90.7401 110.004L114.744 110.002L138.464 146.474L115.083 146.477Z" stroke="#43705E" stroke-width="0.359244" />
+                    <path d="M115.11 73.3789L91.3305 36.9062L115.338 36.9039L139.059 73.3766L115.11 73.3789Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M162.327 146.473L186.662 109.996L162.659 109.998L138.945 146.476L162.327 146.473Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M259.643 73.368L283.979 36.8906L259.975 36.8929L236.202 73.3702L259.643 73.368Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M18.3621 146.484L-5.98059 110.012L18.0231 110.009L41.803 146.482L18.3621 146.484Z" stroke="#43705E" stroke-opacity="0.2" stroke-width="0.359244" />
+                    <path d="M307.984 146.457L283.641 109.984L307.645 109.982L331.425 146.455L307.984 146.457Z" stroke="#43705E" stroke-width="0.359244" />
+                </svg>
+            </section>
+        </main>
+
+
+        <footer class="footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__line">
+				<span></span>
+			</div>
+			<div class="footer__one">
+				<a class="footer__logo" href="#">
+					<img src="img/logo-footer.svg" alt="">
+				</a>
+				<p class="footer__copyright">
+					© 2022. <br>
+					Всі права захищені.
+				</p>
+			</div>
+			<div class="footer__two">
+				<a class="footer__phone heading-3" href="tel:+380930808089">+38 093 080 80 89</a>
+				<a class="footer__mail body-2" href="mailto:developer@trueville.com.ua">developer@trueville.com.ua</a>
+
+				<div class="footer__wrapper">
+					<div class="footer__info">
+						<p class="footer__address body-2">Івано-Франківська область, с. Яблуниця</p>
+						<a class="footer__route body-2" href="#">Прокласти маршрут</a>
+					</div>
+					<nav class="footer__control">
+						<ul class="footer__list">
+							<li class="footer__item">
+								<ul class="footer__social">
+									<li>
+										<a class="footer__link body-2" href="" target="_blank">Facebook</a>
+									</li>
+									<li>
+										<a class="footer__link body-2" href="" target="_blank">Instagram</a>
+									</li>
+								</ul>
+							</li>
+							<li class="footer__item">
+								<ul class="footer__nav">
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Головна</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Інвестиції</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Котеджі</a>
+									</li>
+								</ul>
+							</li>
+							<li class="footer__item">
+								<ul class="footer__nav">
+									<li>
+										<a class="footer__link footer__nav-link body-2 active" href="#">Новини</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Контакти</a>
+									</li>
+									<li>
+										<ul class="footer__lang">
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3 active" href="#"> UA</a>
+											</li>
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3" href="#"> RU</a>
+											</li>
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3" href="#"> AR</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<a class="btn btn--green body-2" href="#">
+					Забронювати котедж
+					<svg>
+						<use xlink:href="img/sprite.svg#arrow-right"></use>
+					</svg>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgCfPNl3Ht-BmczjNaEKyoc7u10jNra8w"></script>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

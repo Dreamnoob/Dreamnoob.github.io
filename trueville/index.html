@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Page</title>
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <div class="preloader">
+    <style type="text/css">
+        .preloader {
+            width: 100vw;
+            height: 100vh;
+
+            background-color: #fff;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+    </style>
+    <script>
+        var keys = {
+            37: 1,
+            38: 1,
+            39: 1,
+            40: 1
+        };
+
+        function preventDefault(e) {
+            e.preventDefault();
+        }
+
+        function preventDefaultForScrollKeys(e) {
+            if (keys[e.keyCode]) {
+                preventDefault(e);
+                return false;
+            }
+        }
+
+        // modern Chrome requires { passive: false } when adding event
+        var supportsPassive = false;
+        try {
+            window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function () {
+                    supportsPassive = true;
+                }
+            }));
+        } catch (e) {}
+
+        var wheelOpt = supportsPassive ? {
+            passive: false
+        } : false;
+        var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+        // call this to Disable
+        function disableScroll() {
+            window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+            window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+            window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+            window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
+
+        // call this to Enable
+        function enableScroll() {
+            window.removeEventListener('DOMMouseScroll', preventDefault, false);
+            window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+            window.removeEventListener('touchmove', preventDefault, wheelOpt);
+            window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
+
+        disableScroll();
+
+    </script>
+</div>
+
+    <div class="page page-main">
+        <header class="header ">
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo" href="/">
+                <svg viewBox="0 0 110 32" xmlns="http://www.w3.org/2000/svg">
+                    <path class="header__logo-text" d="M36.3293 5.58823V7.91765H40.494V19H43.2822V7.91765H47.4469V5.58823H36.3293ZM48.9583 9.41765H46.2759V19H48.9759V14.0412C48.9759 12.4176 49.7877 11.8529 51.4641 11.8529H52.1524V9.20588C50.2994 9.20588 49.3288 10.4235 48.9583 11.9235V9.41765ZM58.9472 14.8706C58.9472 16.5118 58.3648 17.3235 57.2354 17.3235C56.1236 17.3235 55.506 16.5647 55.506 14.9059V14.8706V9.41765H52.806V15.4529V15.4882C52.806 17.6059 53.7413 19.2118 55.9648 19.2118C57.6413 19.2118 58.5413 18.2588 58.9825 17.1118V19H61.6472V9.41765H58.9472V14.8706ZM72.4119 14.2529C72.4119 11.2353 70.5413 9.20588 67.5766 9.20588C64.6648 9.20588 62.706 11.2529 62.706 14.2C62.706 17.1471 64.5942 19.2118 67.5766 19.2118C69.8707 19.2118 71.5648 18.1882 72.2001 16.1588H69.4825C69.1472 16.9353 68.6354 17.3765 67.5942 17.3765C66.4825 17.3765 65.6531 16.6176 65.4589 15.0118H72.3589C72.3942 14.7471 72.4119 14.4824 72.4119 14.2529ZM67.5766 11.0412C68.706 11.0412 69.5178 11.8529 69.6589 13.2118H65.4766C65.706 11.7118 66.5001 11.0412 67.5766 11.0412ZM78.2569 18.4706L74.551 5.58823H71.551L75.6099 19H80.8687L84.9452 5.58823H81.9452L78.2569 18.4706ZM88.1515 8.12941V5.58823H85.3633V8.12941H88.1515ZM88.0986 19V9.41765H85.3986V19H88.0986ZM92.3732 19V5.58823H89.6732V19H92.3732ZM96.6478 19V5.58823H93.9478V19H96.6478ZM107.416 14.2529C107.416 11.2353 105.546 9.20588 102.581 9.20588C99.6694 9.20588 97.7106 11.2529 97.7106 14.2C97.7106 17.1471 99.5988 19.2118 102.581 19.2118C104.875 19.2118 106.569 18.1882 107.205 16.1588H104.487C104.152 16.9353 103.64 17.3765 102.599 17.3765C101.487 17.3765 100.658 16.6176 100.464 15.0118H107.364C107.399 14.7471 107.416 14.4824 107.416 14.2529ZM102.581 11.0412C103.711 11.0412 104.522 11.8529 104.664 13.2118H100.481C100.711 11.7118 101.505 11.0412 102.581 11.0412Z"/>
+                    <path d="M7.67603 0H15.5882L7.91221 11.7818H0L7.67603 0Z"  />
+                    <path d="M7.91235 11.7812L15.5884 11.7813L7.91233 23.2722H0.236328L7.91235 11.7812Z"  />
+                    <path d="M23.5005 0H15.5883L23.2643 11.7818H31.1765L23.5005 0Z"  />
+                    <path d="M23.2642 11.7812H15.5883L23.2644 23.2722H30.9402L23.2642 11.7812Z"  />
+                </svg>
+            </a>
+
+            <nav class="nav">
+                <button class="nav__close">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#close"></use>
+                    </svg>
+                </button>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link body-3 active" href="index.html">
+                            Головна
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="investments.html">
+                            Інвестиції
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="cottages.html">
+                            Котеджі
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="news.html">
+                            Новини
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="contacts.html">
+                            Контакти
+                        </a>
+                    </li>
+                </ul>
+                <ul class="lang">
+                    <li class="lang__item">
+                        <a class="lang__link body-3 active" href="#"> UA</a>
+                    </li>
+                    <li class="lang__item">
+                        <a class="lang__link body-3" href="#"> RU</a>
+                    </li>
+                    <li class="lang__item">
+                        <a class="lang__link body-3" href="#"> AR</a>
+                    </li>
+                </ul>
+                <a class="header__btn btn btn--green body-3" href="booking.html">
+                    Придбати
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                    </svg>
+                </a>
+            </nav>
+
+            <button class="burger">
+                <svg>
+                    <use xlink:href="img/sprite.svg#burger"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+        <main>
+            <section class="intro">
+                <img class="intro__bg" src="img/intro-bg.webp" alt="">
+                <div class="container">
+                    <div class="intro__inner">
+                        <h1 class="intro__title heading-1">
+                            <span>TrueVille —</span>
+                            <span>котеджне містечко</span>
+                            <span>в серці Карпат.</span>
+                        </h1>
+
+                        <button class="intro__btn btn btn--white body-3" type="button" onclick="scrollFromBtnToSection('.pdf', 5);">
+                            <span>
+                                Отримати презентацію
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-down"></use>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <img class="intro__elem" src="img/waves-light.svg" alt="">
+            </section>
+
+            <section class="about about-trueville">
+                <div class="container">
+                    <div class="about__inner">
+                        <h2 class="about__title title heading-2">
+                            <small class="body-3">(А — TrueVille)</small>
+                            <b>Містечко TrueVille</b> розташоване в с. Поляниця на висоті 900 метрів серед густого карпатського лісу.
+                        </h2>
+                        <div class="about__descriptors">
+                            <p class="body-3">серце Карпат</p>
+                            <p class="body-3">Чуттєва атмосфера</p>
+                        </div>
+                        <div class="about__wrapper">
+                            <div class="about__left">
+                                <p class="body-1">Тут цінують кожен момент вашого життя.</p>
+                            </div>
+                            <div class="about__right">
+                                <div class="about__texts">
+                                    <p class="body-2">Зустріч світанку, кава на терасі під шум смереки, заняття йогою, походи в гори з дітьми, поїздки на велосипедах, вечеря у вітальні під улюблений фільм, BBQ-вечірка з друзями та родиною, небо, всіяне зірками, яке видно з вікна. Враховуючи наявний рельєф і попередній досвід, ми покращили планування котеджу, зробивши його масштабнішим та преміальним.</p>
+                                    <p class="body-2">Котедж одночасно має краєвид на Говерлу з вікон вітальні і спальні, смерековий ліс з тераси. Кожен вечір сповнений тепла, затишку, а ранок — свіжості та бадьорості.</p>
+                                </div>
+                                <div class="about__info">
+                                    <p class="body-3">Котеджів люкс-класу</p>
+                                    <p class="about__info-value display-1">15</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="video video-main">
+                <h2 class="visually-hidden">Відео блок</h2>
+                <video class="video__player" muted loop playsinline poster="img/poster.webp">
+                    <source src="video/video.mp4" />
+                </video>
+                <div class="video__btn">
+                    <img src="img/icons/play.svg" alt="" />
+                </div>
+            </section>
+
+            <section class="interactive">
+                <div class="container">
+                    <h2 class="interactive__title title heading-2">
+                        <span>
+                            <small class="body-3">(Б — Генплан)</small>
+                            У нас є все, що потрібно для
+                        </span>
+                        <span>
+                            <b>комфортного життя.</b>
+                        </span>
+                    </h2>
+                    <p class="interactive__descriptor body-3">Поруч з вами</p>
+                    <div class="interactive__wrapper">
+                        <p class="interactive__text body-1">
+                            Ознайомтесь з генплануванням містечка TrueVille.
+                        </p>
+                        <nav class="interactive__nav">
+                            <ul>
+                                <li>
+                                    <button class="interactive__btn body-3 active" data-id="labelPool" type="btn">
+                                        Басейн
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="interactive__btn body-3 active" data-id="labelRestaurant" type="btn">
+                                        Ресторан
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="interactive__btn body-3 active" data-id="labelParking" type="btn">
+                                        Парковка
+                                    </button>
+                                </li>
+                                <!-- <li>
+                                    <button class="interactive__btn body-3" type="btn">
+                                        Дитячий майданчик
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="interactive__btn body-3" type="btn">
+                                        Спортивний майданчик
+                                    </button>
+                                </li> -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="interactive__maps">
+                    <div class="interactive__item active" id="interactivePlan">
+                        <div class="interactive__item-inner">
+                            <div class="interactive__map">
+                                <img class="interactive__map-img" src="img/maps/1.webp" alt="">
+                                <div class="interactive__overlay"></div>
+                                <div class="interactive__label interactive__label--pool active" id="labelPool" style="top: 48%;left: 27%;">
+                                    <span class="interactive__label-inner">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#pool"></use>
+                                        </svg>
+                                        Басейн
+                                    </span>
+
+                                    <div class="card">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/pool.jpg" alt="">
+                                        <div class="card__content">
+                                            <p class="card__title">Басейн</p>
+                                            <p class="card__text">Європейський стиль інтер’єру, світлі кольори, панорамні вікна з чудовим краєвидом на Говерлу — все це дарує гостям відчуття свободи та легкості.</p>
+                                            <div class="card__info body-3">
+                                                Макс. кількість гостей
+                                                <p class="display-3">
+                                                    70
+                                                    <span class="body-2">осіб</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interactive__label interactive__label--parking active" id="labelParking" style="top: 44%; left: 16%;">
+                                    <span class="interactive__label-inner">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#parking"></use>
+                                        </svg>
+                                        Парковка
+                                    </span>
+                                    <div class="card">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/parking.jpg" alt="">
+                                        <div class="card__content">
+                                            <p class="card__title heading-3">Парковка</p>
+                                            <p class="card__text body-2">Європейський стиль інтер’єру, світлі кольори, панорамні вікна з чудовим краєвидом на Говерлу — все це дарує гостям відчуття свободи та легкості.</p>
+                                            <div class="card__info body-3">
+                                                Макс. кількість гостей
+                                                <p class="display-3">
+                                                    70
+                                                    <span class="body-2">осіб</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interactive__label interactive__label--restaurant active" id="labelRestaurant" style="top: 33%;left: 25%;">
+                                    <span class="interactive__label-inner">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#restaurant"></use>
+                                        </svg>
+                                        Ресторан
+                                    </span>
+
+                                    <div class="card">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/restaurant.jpg" alt="">
+                                        <div class="card__content">
+                                            <p class="card__title heading-3">Ресторан</p>
+                                            <p class="card__text body-2">Простора зала, європейський стиль інтер’єру, світлі кольори, панорамні вікна з чудовим краєвидом на Говерлу — все це дарує гостям відчуття свободи та легкості. Українські страви ви скуштуєте в авторському виконанні.</p>
+                                            <div class="card__info body-3">
+                                                Макс. кількість гостей
+                                                <p class="display-3">
+                                                    70
+                                                    <span class="body-2">осіб</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="bottom: 42%;right: 31%;">
+                                    <span class="interactive__label-inner">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="bottom: 30%;right: 31%;">
+                                    <span class="interactive__label-inner">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="bottom: 27%;right: 14%;">
+                                    <span class="interactive__label-inner">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="top: 30%; left: 36%;">
+                                    <span class="interactive__label-inner" style="transform: rotate(-25deg);">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>11</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="top: 34%; left: 38%;">
+                                    <span class="interactive__label-inner" style="transform: rotate(-25deg);">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="top: 38%;left: 40%;">
+                                    <span class="interactive__label-inner" style="transform: rotate(-25deg);">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="top: 42%;left: 42%;">
+                                    <span class="interactive__label-inner" style="transform: rotate(-25deg);">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="top: 46%;left: 44%;">
+                                    <span class="interactive__label-inner" style="transform: rotate(-25deg);">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="bottom: 35%;left: 13%;">
+                                    <span class="interactive__label-inner" style="transform: rotate(-25deg);">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="bottom: 35%;left: 19%;">
+                                    <span class="interactive__label-inner" style="transform: rotate(-25deg);">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="bottom: 35%;left: 25%;">
+                                    <span class="interactive__label-inner" style="transform: rotate(-25deg);">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="bottom: 35%;left: 31%;">
+                                    <span class="interactive__label-inner" style="transform: rotate(-25deg);">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="bottom: 35%;left: 37%;">
+                                    <span class="interactive__label-inner" style="transform: rotate(-25deg);">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="interactive__label" style="bottom: 35%;left: 43%;">
+                                    <span class="interactive__label-inner" style="transform: rotate(-25deg);">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#cottage"></use>
+                                        </svg>
+                                        Котедж
+                                    </span>
+                                    <div class="card card--cottage">
+                                        <button class="card__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#cardClose"></use>
+                                            </svg>
+                                        </button>
+                                        <img class="card__img" src="img/maps/cottage.jpg" alt="">
+                                        <div class="card__descr">
+                                            <div class="card__wrapper">
+                                                <p class="heading-3 card__wrapper-title">Котедж <span>13</span></p>
+                                                <p class="card__availability card__availability--available body-3">
+                                                    В наявності
+                                                </p>
+                                            </div>
+                                            <ul class="card__list">
+                                                <li class="card__item">
+                                                    <p class="body-3">Площа котеджу</p>
+                                                    <p class="display-3">
+                                                        313
+                                                        <span class="body-2">
+                                                            М²
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">
+                                                        Площа ділянки
+                                                    </p>
+                                                    <p class="display-3">
+                                                        0.2662
+                                                        <span class="body-2">
+                                                            ГА
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li class="card__item">
+                                                    <p class="body-3">Готовність</p>
+                                                    <p class="display-3">
+                                                        73
+                                                        <span class="body-2">
+                                                            %
+                                                        </span>
+                                                        <span class="card__list-ready">
+                                                            <span style="height: 73%;"></span>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="card__btn body-3" type="button">
+                                            Забронювати
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="interactive__item" id="interactiveDron">
+                        <div class="interactive__item-inner">
+                            <div class="interactive__map">
+                                <img class="interactive__map-img" src="img/maps/2.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="interactive__tabs tabs body-3">
+                        <button class="interactive__tab tabs__item active body-3" data-id="interactivePlan" type="button">
+                            Генплан містечка TrueVille
+                        </button>
+                        <button class="interactive__tab tabs__item body-3" data-id="interactiveDron" type="button">
+                            Карта розташування (дрон)
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about about-plan">
+                <div class="container">
+                    <div class="about__inner">
+                        <h2 class="about__title title heading-2">
+                            <small class="body-3">(Б — Генплан)</small>
+                            <b>Переваги TrueVille.</b> <br />
+                            Ми працюємо, поки ви насолоджуєтесь життям.
+                        </h2>
+
+                        <div class="about__descriptors">
+                            <p class="body-3">— Перша черга</p>
+                            <p class="body-3">Збільшуйте власний капітал</p>
+                        </div>
+                        <div class="about__wrapper">
+                            <div class="about__left">
+                                <p class="body-1">Лише за рік власники котеджів збільшили капітал на 20% завдяки постійному зростанню цін на готові котеджі.</p>
+                            </div>
+                            <div class="about__right">
+                                <div class="about__texts">
+                                    <p class="body-2">Ви можете купити котедж виключно для себе, а можете здавати його в оренду, поки не користуєтеся ним. Наша управляюча компанія забезпечить вам від $25,000 доходу на рік. При цьому ви зможете користуватися власним котеджем коли захочете.</p>
+                                    <p class="body-2">Котеджі у першій черзі уже зросли у вартості на 30%, завдяки розвитку бренду, масштабуванню містечка та новій інфраструктурі. Але основні інфраструктурні проекти містечка ще попереду.</p>
+                                </div>
+                                <div class="about__info">
+                                    <p class="body-3">Річна дохідність, %</p>
+                                    <p class="about__info-value display-1">8-11</p>
+                                </div>
+                                <a class="about__btn btn btn--green body-3" href="#">
+                                    <span>Дізнатися більше про інвестиції</span>
+                                </a>
+
+                                <button class="about__link body-3" type="button" onclick="showCurrentBookingPopup('#step2')">Отримати розрахунок</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cottage">
+                <img class="cottage__bg" src="img/cottage-bg.webp" alt="">
+                <div class="container">
+                    <div class="cottage__inner">
+                        <h2 class="cottage__title heading-2">Котеджi TrueVille.</h2>
+                        <p class="body-2 cottage__text">Пропонуємо вам придбати сучасні котеджі люкс-классу в Карпатах, з чудовим панорамним видом на гори.</p>
+                        <ul class="cottage__list">
+                            <li class="cottage__item">
+                                <p class="cottage__name body-3">Площа котеджу</p>
+                                <p class="cottage__value display-2">
+                                    313
+                                    <span class="body-1">М²</span>
+                                </p>
+                            </li>
+                            <li class="cottage__item">
+                                <p class="cottage__name body-3">Площа ділянки</p>
+                                <p class="cottage__value display-2">
+                                    0.2662
+                                    <span class="body-1">ГА</span>
+                                </p>
+                            </li>
+                            <li class="cottage__item">
+                                <p class="cottage__name body-3">Ціна від</p>
+                                <p class="cottage__value display-2">
+                                    2 299
+                                    <span class="body-1">$/М²</span>
+                                </p>
+                            </li>
+                            <li class="cottage__item">
+                                <p class="cottage__name body-3">Котеджів у продажу</p>
+                                <p class="cottage__value display-2">13</p>
+                            </li>
+                        </ul>
+                        <div class="cottage__nav">
+                            <a class="btn btn--white body-3" href="#">
+                                <span>Детальна інформація про котедж</span>
+                            </a>
+                            <button class="btn btn--green body-3" type="button" onclick="scrollFromBtnToSection('.feedback', 5)">
+                                <span>
+                                    Записатись на огляд
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="infrastructure">
+                <div class="container">
+                    <h2 class="heading-2 title infrastructure__title">
+                        <small class="body-3"> (Д — Інфраструктура) </small>
+                        З нами кожен ваш день буде сповнений
+                        <b>затишку, тепла та чуттєвості.</b>
+                    </h2>
+                </div>
+
+                <div class="infrastructure__wrapper">
+                    <div class="container">
+                        <div class="infrastructure__nav">
+                            <p class="infrastructure__btn heading-3 active" data-id="infrastructure1">ресторан</p>
+                            <p class="infrastructure__btn heading-3" data-id="infrastructure2">басейн з підігрівом</p>
+                            <p class="infrastructure__btn heading-3" data-id="infrastructure3">парковка</p>
+                        </div>
+                    </div>
+                    <div class="infrastructure__content">
+                        <div class="container">
+                            <div class="infrastructure__item active" id="infrastructure1">
+                                <p class="infrastructure__number heading-3">1</p>
+                                <p class="infrastructure__text body-2">Шеф-кухар зустрічає гостей традиційними українськими стравами, а для любителів легких страв ми створили сучасне меню, яке постійно доповнюється свіжими пропозиціями.</p>
+                                <div class="infrastructure__img">
+                                    <img src="img/infrastructure/1.webp" alt="" />
+                                </div>
+                            </div>
+                            <div class="infrastructure__item" id="infrastructure2">
+                                <p class="infrastructure__number heading-3">2</p>
+                                <p class="infrastructure__text body-2">Наш басейн може бути як відкритим в сонячний день, так і закритим в прохолодну погоду. Має розміри 7х15 метрів та повноцінне накриття висотою 2,5м для відпочинку в будь яку погоду.</p>
+                                <div class="infrastructure__img">
+                                    <img src="img/infrastructure/2.webp" alt="" />
+                                </div>
+                            </div>
+                            <div class="infrastructure__item" id="infrastructure3">
+                                <p class="infrastructure__number heading-3">3</p>
+                                <p class="infrastructure__text body-2">TrueVille пропонує вам послуги парковки, яка охороняється цілодобово. Паркувальне поле вміщає близько 100 автомобілів. Перевага — вдале місце розташування</p>
+                                <div class="infrastructure__img">
+                                    <img src="img/infrastructure/3.webp" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <svg class="infrastructure__bottom-bg" preserveAspectRatio="none" viewBox="0 0 1600 324" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g opacity="0.4" clip-path="url(#clip0_226_2407)">
+                                <path d="M799.937 199.959L701.25 199.959L799.937 1.12188L898.623 199.959L799.937 199.959Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M683.48 199.959L782.167 199.959L683.48 1.12188L584.794 199.959L683.48 199.959Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M799.937 124.035L701.25 124.035L799.937 322.872L898.623 124.035L799.937 124.035Z" stroke="#43705E" />
+                                <path d="M683.48 124.035L782.167 124.035L683.48 322.872L584.794 124.035L683.48 124.035Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M914.119 199.959L815.433 199.959L914.119 1.12188L1012.81 199.959L914.119 199.959Z" stroke="#43705E" />
+                                <path d="M569.3 199.959L667.986 199.959L569.3 1.12188L470.613 199.959L569.3 199.959Z" stroke="#43705E" />
+                                <path d="M914.119 124.035L815.433 124.035L914.119 322.872L1012.81 124.035L914.119 124.035Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M569.3 124.035L667.986 124.035L569.3 322.872L470.613 124.035L569.3 124.035Z" stroke="#43705E" />
+                                <path d="M1028.31 199.959L929.621 199.959L1028.31 1.12188L1126.99 199.959L1028.31 199.959Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M455.114 199.959L553.8 199.959L455.114 1.12188L356.427 199.959L455.114 199.959Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M1028.31 124.035L929.621 124.035L1028.31 322.872L1126.99 124.035L1028.31 124.035Z" stroke="#43705E" />
+                                <path d="M455.114 124.035L553.8 124.035L455.114 322.872L356.427 124.035L455.114 124.035Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M1142.49 199.959L1043.8 199.959L1142.49 1.12188L1241.17 199.959L1142.49 199.959Z" stroke="#43705E" />
+                                <path d="M340.933 199.959L439.62 199.959L340.933 1.12188L242.247 199.959L340.933 199.959Z" stroke="#43705E" />
+                                <path d="M1142.49 124.035L1043.8 124.035L1142.49 322.872L1241.17 124.035L1142.49 124.035Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M340.933 124.035L439.62 124.035L340.933 322.872L242.247 124.035L340.933 124.035Z" stroke="#43705E" />
+                                <path d="M1256.67 199.959L1157.99 199.959L1256.67 1.12188L1355.36 199.959L1256.67 199.959Z" stroke="#43705E" />
+                                <path d="M1485.59 199.959L1386.91 199.959L1485.59 1.12188L1584.28 199.959L1485.59 199.959Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M226.75 199.959L325.436 199.959L226.75 1.12188L128.063 199.959L226.75 199.959Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M1256.67 124.035L1157.99 124.035L1256.67 322.872L1355.36 124.035L1256.67 124.035Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M1485.59 124.035L1386.91 124.035L1485.59 322.872L1584.28 124.035L1485.59 124.035Z" stroke="#43705E" />
+                                <path d="M226.75 124.035L325.436 124.035L226.75 322.872L128.063 124.035L226.75 124.035Z" stroke="#43705E" />
+                                <path d="M-0.76094 124.039L97.9253 124.039L-0.761042 322.876L-99.4475 124.039L-0.76094 124.039Z" stroke="#43705E" />
+                                <path d="M1600.76 124.039L1699.45 124.039L1600.76 322.876L1502.07 124.039L1600.76 124.039Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M1370.86 199.959L1272.17 199.959L1370.86 1.12188L1469.54 199.959L1370.86 199.959Z" stroke="#43705E" />
+                                <path d="M112.562 199.959L211.249 199.959L112.562 1.12188L13.8757 199.959L112.562 199.959Z" stroke="#43705E" />
+                                <path d="M1370.86 124.035L1272.17 124.035L1370.86 322.872L1469.54 124.035L1370.86 124.035Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M112.562 124.035L211.249 124.035L112.562 322.872L13.8757 124.035L112.562 124.035Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M-0.76094 200.143L97.9253 200.143L-0.761042 1.30548L-99.4475 200.143L-0.76094 200.143Z" stroke="#43705E" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_226_2407">
+                                    <rect width="1600" height="324" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <section class="benefits">
+                <div class="container">
+                    <div class="benefits__inner">
+                        <h2 class="benefits__title title">
+                            <span class="heading-2">
+                                <small class="body-3"> (Г — Переваги) </small>
+                                TrueVille — це ваш комфорт.
+                            </span>
+                            <span class="heading-2"> Нас обирають за: </span>
+                        </h2>
+
+                        <ol class="benefits__list">
+                            <li class="benefits__item" data-id="location">
+                                <p class="benefits__question heading-3">
+                                    Розташування
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </p>
+                                <p class="benefits__answer body-2">Близькість котеджного містечка до міста дозволяє швидко дістатися центру як автомобілем, так і громадським транспортом.</p>
+                            </li>
+                            <li class="benefits__item" data-id="basin">
+                                <p class="benefits__question heading-3">
+                                    Басейн
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </p>
+                                <p class="benefits__answer">Близькість котеджного містечка до міста дозволяє швидко дістатися центру як автомобілем, так і громадським транспортом.</p>
+                            </li>
+                            <li class="benefits__item" data-id="energy">
+                                <p class="benefits__question heading-3">
+                                    Енергонезалежність
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </p>
+                                <p class="benefits__answer body-2">Близькість котеджного містечка до міста дозволяє швидко дістатися центру як автомобілем, так і громадським транспортом.</p>
+                            </li>
+                            <li class="benefits__item" data-id="restaurant">
+                                <p class="benefits__question heading-3">
+                                    Ресторан
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </p>
+                                <p class="benefits__answer body-2">Близькість котеджного містечка до міста дозволяє швидко дістатися центру як автомобілем, так і громадським транспортом.</p>
+                            </li>
+                            <li class="benefits__item" data-id="improvement">
+                                <p class="benefits__question heading-3">
+                                    Благоустрій
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </p>
+                                <p class="benefits__answer body-2">Близькість котеджного містечка до міста дозволяє швидко дістатися центру як автомобілем, так і громадським транспортом.</p>
+                            </li>
+                            <li class="benefits__item" data-id="security">
+                                <p class="benefits__question heading-3">
+                                    Безпека
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </p>
+                                <p class="benefits__answer body-2">Близькість котеджного містечка до міста дозволяє швидко дістатися центру як автомобілем, так і громадським транспортом.z</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="benefits__img" id="location">
+                    <img src="img/benefits/1.jpg" alt="">
+                </div>
+                <div class="benefits__img" id="basin">
+                    <img src="img/benefits/3.jpg" alt="">
+                </div>
+                <div class="benefits__img" id="energy">
+                    <img src="img/benefits/2.jpg" alt="">
+                </div>
+                <div class="benefits__img" id="restaurant">
+                    <img src="img/benefits/4.jpg" alt="">
+                </div>
+                <div class="benefits__img" id="improvement">
+                    <img src="img/benefits/5.jpg" alt="">
+                </div>
+                <div class="benefits__img" id="security">
+                    <img src="img/benefits/6.jpg" alt="">
+                </div>
+            </section>
+
+            <section class="pdf">
+                <div class="container">
+                    <div class="pdf__inner">
+                        <h2 class="pdf__title title heading-2">
+                            <span>
+                                <small class="body-3">(Д — Презентацiя)</small>
+                                Ще бiльше про TrueVille.
+                            </span>
+                            <span>
+                                Завантажте презентацію.
+                            </span>
+                        </h2>
+                        <div class="pdf__content">
+                            <p class="pdf__text">
+                                Лише за рік часу власники котеджів у першій черзі збільшили свій капітал на 20% завдяки зростанню цін на готові котеджі.
+                                Зараз ми очікуємо ріст до 30% завдяки постійному швидкому розвитку інфраструктури містечка.
+                            </p>
+                            <button class="btn btn--green body-3" type="button"  onclick="showCurrentBookingPopup('#step2')">
+                                <span>
+                                    Отримати презентацію
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-down"></use>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gallery">
+                <div class="container">
+                    <div class="gallery__inner">
+                        <h2 class="gallery__title body-3">(Е — Галерея)</h2>
+                        <div class="gallery__slider swiper">
+                            <div class="swiper-wrapper">
+                                <div class="gallery__slide swiper-slide">
+                                    <img src="img/gallery/1.jpg" alt="">
+                                </div>
+                                <div class="gallery__slide swiper-slide">
+                                    <img src="img/gallery/2.jpg" alt="">
+                                </div>
+                                <div class="gallery__slide swiper-slide">
+                                    <img src="img/gallery/3.jpg" alt="">
+                                </div>
+                                <div class="gallery__slide swiper-slide">
+                                    <img src="img/gallery/4.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <nav class="gallery__nav">
+                            <div class="slider-prev gallery__prev">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-left"></use>
+                                </svg>
+                            </div>
+                            <div class="gallery__pagination slider-pagination body-2">
+                            </div>
+                            <div class="slider-next gallery__next">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <section class="divider divider-life">
+                <img class="divider__bg" src="img/divider-1.jpg" alt="">
+                <div class="container">
+                    <div class="divider__inner">
+                        <h2 class="divider__title heading-1">
+                            Життя серед лісу
+                        </h2>
+                        <p class="divider__text body-2">
+                            Щоранку ви відчуваєте запах смерек та свіжість вітру, а з вікна бачите Говерлу та Петрос.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="construction">
+                <div class="container">
+                    <div class="construction__inner">
+                        <div class="construction__top">
+                            <h2 class="construction__title title heading-2">
+                                <span>
+                                    <small class="body-3">(Ж — Хід будівництва)</small>
+                                    <b>Важливі процеси</b>
+                                </span>
+                                <span>нашого будівництва.</span>
+                            </h2>
+                            <div class="construction__wrapper">
+                                <div class="construction__nav">
+                                    <div class="slider-prev construction__prev">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-left"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="slider-next construction__next">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="construction__text body-2">Травень 2021 — Серпень 2022</p>
+                            </div>
+                        </div>
+                        <div class="swiper construction__slider">
+                            <div class="swiper-wrapper">
+                                <a class="swiper-slide construction__slide" href="construction-progress.html">
+                                    <div class="construction__img">
+                                        <img src="img/construction/1.jpg" alt="">
+                                    </div>
+                                    <div class="construction__info">
+                                        <p class="construction__name body-2">Серпень 2022</p>
+                                        <p class="construction__value body-2">(13 фото)</p>
+                                    </div>
+                                </a>
+                                <a class="swiper-slide construction__slide" href="construction-progress.html">
+                                    <div class="construction__img">
+                                        <img src="img/construction/2.jpg" alt="">
+                                    </div>
+                                    <div class="construction__info">
+                                        <p class="construction__name body-2">Липень 2022</p>
+                                        <p class="construction__value body-2">(3 фото)</p>
+                                    </div>
+                                </a>
+                                <a class="swiper-slide construction__slide" href="construction-progress.html">
+                                    <div class="construction__img">
+                                        <img src="img/construction/3.jpg" alt="">
+                                    </div>
+                                    <div class="construction__info">
+                                        <p class="construction__name body-2">Червень 2022</p>
+                                        <p class="construction__value body-2">(3 фото)</p>
+                                    </div>
+                                </a>
+                                <a class="swiper-slide construction__slide" href="construction-progress.html">
+                                    <div class="construction__img">
+                                        <img src="img/construction/4.jpg" alt="">
+                                    </div>
+                                    <div class="construction__info">
+                                        <p class="construction__name body-2">Травень 2022</p>
+                                        <p class="construction__value body-2">(3 фото)</p>
+                                    </div>
+                                </a>
+                                <a class="swiper-slide construction__slide" href="construction-progress.html">
+                                    <div class="construction__img">
+                                        <img src="img/construction/1.jpg" alt="">
+                                    </div>
+                                    <div class="construction__info">
+                                        <p class="construction__name body-2">Серпень 2022</p>
+                                        <p class="construction__value body-2">(13 фото)</p>
+                                    </div>
+                                </a>
+                                <a class="swiper-slide construction__slide" href="construction-progress.html">
+                                    <div class="construction__img">
+                                        <img src="img/construction/2.jpg" alt="">
+                                    </div>
+                                    <div class="construction__info">
+                                        <p class="construction__name body-2">Липень 2022</p>
+                                        <p class="construction__value body-2">(3 фото)</p>
+                                    </div>
+                                </a>
+                                <a class="swiper-slide construction__slide" href="construction-progress.html">
+                                    <div class="construction__img">
+                                        <img src="img/construction/3.jpg" alt="">
+                                    </div>
+                                    <div class="construction__info">
+                                        <p class="construction__name body-2">Червень 2022</p>
+                                        <p class="construction__value body-2">(3 фото)</p>
+                                    </div>
+                                </a>
+                                <a class="swiper-slide construction__slide" href="construction-progress.html">
+                                    <div class="construction__img">
+                                        <img src="img/construction/4.jpg" alt="">
+                                    </div>
+                                    <div class="construction__info">
+                                        <p class="construction__name body-2">Травень 2022</p>
+                                        <p class="construction__value body-2">(3 фото)</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="divider divider-ambience">
+                <img class="divider__bg" src="img/divider-2.jpg" alt="">
+                <div class="container">
+                    <div class="divider__inner">
+                        <h2 class="divider__title heading-1">
+                            Чуттєва атмосфера
+                        </h2>
+                        <p class="divider__text body-2">
+                            Перевагами містечка TrueVille насолоджуються понад 30 власників котеджів. Запрошуємо і вас приєднатись до родини містечка.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feedback">
+                <div class="container">
+                    <div class="feedback__inner">
+                        <h2 class="feedback__title title heading-2">
+                            <b>
+                                Побачте наші котеджі
+                                на власні очі.
+                            </b>
+                        </h2>
+                        <div class="feedback__wrapper">
+                            <form class="feedback__form" action="/">
+                                <div class="feedback__text body-2">
+                                    <p>
+                                        Будь-ласка заповніть форму нижче і наш менеджер зв'яжеться з вами, щоб домовитись про зустріч.
+                                    </p>
+                                    <p>
+                                        Будем раді зустрітися!
+                                    </p>
+                                </div>
+
+                                <label class="feedback__field field">
+                                    <input class="heading-3" type="text" placeholder="Ім'я" name="name">
+                                </label>
+                                <label class="feedback__field field">
+                                    <input class="heading-3 field-error" type="tel" placeholder="Телефон" name="phone">
+                                </label>
+
+                                <button class="btn btn--green body-2" type="submit">
+                                    <span>
+                                        Надіслати заявку
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq">
+                <div class="container">
+                    <div>
+                        <h2 class="faq__title title heading-2">
+                            <b>
+                                Часті запитання | FAQ
+                            </b>
+                        </h2>
+                        <ul class="faq__list">
+                            <li class="faq__item">
+                                <div class="faq__question heading-3">
+                                    Де ви розташовані?
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p class="faq__answer body-2">
+                                    с. Яблуниця, Ділянка 174, Івано-Франківська область.
+                                    <a href="#">Переглянути розташування</a>
+                                </p>
+                            </li>
+                            <li class="faq__item">
+                                <div class="faq__question heading-3">
+                                    В мене буде право на власність?
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p class="faq__answer body-2">
+                                    с. Яблуниця, Ділянка 174, Івано-Франківська область.
+                                    <a href="#">Переглянути розташування</a>
+                                </p>
+                            </li>
+                            <li class="faq__item">
+                                <div class="faq__question heading-3">
+                                    Що входить у вартість одного котеджу?
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p class="faq__answer body-2">
+                                    с. Яблуниця, Ділянка 174, Івано-Франківська область.
+                                    <a href="#">Переглянути розташування</a>
+                                </p>
+                            </li>
+                            <li class="faq__item">
+                                <div class="faq__question heading-3">
+                                    Чи здаються котеджі в оренду на декілька днів?
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p class="faq__answer body-2">
+                                    с. Яблуниця, Ділянка 174, Івано-Франківська область.
+                                    <a href="#">Переглянути розташування</a>
+                                </p>
+                            </li>
+                            <li class="faq__item">
+                                <div class="faq__question heading-3">
+                                    Що буде в наступній черзі будівництва?
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p class="faq__answer body-2">
+                                    Триває будівництво 2 та 3 черги. <br> Друга черга: 6 елітних котеджів з рестораном, басейнами, велика рекреаційна зона. В третій черзі вже будується SPA-банний комплекс, літнє кафе, дитячі та спортивні майданчики, зони для медитацій та відпочинку в лісі.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__line">
+				<span></span>
+			</div>
+			<div class="footer__one">
+				<a class="footer__logo" href="#">
+					<img src="img/logo-footer.svg" alt="">
+				</a>
+				<p class="footer__copyright">
+					© 2022. <br>
+					Всі права захищені.
+				</p>
+			</div>
+			<div class="footer__two">
+				<a class="footer__phone heading-3" href="tel:+380930808089">+38 093 080 80 89</a>
+				<a class="footer__mail body-2" href="mailto:developer@trueville.com.ua">developer@trueville.com.ua</a>
+
+				<div class="footer__wrapper">
+					<div class="footer__info">
+						<p class="footer__address body-2">Івано-Франківська область, с. Яблуниця</p>
+						<a class="footer__route body-2" href="#">Прокласти маршрут</a>
+					</div>
+					<nav class="footer__control">
+						<ul class="footer__list">
+							<li class="footer__item">
+								<ul class="footer__social">
+									<li>
+										<a class="footer__link body-2" href="" target="_blank">Facebook</a>
+									</li>
+									<li>
+										<a class="footer__link body-2" href="" target="_blank">Instagram</a>
+									</li>
+								</ul>
+							</li>
+							<li class="footer__item">
+								<ul class="footer__nav">
+									<li>
+										<a class="footer__link footer__nav-link body-2 active" href="#">Головна</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Інвестиції</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Котеджі</a>
+									</li>
+								</ul>
+							</li>
+							<li class="footer__item">
+								<ul class="footer__nav">
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Новини</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Контакти</a>
+									</li>
+									<li>
+										<ul class="footer__lang">
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3 active" href="#"> UA</a>
+											</li>
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3" href="#"> RU</a>
+											</li>
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3" href="#"> AR</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<a class="btn btn--green body-2" href="#">
+					Забронювати котедж
+					<svg>
+						<use xlink:href="img/sprite.svg#arrow-right"></use>
+					</svg>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+
+        <form class="booking__popup" id="step2" action="/">
+            <div class="booking__popup-inner">
+                <button class="booking__popup-btn" type="button">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#circle-btn"></use>
+                    </svg>
+                </button>
+                <div class="booking__popup-title body-1">
+                    Забронювати котедж
+                    <p class="booking__popup-num">№4</p>
+                </div>
+                <div class="booking__popup-text body-2">
+                    <p>
+                        Будь-ласка заповніть форму нижче і наш менеджер зв'яжеться з вами, щоб домовитись про зустріч.
+                    </p>
+                    <p>
+                        Будем раді зустрітися!
+                    </p>
+                </div>
+
+                <label class="field">
+                    <input class="heading-3" type="text" placeholder="Ім'я" name="name">
+                </label>
+                <label class="field">
+                    <input class="heading-3" type="email" placeholder="E-mail адреса" name="email">
+                </label>
+                <label class="field">
+                    <input class="heading-3 field-error" type="tel" placeholder="Телефон" name="phone">
+                </label>
+                <button class="btn btn--green body-3" type="submit">
+                    Забронювати котедж 4
+                </button>
+            </div>
+        </form>
+
+        <div class="booking__popup" id="step3">
+            <div class="booking__popup-inner">
+                <button class="booking__popup-btn" type="button">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#circle-btn"></use>
+                    </svg>
+                </button>
+                <div class="booking__popup-title body-1">
+                    Готово!
+                </div>
+                <p class="booking__conclusion heading-3">
+                    Ми отримали Ваш запит. Зв’яжемося з Вами якомога швидше.
+                </p>
+                <button class="booking__popup-thanks btn btn--green body-3" type="button">
+                    Дякую
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

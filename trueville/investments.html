@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Page</title>
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<!-- 
+<svg>
+    <use xlink:href="img/sprite.svg#plus"></use>
+</svg> 
+-->
+
+<body>
+    <div class="preloader">
+    <style type="text/css">
+        .preloader {
+            width: 100vw;
+            height: 100vh;
+
+            background-color: #fff;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+    </style>
+    <script>
+        var keys = {
+            37: 1,
+            38: 1,
+            39: 1,
+            40: 1
+        };
+
+        function preventDefault(e) {
+            e.preventDefault();
+        }
+
+        function preventDefaultForScrollKeys(e) {
+            if (keys[e.keyCode]) {
+                preventDefault(e);
+                return false;
+            }
+        }
+
+        // modern Chrome requires { passive: false } when adding event
+        var supportsPassive = false;
+        try {
+            window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function () {
+                    supportsPassive = true;
+                }
+            }));
+        } catch (e) {}
+
+        var wheelOpt = supportsPassive ? {
+            passive: false
+        } : false;
+        var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+        // call this to Disable
+        function disableScroll() {
+            window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+            window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+            window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+            window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
+
+        // call this to Enable
+        function enableScroll() {
+            window.removeEventListener('DOMMouseScroll', preventDefault, false);
+            window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+            window.removeEventListener('touchmove', preventDefault, wheelOpt);
+            window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
+
+        disableScroll();
+
+    </script>
+</div>
+    
+    <div class="page page-investments">
+        <header class="header header--black">
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo" href="/">
+                <svg viewBox="0 0 110 32" xmlns="http://www.w3.org/2000/svg">
+                    <path class="header__logo-text" d="M36.3293 5.58823V7.91765H40.494V19H43.2822V7.91765H47.4469V5.58823H36.3293ZM48.9583 9.41765H46.2759V19H48.9759V14.0412C48.9759 12.4176 49.7877 11.8529 51.4641 11.8529H52.1524V9.20588C50.2994 9.20588 49.3288 10.4235 48.9583 11.9235V9.41765ZM58.9472 14.8706C58.9472 16.5118 58.3648 17.3235 57.2354 17.3235C56.1236 17.3235 55.506 16.5647 55.506 14.9059V14.8706V9.41765H52.806V15.4529V15.4882C52.806 17.6059 53.7413 19.2118 55.9648 19.2118C57.6413 19.2118 58.5413 18.2588 58.9825 17.1118V19H61.6472V9.41765H58.9472V14.8706ZM72.4119 14.2529C72.4119 11.2353 70.5413 9.20588 67.5766 9.20588C64.6648 9.20588 62.706 11.2529 62.706 14.2C62.706 17.1471 64.5942 19.2118 67.5766 19.2118C69.8707 19.2118 71.5648 18.1882 72.2001 16.1588H69.4825C69.1472 16.9353 68.6354 17.3765 67.5942 17.3765C66.4825 17.3765 65.6531 16.6176 65.4589 15.0118H72.3589C72.3942 14.7471 72.4119 14.4824 72.4119 14.2529ZM67.5766 11.0412C68.706 11.0412 69.5178 11.8529 69.6589 13.2118H65.4766C65.706 11.7118 66.5001 11.0412 67.5766 11.0412ZM78.2569 18.4706L74.551 5.58823H71.551L75.6099 19H80.8687L84.9452 5.58823H81.9452L78.2569 18.4706ZM88.1515 8.12941V5.58823H85.3633V8.12941H88.1515ZM88.0986 19V9.41765H85.3986V19H88.0986ZM92.3732 19V5.58823H89.6732V19H92.3732ZM96.6478 19V5.58823H93.9478V19H96.6478ZM107.416 14.2529C107.416 11.2353 105.546 9.20588 102.581 9.20588C99.6694 9.20588 97.7106 11.2529 97.7106 14.2C97.7106 17.1471 99.5988 19.2118 102.581 19.2118C104.875 19.2118 106.569 18.1882 107.205 16.1588H104.487C104.152 16.9353 103.64 17.3765 102.599 17.3765C101.487 17.3765 100.658 16.6176 100.464 15.0118H107.364C107.399 14.7471 107.416 14.4824 107.416 14.2529ZM102.581 11.0412C103.711 11.0412 104.522 11.8529 104.664 13.2118H100.481C100.711 11.7118 101.505 11.0412 102.581 11.0412Z"/>
+                    <path d="M7.67603 0H15.5882L7.91221 11.7818H0L7.67603 0Z"  />
+                    <path d="M7.91235 11.7812L15.5884 11.7813L7.91233 23.2722H0.236328L7.91235 11.7812Z"  />
+                    <path d="M23.5005 0H15.5883L23.2643 11.7818H31.1765L23.5005 0Z"  />
+                    <path d="M23.2642 11.7812H15.5883L23.2644 23.2722H30.9402L23.2642 11.7812Z"  />
+                </svg>
+            </a>
+
+            <nav class="nav">
+                <button class="nav__close">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#close"></use>
+                    </svg>
+                </button>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="index.html">
+                            Головна
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 active" href="investments.html">
+                            Інвестиції
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="cottages.html">
+                            Котеджі
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="news.html">
+                            Новини
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="contacts.html">
+                            Контакти
+                        </a>
+                    </li>
+                </ul>
+                <ul class="lang">
+                    <li class="lang__item">
+                        <a class="lang__link body-3 active" href="#"> UA</a>
+                    </li>
+                    <li class="lang__item">
+                        <a class="lang__link body-3" href="#"> RU</a>
+                    </li>
+                    <li class="lang__item">
+                        <a class="lang__link body-3" href="#"> AR</a>
+                    </li>
+                </ul>
+                <a class="header__btn btn btn--green body-3" href="booking.html">
+                    Придбати
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                    </svg>
+                </a>
+            </nav>
+
+            <button class="burger">
+                <svg>
+                    <use xlink:href="img/sprite.svg#burger"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+        <main>
+            <section class="investments">
+                <div class="container">
+                    <div class="investments__inner">
+                        <h1 class="investments__title heading-1">
+                            <span><b>Інвестуйте у своє</b></span>
+                            <span><b>майбутнє</b> вже</span>
+                            <span>сьогодні.</span>
+                        </h1>
+
+                        <div class="investments__content">
+                            <p class="investments__text">
+                                Ви можете купити котедж виключно для себе, а можете здавати його в оренду, поки не користуєтеся ним. Наша управляюча компанія забезпечить вам від $25,000 доходу на рік. При цьому ви можете користуватися своїм котеджем коли захочете.
+                            </p>
+
+                            <div class="investments__img">
+                                <img src="img/investments-1.jpg" alt="">
+                            </div>
+                            <svg class="investments__bg" viewBox="0 0 805 408" fill="none">
+                                <g opacity="0.4" clip-path="url(#clip0_266_2383)">
+                                    <path d="M-65.703 102.569L-132.681 1.04288L-66.6466 1.03657L0.330933 102.563L-65.703 102.569Z" stroke="#43705E" />
+                                    <path d="M740.551 102.495L673.573 0.968661L739.607 0.962351L806.585 102.489L740.551 102.495Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M334.894 306L401.853 204.461L335.819 204.467L268.86 306.007L334.894 306Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M336.552 102.531L403.51 0.992276L337.476 0.998587L270.518 102.538L336.552 102.531Z" stroke="#43705E" />
+                                    <path d="M738.896 305.956L671.918 204.43L739.53 204.423L804.941 305.95L738.896 305.956Z" stroke="#43705E" />
+                                    <path d="M203.535 102.542L136.558 1.01554L202.592 1.00923L269.569 102.536L203.535 102.542Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M871.912 305.949L938.87 204.41L873.625 204.416L805.884 305.956L871.912 305.949Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M65.6581 306.02L132.616 204.481L67.3715 204.487L-0.369903 306.026L65.6581 306.02Z" stroke="#43705E" />
+                                    <path d="M-66.5177 204.288L-132.712 102.762L-65.8828 102.755L0.311524 204.282L-66.5177 204.288Z" stroke="#43705E" />
+                                    <path d="M739.737 204.222L673.543 102.695L740.372 102.689L806.566 204.215L739.737 204.222Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M334.151 407.719L401.892 306.18L335.075 306.186L268.9 407.725L334.151 407.719Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M335.806 204.254L403.548 102.715L336.732 102.721L271.341 204.26L335.806 204.254Z" stroke="#43705E" />
+                                    <path d="M739.662 407.682L671.902 306.156L738.717 306.15L804.128 407.676L739.662 407.682Z" stroke="#43705E" />
+                                    <path d="M201.933 204.269L136.522 102.742L203.357 102.736L269.552 204.262L201.933 204.269Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M871.167 407.672L938.908 306.133L872.091 306.139L805.916 407.678L871.167 407.672Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M64.9138 407.75L132.655 306.211L65.8379 306.217L-0.336944 407.757L64.9138 407.75Z" stroke="#43705E" />
+                                    <path d="M605.152 102.5L672.11 0.961026L606.076 0.967337L539.118 102.507L605.152 102.5Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M470.294 305.983L403.316 204.457L470.929 204.45L536.34 305.977L470.294 305.983Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M471.946 102.511L404.969 0.984286L471.003 0.977976L537.98 102.504L471.946 102.511Z" stroke="#43705E" />
+                                    <path d="M603.5 305.973L670.458 204.434L604.424 204.44L537.466 305.979L603.5 305.973Z" stroke="#43705E" />
+                                    <path d="M68.1366 102.555L135.095 1.01571L69.0607 1.02202L2.10263 102.561L68.1366 102.555Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M201.055 306.007L134.077 204.48L201.69 204.474L267.101 306L201.055 306.007Z" stroke="#43705E" />
+                                    <path d="M604.338 204.227L672.079 102.688L605.262 102.694L539.087 204.233L604.338 204.227Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M471.125 407.706L403.364 306.18L470.182 306.173L536.376 407.7L471.125 407.706Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M471.203 204.245L405.009 102.719L471.838 102.712L538.032 204.239L471.203 204.245Z" stroke="#43705E" />
+                                    <path d="M602.684 407.696L670.426 306.156L603.608 306.163L537.434 407.702L602.684 407.696Z" stroke="#43705E" />
+                                    <path d="M67.322 204.282L135.063 102.742L68.2461 102.749L2.07126 204.288L67.322 204.282Z" stroke="#43705E" stroke-opacity="0.2" />
+                                    <path d="M201.887 407.729L134.126 306.203L200.943 306.197L267.138 407.723L201.887 407.729Z" stroke="#43705E" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_266_2383">
+                                        <rect width="805" height="408" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info">
+                <div class="container">
+                    <div class="info__inner">
+                        <p class="info__descriptor body-3">Надійні інвестиції</p>
+                        <h2 class="info__title title heading-2">
+                            Котеджі у першій черзі вже <b>зросли у вартості на 30%,</b> завдяки розвитку бренду, масштабуванню містечка та новій інфраструктурі.
+                            <b>Але основні інфраструктурні проекти містечка ще попереду.</b>
+                        </h2>
+                        <ul class="info__list">
+                            <li class="info__item">
+                                <p class="info__num body-2">1.</p>
+                                <p class="info__text body-2">
+                                    З 2019 року ми повністю реалізували 1-шу чергу проекту та збудували 65% 2 черги.
+                                </p>
+                            </li>
+                            <li class="info__item">
+                                <p class="info__num body-2">2.</p>
+                                <p class="info__text body-2">
+                                    Ви отримуєте повне право власності на будинок та земельну ділянку.
+                                </p>
+                            </li>
+                            <li class="info__item">
+                                <p class="info__num body-2">3.</p>
+                                <p class="info__text body-2">
+                                    Середньорічна завантаженість: 51,80% ADR: 12 649 грн (Середня ціна за ніч).
+                                </p>
+                            </li>
+                            <li class="info__item">
+                                <p class="info__num body-2">4.</p>
+                                <p class="info__text body-2">
+                                    Попит на відпочинок в Карпатах росте. У 2021 році Буковель відвідало >2,2 млн. туристів.
+                                </p>
+                            </li>
+                            <li class="info__item">
+                                <p class="info__num body-2">5.</p>
+                                <p class="info__text body-2">
+                                    20 років досвіду в девелопменті по всій Україні + команда фахівців з будівництва на складній місцевості.
+                                </p>
+                            </li>
+                            <li class="info__item">
+                                <p class="info__num body-2">6.</p>
+                                <p class="info__text body-2">
+                                    Розвиваємо інфраструктуру регіону, залишаючись затишним та закритим містечком серед живої природи.
+                                </p>
+                            </li>
+                            <li class="info__big">
+                                <div class="info__big-wrapper">
+                                    <p class="info__big-text body-3">Річна дохідність, %</p>
+                                    <p class="info__big-value display-1">
+                                        8-11
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="calculation">
+                <div class="container">
+                    <div class="calculation__inner">
+                        <h2 class="calculation__title title heading-2">
+                            Отримайте
+                            <b>
+                                інвестиційний розрахунок прибутковості
+                            </b>
+                            котеджу.
+                        </h2>
+                        <form class="calculation__form" action="/">
+                            <label class="calculation__field field">
+                                <input class="heading-3" type="text" placeholder="Ім'я" name="name">
+                            </label>
+                            <label class="calculation__field field">
+                                <input class="heading-3 field-error" type="tel" placeholder="Телефон" name="phone">
+                            </label>
+
+                            <button class="btn btn--green body-2" type="submit">
+                                <span>
+                                    Отримати розрахунок
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <div class="img-full">
+                <img src="img/divider-3.jpg" alt="">
+            </div>
+
+            <section class="revenue">
+                <div class="container">
+                    <div class="revenue__block active" id="owner">
+                        <p class="revenue__descriptor body-2">
+                            Як працює
+                            <span>керуюча компанія TrueVille.</span>
+                        </p>
+                        <h2 class="revenue__title heading-2">
+                            Власник котеджу отримує
+                        </h2>
+                        <p class="revenue__precent display-1">70%</p>
+                        <div class="revenue__slider swiper">
+                            <ul class="revenue__list swiper-wrapper">
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Повне право власності на котедж, плюс прибудинкову ділянку.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    На 100% готовий автономний бізнес під ключ.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Цілодобовий онлайн-доступ до нашого кабінету бронювання.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Прозора фінансова звітність.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Необмежений відпочинок у власному котеджі.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Дохідність на рівні 8-11% річних від здачі власного котеджу в оренду.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Зростання вартості активу завдякирозвитку інфраструктури містечка.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="revenue__block" id="company">
+                        <p class="revenue__descriptor body-2">
+                            Як працює
+                            <span>керуюча компанія TrueVille.</span>
+                        </p>
+                        <h2 class="revenue__title heading-2">
+                            Керуюча компанія отримує
+                        </h2>
+                        <p class="revenue__precent display-1">30%</p>
+                        <div class="revenue__slider swiper">
+                            <ul class="revenue__list swiper-wrapper">
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Відділ бронювання.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Розвиток інфраструктури котеджного містечка.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Забезпечення та догляд за всіма комунікаціями котеджного містечка TrueVille.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Аналіз ринку та ціноутворення.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Благоустрій.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Цілодобовий консьєрж-сервіс.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Клінінг котеджів та догляд за територією.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Створення дозвілля у містечку.
+                                </li>
+                                <li class="revenue__item body-2 swiper-slide">
+                                    Реклама: плюс маркетинг.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="revenue__tabs tabs body-3">
+                        <button class="revenue__tab tabs__item active body-3" data-id="owner" type="button">
+                            Власник котеджу
+                        </button>
+                        <button class="revenue__tab tabs__item body-3" data-id="company" type="button">
+                            Керуюча компанія
+                        </button>
+                    </div>
+                </div>
+                <svg class="revenue__bg-left" viewBox="0 0 486 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M-91.7348 160.289L-170.575 160.289L-91.7347 1.43812L-12.8943 160.289L-91.7348 160.289Z" stroke="#43705E" />
+                    <path opacity="0.2" d="M-91.7348 99.7074L-170.575 99.7074L-91.7347 258.558L-12.8943 99.7075L-91.7348 99.7074Z" stroke="#43705E" />
+                    <path opacity="0.2" d="M-0.329505 160.289L-79.1697 160.289L-0.329419 1.43812L78.5109 160.289L-0.329505 160.289Z" stroke="#43705E" />
+                    <path d="M-0.329505 99.7074L-79.1697 99.7074L-0.329419 258.558L78.5109 99.7075L-0.329505 99.7074Z" stroke="#43705E" />
+                    <path d="M91.0777 160.289L12.2376 160.289L91.0778 1.43812L169.918 160.289L91.0777 160.289Z" stroke="#43705E" />
+                    <path d="M274.335 160.289L195.494 160.289L274.335 1.43812L353.175 160.289L274.335 160.289Z" stroke="#43705E" />
+                    <path opacity="0.2" d="M91.0777 99.7074L12.2376 99.7074L91.0778 258.558L169.918 99.7075L91.0777 99.7074Z" stroke="#43705E" />
+                    <path opacity="0.2" d="M274.335 99.7074L195.494 99.7074L274.335 258.558L353.175 99.7075L274.335 99.7074Z" stroke="#43705E" />
+                    <path d="M366.531 99.7113L445.371 99.7113L366.531 258.562L287.69 99.7114L366.531 99.7113Z" stroke="#43705E" />
+                    <path opacity="0.2" d="M182.485 160.289L103.645 160.289L182.485 1.43812L261.325 160.289L182.485 160.289Z" stroke="#43705E" />
+                    <path d="M182.485 99.7074L103.645 99.7074L182.485 258.558L261.325 99.7075L182.485 99.7074Z" stroke="#43705E" />
+                </svg>
+                <svg class="revenue__bg-right" viewBox="0 0 484 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M575.818 160.289L654.658 160.289L575.818 1.43812L496.977 160.289L575.818 160.289Z" stroke="#43705E" />
+                    <path opacity="0.2" d="M575.818 99.7074L654.658 99.7074L575.818 258.558L496.977 99.7075L575.818 99.7074Z" stroke="#43705E" />
+                    <path opacity="0.2" d="M484.41 160.289L563.25 160.289L484.409 1.43812L405.569 160.289L484.41 160.289Z" stroke="#43705E" />
+                    <path d="M484.41 99.7074L563.25 99.7074L484.409 258.558L405.569 99.7075L484.41 99.7074Z" stroke="#43705E" />
+                    <path d="M393.005 160.289L471.845 160.289L393.005 1.43812L314.164 160.289L393.005 160.289Z" stroke="#43705E" />
+                    <path opacity="0.2" d="M393.005 99.7074L471.845 99.7074L393.005 258.558L314.164 99.7075L393.005 99.7074Z" stroke="#43705E" />
+                    <path opacity="0.2" d="M301.598 160.289L380.438 160.289L301.598 1.43812L222.758 160.289L301.598 160.289Z" stroke="#43705E" />
+                    <path d="M301.598 99.7074L380.438 99.7074L301.598 258.558L222.758 99.7075L301.598 99.7074Z" stroke="#43705E" />
+                    <path d="M119.47 99.7113L198.31 99.7113L119.47 258.562L40.6292 99.7114L119.47 99.7113Z" stroke="#43705E" />
+                    <path d="M210.188 160.289L289.028 160.289L210.188 1.43812L131.347 160.289L210.188 160.289Z" stroke="#43705E" />
+                    <path opacity="0.2" d="M210.188 99.7074L289.028 99.7074L210.188 258.558L131.347 99.7075L210.188 99.7074Z" stroke="#43705E" />
+                    <path opacity="0.2" d="M119.47 160.433L198.31 160.433L119.47 1.58265L40.6292 160.433L119.47 160.433Z" stroke="#43705E" />
+                </svg>
+            </section>
+
+            <section class="cottage">
+                <img class="cottage__bg" src="img/cottage-bg.webp" alt="">
+                <div class="container">
+                    <div class="cottage__inner">
+                        <h2 class="cottage__title heading-2">Котеджi TrueVille.</h2>
+                        <p class="body-2 cottage__text">Пропонуємо вам придбати сучасні котеджі люкс-классу в Карпатах, з чудовим панорамним видом на гори.</p>
+                        <ul class="cottage__list">
+                            <li class="cottage__item">
+                                <p class="cottage__name body-3">Площа котеджу</p>
+                                <p class="cottage__value display-2">
+                                    313
+                                    <span class="body-1">М²</span>
+                                </p>
+                            </li>
+                            <li class="cottage__item">
+                                <p class="cottage__name body-3">Площа ділянки</p>
+                                <p class="cottage__value display-2">
+                                    0.2662
+                                    <span class="body-1">ГА</span>
+                                </p>
+                            </li>
+                            <li class="cottage__item">
+                                <p class="cottage__name body-3">Ціна від</p>
+                                <p class="cottage__value display-2">
+                                    2 299
+                                    <span class="body-1">$/М²</span>
+                                </p>
+                            </li>
+                            <li class="cottage__item">
+                                <p class="cottage__name body-3">Котеджів у продажу</p>
+                                <p class="cottage__value display-2">13</p>
+                            </li>
+                        </ul>
+                        <div class="cottage__nav">
+                            <a class="btn btn--white body-3" href="#">
+                                <span>Детальна інформація про котедж</span>
+                            </a>
+                            <button class="btn btn--green body-3" type="button" onclick="scrollFromBtnToSection('.feedback', 1)">
+                                <span>
+                                    Записатись на огляд
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feedback feedback--light">
+                <div class="container">
+                    <div class="feedback__inner">
+                        <h2 class="feedback__title title heading-2">
+                            <b>
+                                Побачте наші котеджі
+                                на власні очі.
+                            </b>
+                        </h2>
+                        <div class="feedback__wrapper">
+                            <form class="feedback__form" action="/">
+                                <div class="feedback__text body-2">
+                                    <p>
+                                        Будь-ласка заповніть форму нижче і наш менеджер зв'яжеться з вами, щоб домовитись про зустріч.
+                                    </p>
+                                    <p>
+                                        Будем раді зустрітися!
+                                    </p>
+                                </div>
+
+                                <label class="feedback__field field">
+                                    <input class="heading-3" type="text" placeholder="Ім'я" name="name">
+                                </label>
+                                <label class="feedback__field field">
+                                    <input class="heading-3 field-error" type="tel" placeholder="Телефон" name="phone">
+                                </label>
+
+                                <button class="btn btn--green body-2" type="submit">
+                                    <span>
+                                        Надіслати заявку
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__line">
+				<span></span>
+			</div>
+			<div class="footer__one">
+				<a class="footer__logo" href="#">
+					<img src="img/logo-footer.svg" alt="">
+				</a>
+				<p class="footer__copyright">
+					© 2022. <br>
+					Всі права захищені.
+				</p>
+			</div>
+			<div class="footer__two">
+				<a class="footer__phone heading-3" href="tel:+380930808089">+38 093 080 80 89</a>
+				<a class="footer__mail body-2" href="mailto:developer@trueville.com.ua">developer@trueville.com.ua</a>
+
+				<div class="footer__wrapper">
+					<div class="footer__info">
+						<p class="footer__address body-2">Івано-Франківська область, с. Яблуниця</p>
+						<a class="footer__route body-2" href="#">Прокласти маршрут</a>
+					</div>
+					<nav class="footer__control">
+						<ul class="footer__list">
+							<li class="footer__item">
+								<ul class="footer__social">
+									<li>
+										<a class="footer__link body-2" href="" target="_blank">Facebook</a>
+									</li>
+									<li>
+										<a class="footer__link body-2" href="" target="_blank">Instagram</a>
+									</li>
+								</ul>
+							</li>
+							<li class="footer__item">
+								<ul class="footer__nav">
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Головна</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 active" href="#">Інвестиції</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Котеджі</a>
+									</li>
+								</ul>
+							</li>
+							<li class="footer__item">
+								<ul class="footer__nav">
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Новини</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Контакти</a>
+									</li>
+									<li>
+										<ul class="footer__lang">
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3 active" href="#"> UA</a>
+											</li>
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3" href="#"> RU</a>
+											</li>
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3" href="#"> AR</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<a class="btn btn--green body-2" href="#">
+					Забронювати котедж
+					<svg>
+						<use xlink:href="img/sprite.svg#arrow-right"></use>
+					</svg>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

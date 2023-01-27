@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Page</title>
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <div class="preloader">
+    <style type="text/css">
+        .preloader {
+            width: 100vw;
+            height: 100vh;
+
+            background-color: #fff;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+    </style>
+    <script>
+        var keys = {
+            37: 1,
+            38: 1,
+            39: 1,
+            40: 1
+        };
+
+        function preventDefault(e) {
+            e.preventDefault();
+        }
+
+        function preventDefaultForScrollKeys(e) {
+            if (keys[e.keyCode]) {
+                preventDefault(e);
+                return false;
+            }
+        }
+
+        // modern Chrome requires { passive: false } when adding event
+        var supportsPassive = false;
+        try {
+            window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function () {
+                    supportsPassive = true;
+                }
+            }));
+        } catch (e) {}
+
+        var wheelOpt = supportsPassive ? {
+            passive: false
+        } : false;
+        var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+        // call this to Disable
+        function disableScroll() {
+            window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+            window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+            window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+            window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
+
+        // call this to Enable
+        function enableScroll() {
+            window.removeEventListener('DOMMouseScroll', preventDefault, false);
+            window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+            window.removeEventListener('touchmove', preventDefault, wheelOpt);
+            window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
+
+        disableScroll();
+
+    </script>
+</div>
+    
+    <div class="page page-news-detail">
+        <header class="header header--black">
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo" href="/">
+                <svg viewBox="0 0 110 32" xmlns="http://www.w3.org/2000/svg">
+                    <path class="header__logo-text" d="M36.3293 5.58823V7.91765H40.494V19H43.2822V7.91765H47.4469V5.58823H36.3293ZM48.9583 9.41765H46.2759V19H48.9759V14.0412C48.9759 12.4176 49.7877 11.8529 51.4641 11.8529H52.1524V9.20588C50.2994 9.20588 49.3288 10.4235 48.9583 11.9235V9.41765ZM58.9472 14.8706C58.9472 16.5118 58.3648 17.3235 57.2354 17.3235C56.1236 17.3235 55.506 16.5647 55.506 14.9059V14.8706V9.41765H52.806V15.4529V15.4882C52.806 17.6059 53.7413 19.2118 55.9648 19.2118C57.6413 19.2118 58.5413 18.2588 58.9825 17.1118V19H61.6472V9.41765H58.9472V14.8706ZM72.4119 14.2529C72.4119 11.2353 70.5413 9.20588 67.5766 9.20588C64.6648 9.20588 62.706 11.2529 62.706 14.2C62.706 17.1471 64.5942 19.2118 67.5766 19.2118C69.8707 19.2118 71.5648 18.1882 72.2001 16.1588H69.4825C69.1472 16.9353 68.6354 17.3765 67.5942 17.3765C66.4825 17.3765 65.6531 16.6176 65.4589 15.0118H72.3589C72.3942 14.7471 72.4119 14.4824 72.4119 14.2529ZM67.5766 11.0412C68.706 11.0412 69.5178 11.8529 69.6589 13.2118H65.4766C65.706 11.7118 66.5001 11.0412 67.5766 11.0412ZM78.2569 18.4706L74.551 5.58823H71.551L75.6099 19H80.8687L84.9452 5.58823H81.9452L78.2569 18.4706ZM88.1515 8.12941V5.58823H85.3633V8.12941H88.1515ZM88.0986 19V9.41765H85.3986V19H88.0986ZM92.3732 19V5.58823H89.6732V19H92.3732ZM96.6478 19V5.58823H93.9478V19H96.6478ZM107.416 14.2529C107.416 11.2353 105.546 9.20588 102.581 9.20588C99.6694 9.20588 97.7106 11.2529 97.7106 14.2C97.7106 17.1471 99.5988 19.2118 102.581 19.2118C104.875 19.2118 106.569 18.1882 107.205 16.1588H104.487C104.152 16.9353 103.64 17.3765 102.599 17.3765C101.487 17.3765 100.658 16.6176 100.464 15.0118H107.364C107.399 14.7471 107.416 14.4824 107.416 14.2529ZM102.581 11.0412C103.711 11.0412 104.522 11.8529 104.664 13.2118H100.481C100.711 11.7118 101.505 11.0412 102.581 11.0412Z"/>
+                    <path d="M7.67603 0H15.5882L7.91221 11.7818H0L7.67603 0Z"  />
+                    <path d="M7.91235 11.7812L15.5884 11.7813L7.91233 23.2722H0.236328L7.91235 11.7812Z"  />
+                    <path d="M23.5005 0H15.5883L23.2643 11.7818H31.1765L23.5005 0Z"  />
+                    <path d="M23.2642 11.7812H15.5883L23.2644 23.2722H30.9402L23.2642 11.7812Z"  />
+                </svg>
+            </a>
+
+            <nav class="nav">
+                <button class="nav__close">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#close"></use>
+                    </svg>
+                </button>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="index.html">
+                            Головна
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="investments.html">
+                            Інвестиції
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="cottages.html">
+                            Котеджі
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 active" href="news.html">
+                            Новини
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="contacts.html">
+                            Контакти
+                        </a>
+                    </li>
+                </ul>
+                <ul class="lang">
+                    <li class="lang__item">
+                        <a class="lang__link body-3 active" href="#"> UA</a>
+                    </li>
+                    <li class="lang__item">
+                        <a class="lang__link body-3" href="#"> RU</a>
+                    </li>
+                    <li class="lang__item">
+                        <a class="lang__link body-3" href="#"> AR</a>
+                    </li>
+                </ul>
+                <a class="header__btn btn btn--green body-3" href="booking.html">
+                    Придбати
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                    </svg>
+                </a>
+            </nav>
+
+            <button class="burger">
+                <svg>
+                    <use xlink:href="img/sprite.svg#burger"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+        <main>
+            <section class="article">
+                <div class="container">
+                    <a class="article__back body-3" href="news.html">Повернутися</a>
+                    <div class="article__wrapper">
+                        <div class="article__left">
+                            <h1 class="heading-2 article__title">
+                                Енергоефективні вікна в котеджах TrueVille
+                            </h1>
+                            <time class="article__time body-2" datetime="2022-08-11">11 серпня 2022</time>
+                        </div>
+                        <div class="article__right">
+                            <img src="img/news/7.jpg" alt="">
+
+                            <h2>
+                                Енергоефективні вікна. Чому? Відповідаємо
+                            </h2>
+
+                            <p>
+                                Енергоефективні вікна в котеджах TrueVille дозволяють економити на комунальних платежах. Вони надійні, лаконічні та гармонійно поєднуються із металевою покрівлею на будівлях.
+                                <br> <br>
+                                Ми обрали вікна бельгійського виробника Reynaers з алюмінієвим профілем MasterLine 8 HI зі спеціалізованою фурнітурою. Точки замикання в системі виконані з цинкової і нержавіючої сталі, яка монтується в міцний алюмінієвий профіль спеціального сплаву. Вікна засклені якісним склом Guardian Glass. Це двокамерні склопакети із трьома шарами товщиною 6 мм та енегроефективним напиленням.
+                                <br> <br>
+                                Алюмінієві розсувні системи MasterPatio спеціально розроблені для зон патіо та терас, котрі забезпечують максимальний безрамний краєвид — з супер мінімалістичним дизайном та високим рівнем ізоляції.
+                            </p>
+
+                            <ul>
+                                <li>
+                                    алюмінієві розсувні системи MasterPatio
+                                </li>
+                                <li>
+                                    вікна бельгійського виробника Reynaers з алюмінієвим профілем MasterLine І
+                                </li>
+                            </ul>
+
+                            <h2>Співпрацюємо з найкращими</h2>
+
+                            <p>
+                                "Теплий монтаж" надійно забезпечує високі гідро- і теплоізоляційні властивості, тобто захищає від втрат тепла і проникнення вологи. Детальніше про те, чому саме ці вікна, а також про особливості монтажу — дивіться у відео.
+                                <br> <br>
+                                Дякуємо компанії <a target="_blank" rel="nofollow" href="#">Альфа ПРО</a> за співпрацю!
+                            </p>
+
+                            <p>
+                                Енергоефективні вікна в котеджах TrueVille дозволяють економити на комунальних платежах. Вони надійні, лаконічні та гармонійно поєднуються із металевою покрівлею на будівлях.
+                                <br> <br>
+                                Ми обрали вікна бельгійського виробника Reynaers з алюмінієвим профілем MasterLine 8 HI зі спеціалізованою фурнітурою. Точки замикання в системі виконані з цинкової і нержавіючої сталі, яка монтується в міцний алюмінієвий профіль спеціального сплаву. Вікна засклені якісним склом Guardian Glass. Це двокамерні склопакети із трьома шарами товщиною 6 мм та енегроефективним напиленням.
+                                <br> <br>
+                                Алюмінієві розсувні системи MasterPatio спеціально розроблені для зон патіо та терас, котрі забезпечують максимальний безрамний краєвид — з супер мінімалістичним дизайном та високим рівнем ізоляції.
+                                <br> <br>
+                                Енергоефективні вікна в котеджах TrueVille дозволяють економити на комунальних платежах. Вони надійні, лаконічні та гармонійно поєднуються із металевою покрівлею на будівлях.
+                                <br> <br>
+                                Ми обрали вікна бельгійського виробника Reynaers з алюмінієвим профілем MasterLine 8 HI зі спеціалізованою фурнітурою. Точки замикання в системі виконані з цинкової і нержавіючої сталі, яка монтується в міцний алюмінієвий профіль спеціального сплаву. Вікна засклені якісним склом Guardian Glass. Це двокамерні склопакети із трьома шарами товщиною 6 мм та енегроефективним напиленням.
+                                <br> <br>
+                                Алюмінієві розсувні системи MasterPatio спеціально розроблені для зон патіо та терас, котрі забезпечують максимальний безрамний краєвид — з супер мінімалістичним дизайном та високим рівнем ізоляції.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="article__video">
+                        <h3 class="article__video-title heading-3">
+                            <small class="body-3">Відеоматеріал</small>
+                            Переваги використання енергоефективних вікон в котеджах TrueVille.
+                        </h3>
+
+                        <div class="article__video-inner video">
+                            <video class="video__player" muted loop playsinline poster="img/poster.webp">
+                                <source src="video/video.mp4" />
+                            </video>
+                            <div class="video__btn">
+                                <img src="img/icons/play.svg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article__gallery">
+                        <h3 class="article__gallery-title heading-3">
+                            <small class="body-3">Галерея</small>
+                            Переваги використання енергоефективних вікон в котеджах TrueVille.
+                        </h3>
+
+                        <div class="article__gallery-slider look__slider swiper">
+                            <div class="swiper-wrapper">
+                                <div class="look__slide swiper-slide">
+                                    <img src="img/exterior/1.webp" alt="">
+                                </div>
+                                <div class="look__slide swiper-slide">
+                                    <img src="img/exterior/2.webp" alt="">
+                                </div>
+                                <div class="look__slide swiper-slide">
+                                    <img src="img/exterior/3.webp" alt="">
+                                </div>
+                                <div class="look__slide swiper-slide">
+                                    <img src="img/exterior/4.webp" alt="">
+                                </div>
+                                <div class="look__slide swiper-slide">
+                                    <img src="img/exterior/5.webp" alt="">
+                                </div>
+                                <div class="look__slide swiper-slide">
+                                    <img src="img/exterior/6.webp" alt="">
+                                </div>
+                            </div>
+                            <nav class="look__nav">
+                                <div class="slider-prev look__prev">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-left"></use>
+                                    </svg>
+                                </div>
+                                <div class="look__pagination slider-pagination body-2">
+                                </div>
+                                <div class="slider-next look__next">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="article__wrapper">
+                        <div class="article__right">
+                            <h2>
+                                Енергоефективні вікна. Чому? Відповідаємо
+                            </h2>
+
+                            <p>
+                                Енергоефективні вікна в котеджах TrueVille дозволяють економити на комунальних платежах. Вони надійні, лаконічні та гармонійно поєднуються із металевою покрівлею на будівлях.
+                                <br> <br>
+                                Ми обрали вікна бельгійського виробника Reynaers з алюмінієвим профілем MasterLine 8 HI зі спеціалізованою фурнітурою. Точки замикання в системі виконані з цинкової і нержавіючої сталі, яка монтується в міцний алюмінієвий профіль спеціального сплаву. Вікна засклені якісним склом Guardian Glass. Це двокамерні склопакети із трьома шарами товщиною 6 мм та енегроефективним напиленням.
+                                <br> <br>
+                                Алюмінієві розсувні системи MasterPatio спеціально розроблені для зон патіо та терас, котрі забезпечують максимальний безрамний краєвид — з супер мінімалістичним дизайном та високим рівнем ізоляції.
+                            </p>
+
+                            <img style="width: 50%;" src="img/news/2.jpg" alt="">
+
+                            <p>
+                                Енергоефективні вікна в котеджах TrueVille дозволяють економити на комунальних платежах. Вони надійні, лаконічні та гармонійно поєднуються із металевою покрівлею на будівлях.
+                                <br> <br>
+                                Ми обрали вікна бельгійського виробника Reynaers з алюмінієвим профілем MasterLine 8 HI зі спеціалізованою фурнітурою. Точки замикання в системі виконані з цинкової і нержавіючої сталі, яка монтується в міцний алюмінієвий профіль спеціального сплаву. Вікна засклені якісним склом Guardian Glass. Це двокамерні склопакети із трьома шарами товщиною 6 мм та енегроефективним напиленням.
+                                <br> <br>
+                                Алюмінієві розсувні системи MasterPatio спеціально розроблені для зон патіо та терас, котрі забезпечують максимальний безрамний краєвид — з супер мінімалістичним дизайном та високим рівнем ізоляції.
+                                <br> <br>
+                                Енергоефективні вікна в котеджах TrueVille дозволяють економити на комунальних платежах. Вони надійні, лаконічні та гармонійно поєднуються із металевою покрівлею на будівлях.
+                                <br> <br>
+                                Ми обрали вікна бельгійського виробника Reynaers з алюмінієвим профілем MasterLine 8 HI зі спеціалізованою фурнітурою. Точки замикання в системі виконані з цинкової і нержавіючої сталі, яка монтується в міцний алюмінієвий профіль спеціального сплаву. Вікна засклені якісним склом Guardian Glass. Це двокамерні склопакети із трьома шарами товщиною 6 мм та енегроефективним напиленням.
+                                <br> <br>
+                                Алюмінієві розсувні системи MasterPatio спеціально розроблені для зон патіо та терас, котрі забезпечують максимальний безрамний краєвид — з супер мінімалістичним дизайном та високим рівнем ізоляції.
+                            </p>
+
+                            <h2>Співпрацюємо з найкращими</h2>
+
+                            <p>
+                                "Теплий монтаж" надійно забезпечує високі гідро- і теплоізоляційні властивості, тобто захищає від втрат тепла і проникнення вологи. Детальніше про те, чому саме ці вікна, а також про особливості монтажу — дивіться у відео.
+                                <br> <br>
+                                Дякуємо компанії <a target="_blank" rel="nofollow" href="#">Альфа ПРО</a> за співпрацю!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="more-news">
+                <div class="container">
+                    <div class="more-news__inner">
+                        <div class="more-news__top">
+                            <div class="more-news__title">
+                                <h2 class="heading-2">Новини</h2>
+                                <a class="more-news__link body-2" href="news.html">Дивитись всі</a>
+                            </div>
+                            <div class="more-news__wrapper">
+                                <div class="more-news__nav">
+                                    <div class="slider-prev more-news__prev">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-left"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="slider-next more-news__next">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="body-2">Релевантні новини</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper more-news__slider">
+                            <div class="swiper-wrapper">
+                                <a class="news__article swiper-slide" href="news-detail.html">
+                                    <article class="news__inner">
+                                        <h2 class="news__name body-1">
+                                            Розстрочку подовжено! Будинки під 0% на 3 роки!
+                                        </h2>
+                                        <div class="news__img">
+                                            <img src="img/news/1.jpg" alt="">
+                                        </div>
+                                        <time class="news__time body-2" datetime="2022-08-11">11 серпня 2022</time>
+                                        <p class="news__text body-2">
+                                            Літо – чудова пора, щоб переїхати до власного будинку із ідеальним зеленим газоном, квітучим садом та просторою терасою, де теплими вечорами можна збиратися усією родиною! Тож ми вирішили подовжити весняну пропозицію, щоб ви обрали будинок своєї мрії та не відкладали його купівлю на потім.
+                                        </p>
+                                    </article>
+                                </a>
+                                <a class="news__article swiper-slide" href="news-detail.html">
+                                    <article class="news__inner">
+                                        <h2 class="news__name body-1">
+                                            Вартість котеджів TrueVille станом на серпень 2022
+                                        </h2>
+                                        <div class="news__img">
+                                            <img src="img/news/2.jpg" alt="">
+                                        </div>
+                                        <time class="news__time body-2" datetime="2022-08-11">11 серпня 2022</time>
+                                        <p class="news__text body-2">
+                                            З 1 серпня 2022 року вартість будинків в містечку TrueVille складе від 1150$/м2. Кінцева вартість залежить від типу будинку та обраної ділянки в містечку.
+                                        </p>
+                                    </article>
+                                </a>
+                                <a class="news__article swiper-slide" href="news-detail.html">
+                                    <article class="news__inner">
+                                        <h2 class="news__name body-1">
+                                            Інтер’єр нового котеджу
+                                        </h2>
+                                        <div class="news__img">
+                                            <img src="img/news/3.jpg" alt="">
+                                        </div>
+                                        <time class="news__time body-2" datetime="2022-08-11">11 серпня 2022</time>
+                                        <p class="news__text body-2">
+                                            Наше архітектурне бюро зараз втілює у життя проект інтер'єру нового котеджу. Зі слів дизайнера, це буде національний стиль змішаний із сучасним та нотами колоніальної Англії з мідними акцентами. Коротко кажучи — буде стильно!
+                                        </p>
+                                    </article>
+                                </a>
+                                <a class="news__article swiper-slide" href="news-detail.html">
+                                    <article class="news__inner">
+                                        <h2 class="news__name body-1">
+                                            Графік роботи нашого офісу продажу у святкові дні
+                                        </h2>
+                                        <div class="news__img">
+                                            <img src="img/news/4.jpg" alt="">
+                                        </div>
+                                        <time class="news__time body-2" datetime="2022-08-11">11 серпня 2022</time>
+                                        <p class="news__text body-2">
+                                            Просимо звернути увагу на графік роботи нашого офісу продажу TrueVille у святкові дні.
+                                        </p>
+                                    </article>
+                                </a>
+                                <a class="news__article swiper-slide" href="news-detail.html">
+                                    <article class="news__inner">
+                                        <h2 class="news__name body-1">
+                                            Спортивна інфраструктура в містечку
+                                        </h2>
+                                        <div class="news__img">
+                                            <img src="img/news/5.jpg" alt="">
+                                        </div>
+                                        <time class="news__time body-2" datetime="2022-08-11">11 серпня 2022</time>
+                                        <p class="news__text body-2">
+                                            Чисте повітря та широкі можливості для спортивного, здорового образу життя, серед іншого, є значними перевагами Green Hills. Розгалужена спортивна інфраструктура для дітей та дорослих дозволяє професійно тренуватись прямо у містечку, без щоденних поїздок до міста.
+                                        </p>
+                                    </article>
+                                </a>
+                                <a class="news__article swiper-slide" href="news-detail.html">
+                                    <article class="news__inner">
+                                        <h2 class="news__name body-1">
+                                            На що слід звернути увагу при виборі котеджного містечка?
+                                        </h2>
+                                        <div class="news__img">
+                                            <img src="img/news/6.jpg" alt="">
+                                        </div>
+                                        <time class="news__time body-2" datetime="2022-08-11">11 серпня 2022</time>
+                                        <p class="news__text body-2">
+                                            Купуючи будинок у котеджному містечку, Ви обираєте не просто будівлю та ділянку землі. Ви обираєте складові комфортного життя саме для Вас та Вашої родини. На що звернути увагу, аби життя у котеджному містечку було зручним та приємним?
+                                        </p>
+                                    </article>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+        <footer class="footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__line">
+				<span></span>
+			</div>
+			<div class="footer__one">
+				<a class="footer__logo" href="#">
+					<img src="img/logo-footer.svg" alt="">
+				</a>
+				<p class="footer__copyright">
+					© 2022. <br>
+					Всі права захищені.
+				</p>
+			</div>
+			<div class="footer__two">
+				<a class="footer__phone heading-3" href="tel:+380930808089">+38 093 080 80 89</a>
+				<a class="footer__mail body-2" href="mailto:developer@trueville.com.ua">developer@trueville.com.ua</a>
+
+				<div class="footer__wrapper">
+					<div class="footer__info">
+						<p class="footer__address body-2">Івано-Франківська область, с. Яблуниця</p>
+						<a class="footer__route body-2" href="#">Прокласти маршрут</a>
+					</div>
+					<nav class="footer__control">
+						<ul class="footer__list">
+							<li class="footer__item">
+								<ul class="footer__social">
+									<li>
+										<a class="footer__link body-2" href="" target="_blank">Facebook</a>
+									</li>
+									<li>
+										<a class="footer__link body-2" href="" target="_blank">Instagram</a>
+									</li>
+								</ul>
+							</li>
+							<li class="footer__item">
+								<ul class="footer__nav">
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Головна</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Інвестиції</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Котеджі</a>
+									</li>
+								</ul>
+							</li>
+							<li class="footer__item">
+								<ul class="footer__nav">
+									<li>
+										<a class="footer__link footer__nav-link body-2 active" href="#">Новини</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Контакти</a>
+									</li>
+									<li>
+										<ul class="footer__lang">
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3 active" href="#"> UA</a>
+											</li>
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3" href="#"> RU</a>
+											</li>
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3" href="#"> AR</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<a class="btn btn--green body-2" href="#">
+					Забронювати котедж
+					<svg>
+						<use xlink:href="img/sprite.svg#arrow-right"></use>
+					</svg>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

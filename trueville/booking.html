@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Page</title>
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <div class="preloader">
+    <style type="text/css">
+        .preloader {
+            width: 100vw;
+            height: 100vh;
+
+            background-color: #fff;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+    </style>
+    <script>
+        var keys = {
+            37: 1,
+            38: 1,
+            39: 1,
+            40: 1
+        };
+
+        function preventDefault(e) {
+            e.preventDefault();
+        }
+
+        function preventDefaultForScrollKeys(e) {
+            if (keys[e.keyCode]) {
+                preventDefault(e);
+                return false;
+            }
+        }
+
+        // modern Chrome requires { passive: false } when adding event
+        var supportsPassive = false;
+        try {
+            window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function () {
+                    supportsPassive = true;
+                }
+            }));
+        } catch (e) {}
+
+        var wheelOpt = supportsPassive ? {
+            passive: false
+        } : false;
+        var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+        // call this to Disable
+        function disableScroll() {
+            window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+            window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+            window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+            window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
+
+        // call this to Enable
+        function enableScroll() {
+            window.removeEventListener('DOMMouseScroll', preventDefault, false);
+            window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+            window.removeEventListener('touchmove', preventDefault, wheelOpt);
+            window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
+
+        disableScroll();
+
+    </script>
+</div>
+
+    <div class="page page-booking">
+        <header class="header ">
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo" href="/">
+                <svg viewBox="0 0 110 32" xmlns="http://www.w3.org/2000/svg">
+                    <path class="header__logo-text" d="M36.3293 5.58823V7.91765H40.494V19H43.2822V7.91765H47.4469V5.58823H36.3293ZM48.9583 9.41765H46.2759V19H48.9759V14.0412C48.9759 12.4176 49.7877 11.8529 51.4641 11.8529H52.1524V9.20588C50.2994 9.20588 49.3288 10.4235 48.9583 11.9235V9.41765ZM58.9472 14.8706C58.9472 16.5118 58.3648 17.3235 57.2354 17.3235C56.1236 17.3235 55.506 16.5647 55.506 14.9059V14.8706V9.41765H52.806V15.4529V15.4882C52.806 17.6059 53.7413 19.2118 55.9648 19.2118C57.6413 19.2118 58.5413 18.2588 58.9825 17.1118V19H61.6472V9.41765H58.9472V14.8706ZM72.4119 14.2529C72.4119 11.2353 70.5413 9.20588 67.5766 9.20588C64.6648 9.20588 62.706 11.2529 62.706 14.2C62.706 17.1471 64.5942 19.2118 67.5766 19.2118C69.8707 19.2118 71.5648 18.1882 72.2001 16.1588H69.4825C69.1472 16.9353 68.6354 17.3765 67.5942 17.3765C66.4825 17.3765 65.6531 16.6176 65.4589 15.0118H72.3589C72.3942 14.7471 72.4119 14.4824 72.4119 14.2529ZM67.5766 11.0412C68.706 11.0412 69.5178 11.8529 69.6589 13.2118H65.4766C65.706 11.7118 66.5001 11.0412 67.5766 11.0412ZM78.2569 18.4706L74.551 5.58823H71.551L75.6099 19H80.8687L84.9452 5.58823H81.9452L78.2569 18.4706ZM88.1515 8.12941V5.58823H85.3633V8.12941H88.1515ZM88.0986 19V9.41765H85.3986V19H88.0986ZM92.3732 19V5.58823H89.6732V19H92.3732ZM96.6478 19V5.58823H93.9478V19H96.6478ZM107.416 14.2529C107.416 11.2353 105.546 9.20588 102.581 9.20588C99.6694 9.20588 97.7106 11.2529 97.7106 14.2C97.7106 17.1471 99.5988 19.2118 102.581 19.2118C104.875 19.2118 106.569 18.1882 107.205 16.1588H104.487C104.152 16.9353 103.64 17.3765 102.599 17.3765C101.487 17.3765 100.658 16.6176 100.464 15.0118H107.364C107.399 14.7471 107.416 14.4824 107.416 14.2529ZM102.581 11.0412C103.711 11.0412 104.522 11.8529 104.664 13.2118H100.481C100.711 11.7118 101.505 11.0412 102.581 11.0412Z"/>
+                    <path d="M7.67603 0H15.5882L7.91221 11.7818H0L7.67603 0Z"  />
+                    <path d="M7.91235 11.7812L15.5884 11.7813L7.91233 23.2722H0.236328L7.91235 11.7812Z"  />
+                    <path d="M23.5005 0H15.5883L23.2643 11.7818H31.1765L23.5005 0Z"  />
+                    <path d="M23.2642 11.7812H15.5883L23.2644 23.2722H30.9402L23.2642 11.7812Z"  />
+                </svg>
+            </a>
+
+            <nav class="nav">
+                <button class="nav__close">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#close"></use>
+                    </svg>
+                </button>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="index.html">
+                            Головна
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="investments.html">
+                            Інвестиції
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="cottages.html">
+                            Котеджі
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="news.html">
+                            Новини
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link body-3 " href="contacts.html">
+                            Контакти
+                        </a>
+                    </li>
+                </ul>
+                <ul class="lang">
+                    <li class="lang__item">
+                        <a class="lang__link body-3 active" href="#"> UA</a>
+                    </li>
+                    <li class="lang__item">
+                        <a class="lang__link body-3" href="#"> RU</a>
+                    </li>
+                    <li class="lang__item">
+                        <a class="lang__link body-3" href="#"> AR</a>
+                    </li>
+                </ul>
+                <a class="header__btn btn btn--green body-3" href="booking.html">
+                    Придбати
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                    </svg>
+                </a>
+            </nav>
+
+            <button class="burger">
+                <svg>
+                    <use xlink:href="img/sprite.svg#burger"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+        <main>
+            <section class="intro">
+                <img class="intro__bg" src="img/booking-bg.jpg" alt="">
+                <div class="container">
+                    <div class="intro__inner">
+                        <h1 class="intro__title heading-1">
+                            <span>Котедж TrueVille—</span>
+                            <span>ваш ідеальний відпочинок.</span>
+                        </h1>
+
+                        <p class="intro__text intro__text--cottages body-2">
+                            Пропонуємо вам придбати сучасні котеджі люкс-классу в Карпатах, з чудовим панорамним видом на гори.
+                        </p>
+                    </div>
+                </div>
+                <img class="intro__elem" src="img/waves-light.svg" alt="">
+            </section>
+
+            <section class="about about-cottages">
+                <div class="container">
+                    <div class="about__inner">
+                        <h2 class="about__title title heading-2">
+                            З TrueVille ваш день починається з ранкової роси, обідаєте ви під шум смерек, а вечеряєте під зоряним небом.
+                        </h2>
+                        <div class="about__wrapper">
+                            <div class="about__right">
+                                <div class="about__texts">
+                                    <p class="body-2">Адміністратори містечка організують для вас будь-яку розвагу за лічені хвилини. Для кожного гостя команда без проблем сформує програму відпочинку.</p>
+                                </div>
+                                <a class="about__btn btn btn--green body-3" href="#">
+                                    <span>Забронювати котедж</span>
+                                </a>
+                                <div class="about__img">
+                                    <img src="img/about-booking.jpg" alt="">
+                                </div>
+                            </div>
+                            <svg class="about__bg" viewBox="0 0 1540 324" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M799.937 199.957L701.25 199.957L799.937 1.12175L898.623 199.957L799.937 199.957Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M683.48 199.957L782.167 199.957L683.48 1.12175L584.794 199.957L683.48 199.957Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M799.937 124.036L701.25 124.036L799.937 322.87L898.623 124.036L799.937 124.036Z" stroke="#43705E" />
+                                <path d="M683.48 124.036L782.167 124.036L683.48 322.87L584.794 124.036L683.48 124.036Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M914.119 199.957L815.433 199.957L914.119 1.12175L1012.81 199.957L914.119 199.957Z" stroke="#43705E" />
+                                <path d="M569.3 199.957L667.986 199.957L569.3 1.12175L470.613 199.957L569.3 199.957Z" stroke="#43705E" />
+                                <path d="M914.119 124.036L815.433 124.036L914.119 322.87L1012.81 124.036L914.119 124.036Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M569.3 124.036L667.986 124.036L569.3 322.87L470.613 124.036L569.3 124.036Z" stroke="#43705E" />
+                                <path d="M1028.31 199.957L929.62 199.957L1028.31 1.12175L1126.99 199.957L1028.31 199.957Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M455.114 199.957L553.8 199.957L455.114 1.12175L356.427 199.957L455.114 199.957Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M1028.31 124.036L929.62 124.036L1028.31 322.87L1126.99 124.036L1028.31 124.036Z" stroke="#43705E" />
+                                <path d="M455.114 124.036L553.8 124.036L455.114 322.87L356.427 124.036L455.114 124.036Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M1142.49 199.957L1043.8 199.957L1142.49 1.12175L1241.17 199.957L1142.49 199.957Z" stroke="#43705E" />
+                                <path d="M340.934 199.957L439.621 199.957L340.934 1.12175L242.248 199.957L340.934 199.957Z" stroke="#43705E" />
+                                <path d="M1142.49 124.036L1043.8 124.036L1142.49 322.87L1241.17 124.036L1142.49 124.036Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M340.934 124.036L439.621 124.036L340.934 322.87L242.248 124.036L340.934 124.036Z" stroke="#43705E" />
+                                <path d="M1256.67 199.957L1157.98 199.957L1256.67 1.12175L1355.36 199.957L1256.67 199.957Z" stroke="#43705E" />
+                                <path d="M1485.59 199.957L1386.91 199.957L1485.59 1.12175L1584.28 199.957L1485.59 199.957Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M226.751 199.957L325.437 199.957L226.751 1.12175L128.064 199.957L226.751 199.957Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M1256.67 124.036L1157.98 124.036L1256.67 322.87L1355.36 124.036L1256.67 124.036Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M1485.59 124.036L1386.91 124.036L1485.59 322.87L1584.28 124.036L1485.59 124.036Z" stroke="#43705E" />
+                                <path d="M226.751 124.036L325.437 124.036L226.751 322.87L128.064 124.036L226.751 124.036Z" stroke="#43705E" />
+                                <path d="M-0.760948 124.043L97.9253 124.043L-0.761039 322.878L-99.4475 124.043L-0.760948 124.043Z" stroke="#43705E" />
+                                <path d="M1600.76 124.043L1699.45 124.043L1600.76 322.878L1502.07 124.043L1600.76 124.043Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M1370.86 199.957L1272.17 199.957L1370.86 1.12175L1469.54 199.957L1370.86 199.957Z" stroke="#43705E" />
+                                <path d="M112.562 199.957L211.249 199.957L112.562 1.12175L13.8757 199.957L112.562 199.957Z" stroke="#43705E" />
+                                <path d="M1370.86 124.036L1272.17 124.036L1370.86 322.87L1469.54 124.036L1370.86 124.036Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M112.562 124.036L211.249 124.036L112.562 322.87L13.8757 124.036L112.562 124.036Z" stroke="#43705E" />
+                                <path opacity="0.2" d="M-0.760948 200.144L97.9253 200.144L-0.761039 1.30925L-99.4475 200.144L-0.760948 200.144Z" stroke="#43705E" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="look look-booking">
+                <div class="container">
+                    <div class="look__inner">
+                        <h2 class="look__title title heading-2">
+                            Ми дбаємо про ваш <b>насичений та яскравий відпочинок.</b>
+                        </h2>
+                        <p class="look__descriptor body-3">
+                            Атмосфера
+                        </p>
+                        <p class="look__text body-1">
+                            Такого ви не знайдете ніде в Карпатах.
+                        </p>
+                    </div>
+                </div>
+                <div class="look__slider swiper">
+                    <div class="swiper-wrapper">
+                        <div class="look__slide swiper-slide">
+                            <img src="img/exterior/1.webp" alt="">
+                        </div>
+                        <div class="look__slide swiper-slide">
+                            <img src="img/exterior/2.webp" alt="">
+                        </div>
+                        <div class="look__slide swiper-slide">
+                            <img src="img/exterior/3.webp" alt="">
+                        </div>
+                        <div class="look__slide swiper-slide">
+                            <img src="img/exterior/4.webp" alt="">
+                        </div>
+                        <div class="look__slide swiper-slide">
+                            <img src="img/exterior/5.webp" alt="">
+                        </div>
+                        <div class="look__slide swiper-slide">
+                            <img src="img/exterior/6.webp" alt="">
+                        </div>
+                    </div>
+                    <nav class="look__nav">
+                        <div class="slider-prev look__prev">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#arrow-left"></use>
+                            </svg>
+                        </div>
+                        <div class="look__pagination slider-pagination body-2">
+                        </div>
+                        <div class="slider-next look__next">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                            </svg>
+                        </div>
+                    </nav>
+                </div>
+            </section>
+
+            <section class="specification">
+                <div class="container">
+                    <h2 class="visually-hidden">набір специфікацій</h2>
+                    <div class="specification__wrapper">
+                        <div class="specification__img">
+                            <img src="img/specification.jpg" alt="">
+                        </div>
+                        <div class="specification__info">
+                            <div class="specification__numbers">
+                                <div class="specification__number body-3">
+                                    Котедж вміщує
+                                    <p class="display-2">
+                                        2-4
+                                        <span class="body-1">особи</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="specification__list specification__list--booking">
+                                <li class="specification__item">
+                                    <p class="specification__value body-1">
+                                        Затишна спальня з м’яким двоспальним ліжком
+                                    </p>
+                                </li>
+                                <li class="specification__item">
+                                    <p class="specification__value body-1">
+                                        Сучасна кухня-студія з великим розкладним диваном
+                                    </p>
+                                </li>
+                                <li class="specification__item">
+                                    <p class="specification__value body-1">
+                                        Простора тераса із власною зоною для барбекю
+                                    </p>
+                                </li>
+                                <li class="specification__item">
+                                    <p class="specification__value body-1">
+                                        Санвузол
+                                    </p>
+                                </li>
+                            </ul>
+                            <ul class="specification__cost">
+                                <li>
+                                    <p class="body-1">Вартість до 30.11</p>
+                                    <p class="body-2">для 2 осіб — від 6500 грн/доба</p>
+                                    <p class="body-2">для 4 осіб — від 7500 грн/доба</p>
+                                </li>
+                                <li>
+                                    <p class="body-1">Вартість до 01.12</p>
+                                    <p class="body-2">для 2 осіб — від 6500 грн/доба</p>
+                                    <p class="body-2">для 4 осіб — від 7500 грн/доба</p>
+                                </li>
+                            </ul>
+                            <a class="specification__btn btn btn--green body-2" href="#">
+                                <span>Забронювати котедж</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info">
+                <div class="container">
+                    <div class="info__inner">
+                        <h2 class="info__title title heading-2">
+                            <b>Зручності на території</b>
+                            котеджного містечка TrueVille.
+                        </h2>
+                        <ul class="info__list info__list--booking">
+                            <li class="info__item">
+                                <p class="info__num body-1">1. Найпопулярніші зручності</p>
+                                <p class="info__text body-2">
+                                    Оздоровчий спа-центр / Ресторан / Сімейні номери / Фітнес-центр
+                                </p>
+                            </li>
+                            <li class="info__item">
+                                <p class="info__num body-1">2. Їжа і напої</p>
+                                <p class="info__text body-2">
+                                    Ресторани / Бар / Дитяче меню
+                                </p>
+                            </li>
+                            <li class="info__item">
+                                <p class="info__num body-1">3. Спорт і відпочинок</p>
+                                <p class="info__text body-2">
+                                    Катання на лижах / Більярд (оплачується додатково) / Велоспорт / Приміщення для зберігання лиж
+                                </p>
+                            </li>
+                            <li class="info__item">
+                                <p class="info__num body-1">4. Інтернет</p>
+                                <p class="info__text body-2">
+                                    Бездротовий доступ до інтернету надається на всій території містечка
+                                </p>
+                            </li>
+                            <li class="info__item">
+                                <p class="info__num body-1">5. Парковка</p>
+                                <p class="info__text body-2">
+                                    Безкоштована приватная автостоянка біля кожного котеджу містечка TrueVille.
+                                </p>
+                            </li>
+                            <li class="info__item">
+                                <p class="info__num body-1">6. Мова спілкування</p>
+                                <p class="info__text body-2">
+                                    Українська / Російська / Польська / Румунська / Англійська
+                                </p>
+                            </li>
+                            <li class="info__big">
+                                <div class="info__big-img">
+                                    <img src="img/info.jpg" alt="">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gallery gallery--booking">
+                <div class="container">
+                    <div class="gallery__inner">
+                        <h2 class="gallery__title body-3">ФотоГалерея</h2>
+                        <div class="gallery__slider swiper">
+                            <div class="swiper-wrapper">
+                                <div class="gallery__slide swiper-slide">
+                                    <img src="img/gallery/1.jpg" alt="">
+                                </div>
+                                <div class="gallery__slide swiper-slide">
+                                    <img src="img/gallery/2.jpg" alt="">
+                                </div>
+                                <div class="gallery__slide swiper-slide">
+                                    <img src="img/gallery/3.jpg" alt="">
+                                </div>
+                                <div class="gallery__slide swiper-slide">
+                                    <img src="img/gallery/4.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <nav class="gallery__nav">
+                            <div class="slider-prev gallery__prev">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-left"></use>
+                                </svg>
+                            </div>
+                            <div class="gallery__pagination slider-pagination body-2">
+                            </div>
+                            <div class="slider-next gallery__next">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <section class="booking">
+                <div class="container">
+                    <div class="booking__inner">
+                        <h2 class="booking__title title heading-2">
+                            <b>Знайти вільний котедж.</b>
+                        </h2>
+
+                        <form class="booking__form" action="/">
+                            <div class="booking__item">
+                                <p class="booking__date body-3">Дата заїзду</p>
+                                <input class="booking__input display-3" type="text" id="date1" readonly>
+                            </div>
+
+                            <div class="booking__item">
+                                <p class="booking__date body-3">Дата виїзду</p>
+                                <input class="booking__input display-3" type="text" id="date2" readonly>
+                            </div>
+                            <button class="booking__btn display-3" type="button">
+                                Шукати
+                            </button>
+                            <div class="booking__calendar" data-lang="ua">
+                            </div>
+
+                            <div class="booking__popup" id="step1">
+                                <div class="booking__popup-inner">
+                                    <button class="booking__popup-btn" type="button">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#circle-btn"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="booking__popup-title body-1">
+                                        Вільні котеджі
+                                    </div>
+                                    <ul class="booking__popup-list">
+                                        <li class="booking__popup-item">
+                                            <p class="booking__popup-name heading-2">
+                                                котедж 3
+                                            </p>
+                                            <button class="btn btn--green body-3" type="button">
+                                                <span>
+                                                    Вибрати
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </li>
+                                        <li class="booking__popup-item">
+                                            <p class="booking__popup-name heading-2">
+                                                котедж 3
+                                            </p>
+                                            <button class="btn btn--green body-3" type="button">
+                                                <span>
+                                                    Вибрати
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </li>
+                                        <li class="booking__popup-item">
+                                            <p class="booking__popup-name heading-2">
+                                                котедж 3
+                                            </p>
+                                            <button class="btn btn--green body-3" type="button">
+                                                <span>
+                                                    Вибрати
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="booking__popup" id="step2">
+                                <div class="booking__popup-inner">
+                                    <button class="booking__popup-btn" type="button">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#circle-btn"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="booking__popup-title body-1">
+                                        Забронювати котедж
+                                        <p class="booking__popup-num">№4</p>
+                                    </div>
+                                    <div class="booking__popup-text body-2">
+                                        <p>
+                                            Будь-ласка заповніть форму нижче і наш менеджер зв'яжеться з вами, щоб домовитись про зустріч.
+                                        </p>
+                                        <p>
+                                            Будем раді зустрітися!
+                                        </p>
+                                    </div>
+
+                                    <label class="field">
+                                        <input class="heading-3" type="text" placeholder="Ім'я" name="name">
+                                    </label>
+                                    <label class="field">
+                                        <input class="heading-3 field-error" type="tel" placeholder="Телефон" name="phone">
+                                    </label>
+                                    <button class="btn btn--green body-3" type="submit">
+                                        Забронювати котедж 4
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="booking__popup" id="step3">
+                                <div class="booking__popup-inner">
+                                    <button class="booking__popup-btn" type="button">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#circle-btn"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="booking__popup-title body-1">
+                                        Готово!
+                                    </div>
+                                    <p class="booking__conclusion heading-3">
+                                        Ми отримали Ваш запит. Зв’яжемося з Вами якомога швидше.
+                                    </p>
+                                    <button class="booking__popup-thanks btn btn--green body-3" type="button">
+                                        Дякую
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="location">
+                <div class="container">
+                    <div class="location__inner">
+                        <h2 class="location__title heading-2">
+                            Як до нас доїхати.
+                        </h2>
+                    </div>
+                </div>
+                <div class="location__map" id="map"></div>
+            </section>
+
+            <section class="reviews">
+                <div class="container">
+                    <div class="reviews__inner">
+                        <h2 class="visually-hidden">Відгуки</h2>
+                        <div class="reviews__left">
+                            <nav class="reviews__nav">
+                                <div class="slider-prev reviews__prev">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-left"></use>
+                                    </svg>
+                                </div>
+                                <div class="reviews__pagination slider-pagination body-2">
+                                </div>
+                                <div class="slider-next reviews__next">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="reviews__right">
+                            <div class="reviews__slider swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <p class="reviews__text heading-3">
+                                            “ TrueVille — це мальовниче та спокійне місце із затишними котеджами, гарним персоналом, це щось більше ніж просто відпочинок.
+                                        </p>
+                                        <div class="reviews__author">
+                                            <div class="reviews__avatar">
+                                                <img src="img/avatar.jpg" alt="">
+                                            </div>
+                                            <p class="reviews__name">
+                                                Коля Репешко
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="reviews__text heading-3">
+                                            “ TrueVille — це мальовниче та спокійне місце із затишними котеджами, гарним персоналом, це щось більше ніж просто відпочинок.
+                                        </p>
+                                        <div class="reviews__author">
+                                            <div class="reviews__avatar">
+                                                <img src="img/avatar.jpg" alt="">
+                                            </div>
+                                            <p class="reviews__name">
+                                                Коля Репешко
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="reviews__text heading-3">
+                                            “ TrueVille — це мальовниче та спокійне місце із затишними котеджами, гарним персоналом, це щось більше ніж просто відпочинок.
+                                        </p>
+                                        <div class="reviews__author">
+                                            <div class="reviews__avatar">
+                                                <img src="img/avatar.jpg" alt="">
+                                            </div>
+                                            <p class="reviews__name">
+                                                Коля Репешко
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__links">
+                                <a class="reviews__link body-3" href="#" target="_blank">
+                                    Більше відгуків на Google
+                                </a>
+                                <a class="reviews__link body-3" href="#" target="_blank">
+                                    Більше відгуків на Booking
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reservation">
+                <div class="container">
+                    <div class="reservation__inner">
+                        <h2 class="reservation__title title heading-2">
+                            Інформація щодо <b>бронювання котеджу.</b>
+                        </h2>
+                        <div class="reservation__wrapper">
+                            <div class="reservation__left">
+                                <ul class="reservation__list body-2">
+                                    <li class="reservation__item">
+                                        Ресторан не працює
+                                        <ul class="reservation__info">
+                                            <li>
+                                                нд, 15.09.2022 — вт, 10.12.2022
+                                            </li>
+                                            <li>
+                                                нд, 15.03.2023 — сб, 20.06.2023
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="reservation__item">
+                                        басейн з підігрівом не працює
+                                        <ul class="reservation__info">
+                                            <li>
+                                                пт, 01.10.2022 — вт, 31.09.2023
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="reservation__right">
+                                <p class="reservation__text body-2">
+                                    Представники адміністрації закладу зв'яжуться з гостями для організації внесення попередньої оплати. Суму передоплати слід перерахувати протягом 3-х днів після оформлення бронювання, у разі ненадходження передоплати адміністрація міні-готелю залишає за собою право анулювати бронювання.
+                                    <br><br>
+                                    Зверніть увагу, що басейном можна користуватися лише влітку з 08:00 до 22:00.
+                                    <br><br>
+                                    Будь ласка, повідомте адміністрації очікуваний час свого приїзду заздалегідь. Для цього ви можете скористатися полем для особливих побажань під час бронювання або зв'язатися безпосередньо з адміністором за контактними даними, які були зазначені у підтвердженні вашого бронювання.
+                                    <br><br>
+                                    Під час реєстрації заїзду вам потрібно пред'явити посвідчення особи з фотографією і кредитну картку. Будь ласка, зауважте, що всі особливі побажання виконуються за умови наявності такої можливості і можуть потребувати додаткової плати.
+                                    <br><br>
+                                    Для цього бронювання необхідно внести передоплату за допомогою банківського переказу. Адміністрація помешкання зв'яжеться з вами після бронювання і надасть інструкції.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq">
+                <div class="container">
+                    <div>
+                        <h2 class="faq__title title heading-2">
+                            <b>
+                                Часті запитання | FAQ
+                            </b>
+                        </h2>
+                        <ul class="faq__list">
+                            <li class="faq__item">
+                                <div class="faq__question heading-3">
+                                    Де ви розташовані?
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p class="faq__answer body-2">
+                                    с. Яблуниця, Ділянка 174, Івано-Франківська область.
+                                    <a href="#">Переглянути розташування</a>
+                                </p>
+                            </li>
+                            <li class="faq__item">
+                                <div class="faq__question heading-3">
+                                    В мене буде право на власність?
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p class="faq__answer body-2">
+                                    с. Яблуниця, Ділянка 174, Івано-Франківська область.
+                                    <a href="#">Переглянути розташування</a>
+                                </p>
+                            </li>
+                            <li class="faq__item">
+                                <div class="faq__question heading-3">
+                                    Що входить у вартість одного котеджу?
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p class="faq__answer body-2">
+                                    с. Яблуниця, Ділянка 174, Івано-Франківська область.
+                                    <a href="#">Переглянути розташування</a>
+                                </p>
+                            </li>
+                            <li class="faq__item">
+                                <div class="faq__question heading-3">
+                                    Чи здаються котеджі в оренду на декілька днів?
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p class="faq__answer body-2">
+                                    с. Яблуниця, Ділянка 174, Івано-Франківська область.
+                                    <a href="#">Переглянути розташування</a>
+                                </p>
+                            </li>
+                            <li class="faq__item">
+                                <div class="faq__question heading-3">
+                                    Що буде в наступній черзі будівництва?
+                                    <span>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 26 26">
+                                            <path d="M0 14.1549V11.8438H26V14.1549H0Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p class="faq__answer body-2">
+                                    Триває будівництво 2 та 3 черги. <br> Друга черга: 6 елітних котеджів з рестораном, басейнами, велика рекреаційна зона. В третій черзі вже будується SPA-банний комплекс, літнє кафе, дитячі та спортивні майданчики, зони для медитацій та відпочинку в лісі.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__line">
+				<span></span>
+			</div>
+			<div class="footer__one">
+				<a class="footer__logo" href="#">
+					<img src="img/logo-footer.svg" alt="">
+				</a>
+				<p class="footer__copyright">
+					© 2022. <br>
+					Всі права захищені.
+				</p>
+			</div>
+			<div class="footer__two">
+				<a class="footer__phone heading-3" href="tel:+380930808089">+38 093 080 80 89</a>
+				<a class="footer__mail body-2" href="mailto:developer@trueville.com.ua">developer@trueville.com.ua</a>
+
+				<div class="footer__wrapper">
+					<div class="footer__info">
+						<p class="footer__address body-2">Івано-Франківська область, с. Яблуниця</p>
+						<a class="footer__route body-2" href="#">Прокласти маршрут</a>
+					</div>
+					<nav class="footer__control">
+						<ul class="footer__list">
+							<li class="footer__item">
+								<ul class="footer__social">
+									<li>
+										<a class="footer__link body-2" href="" target="_blank">Facebook</a>
+									</li>
+									<li>
+										<a class="footer__link body-2" href="" target="_blank">Instagram</a>
+									</li>
+								</ul>
+							</li>
+							<li class="footer__item">
+								<ul class="footer__nav">
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Головна</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Інвестиції</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Котеджі</a>
+									</li>
+								</ul>
+							</li>
+							<li class="footer__item">
+								<ul class="footer__nav">
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Новини</a>
+									</li>
+									<li>
+										<a class="footer__link footer__nav-link body-2 " href="#">Контакти</a>
+									</li>
+									<li>
+										<ul class="footer__lang">
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3 active" href="#"> UA</a>
+											</li>
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3" href="#"> RU</a>
+											</li>
+											<li class="footer__lang-item">
+												<a class="footer__lang-link body-3" href="#"> AR</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<a class="btn btn--green body-2" href="#">
+					Забронювати котедж
+					<svg>
+						<use xlink:href="img/sprite.svg#arrow-right"></use>
+					</svg>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgCfPNl3Ht-BmczjNaEKyoc7u10jNra8w"></script>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
