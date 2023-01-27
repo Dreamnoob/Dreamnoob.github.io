@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Сторінка не знайдена!">
+    <meta name="keywords" content="помилка 404">
+    <title>🇺🇦 Помилка 404 - ПростоПаста</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+    <link href="./css/app.min.css" rel="stylesheet">
+</head>
+
+<body class="page-error">
+
+    <header class="header">
+    <div class="header-line"></div>
+    <div class="container">
+        <div class="header-inner">
+            <a class="header-logo" href="./index.html">
+                <img src="./img/logo.svg" alt="">
+            </a>
+            <nav class="header-nav">
+                <ul class="header-nav-list">
+                    <li class="header-nav-item">
+                        <a class="header-nav-link " href="./products.html">
+                            Продукція
+                        </a> 
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="header-nav-link " href="./collaboration.html">
+                            Співробітництво
+                        </a>
+                    </li>
+                </ul>
+                <ul class="header-nav-list">
+                    <li class="header-nav-item">
+                        <div class="header-nav-btn ">  
+                            Про нас
+                            <ul class="header-subnav">
+                                <li class="header-subnav-item">
+                                    <a class="header-subnav-link " href="./about_us.html">
+                                        Хто ми
+                                    </a>
+                                </li>
+                                <li class="header-subnav-item">
+                                    <a class="header-subnav-link " href="./help.html">
+                                        Допомога
+                                    </a>
+                                </li>
+                                <li class="header-subnav-item">
+                                    <a class="header-subnav-link " href="./reviews.html">
+                                        Відгуки
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="header-nav-link " href="./contacts.html"> 
+                            Контакти
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header-basket" type="button">
+                <img src="./img/icons/basket.svg" alt="basket">
+                <span class="header-basket-value">
+                    12
+                </span>
+            </button>
+            <button class="header-burger">
+                <svg fill="#FFC10B" class="hamburger" viewBox="0 0 100 100">
+                    <rect width="80" height="10" x="10" y="25" rx="5">
+                    </rect>
+                    <rect width="80" height="10" x="10" y="45" rx="5">
+                    </rect>
+                    <rect  width="80" height="10" x="10" y="65" rx="5">
+                    </rect>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+    <div class="basket">
+    <button class="basket-close" type="btn" aria-label="Закрити корзину">
+        <svg viewBox="0 0 32 32" fill="none">
+            <path d="M9 7L25.9706 23.9706L24.0849 25.8562L7.11438 8.88562L9 7Z" fill="black" />
+            <path d="M23.9706 7.02944L7 24L8.88562 25.8856L25.8562 8.91506L23.9706 7.02944Z" fill="black" />
+        </svg>
+    </button>
+    <h2 class="basket-title">Ваш кошик</h2>
+    <p class="basket-subtitle">Додано <span>5</span> товарів</p>
+    <ul class="basket-list">
+        <li class="basket-item">
+            <a class="basket-img" href="./product.html">
+                <img src="./img/products/all/chocolate_dark_500g_front_2.jpg" alt="">
+            </a>
+            <div class="basket-content">
+                <p class="basket-name">
+                    Арахісова паста з фініками
+                </p>
+                <p class="basket-price">
+                    <span class="basket-price-current">
+                        180 грн
+                    </span>
+                    <span class="basket-price-old">
+                        200 грн
+                    </span>
+                </p>
+                <div class="basket-nav">
+                    <div class="basket-box">
+                        <button class="basket-minus" type="button" disabled>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M5 11H19V13H5V11Z" />
+                            </svg>
+                        </button>
+                        <input class="basket-value" type="text" readonly value="1">
+                        <button class="basket-plus" type="button">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="basket-delete" type="button" aria-label="Видалити товар">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M17 6H22V8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8H2V6H7V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V6ZM18 8H6V20H18V8ZM13.414 14L15.182 15.768L13.768 17.182L12 15.414L10.232 17.182L8.818 15.768L10.586 14L8.818 12.232L10.232 10.818L12 12.586L13.768 10.818L15.182 12.232L13.414 14ZM9 4V6H15V4H9Z" fill="black" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </li>
+        <li class="basket-item">
+            <a class="basket-img" href="./product.html">
+                <img src="./img/products/all/chocolate_dark_500g_front_2.jpg" alt="">
+            </a>
+            <div class="basket-content">
+                <p class="basket-name">
+                    Арахісова паста з фініками
+                </p>
+                <p class="basket-price">
+                    <span class="basket-price-current">
+                        180 грн
+                    </span>
+                    <span class="basket-price-old">
+                        200 грн
+                    </span>
+                </p>
+                <div class="basket-nav">
+                    <div class="basket-box">
+                        <button class="basket-minus" type="button" disabled>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M5 11H19V13H5V11Z" />
+                            </svg>
+                        </button>
+                        <input class="basket-value" type="text" readonly value="1">
+                        <button class="basket-plus" type="button">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="basket-delete" type="button" aria-label="Видалити товар">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M17 6H22V8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8H2V6H7V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V6ZM18 8H6V20H18V8ZM13.414 14L15.182 15.768L13.768 17.182L12 15.414L10.232 17.182L8.818 15.768L10.586 14L8.818 12.232L10.232 10.818L12 12.586L13.768 10.818L15.182 12.232L13.414 14ZM9 4V6H15V4H9Z" fill="black" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </li>
+        <li class="basket-item">
+            <a class="basket-img" href="./product.html">
+                <img src="./img/products/all/chocolate_dark_500g_front_2.jpg" alt="">
+            </a>
+            <div class="basket-content">
+                <p class="basket-name">
+                    Арахісова паста з фініками
+                </p>
+                <p class="basket-price">
+                    <span class="basket-price-current">
+                        180 грн
+                    </span>
+                    <span class="basket-price-old">
+                        200 грн
+                    </span>
+                </p>
+                <div class="basket-nav">
+                    <div class="basket-box">
+                        <button class="basket-minus" type="button" disabled>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M5 11H19V13H5V11Z" />
+                            </svg>
+                        </button>
+                        <input class="basket-value" type="text" readonly value="1">
+                        <button class="basket-plus" type="button">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="basket-delete" type="button" aria-label="Видалити товар">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M17 6H22V8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8H2V6H7V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V6ZM18 8H6V20H18V8ZM13.414 14L15.182 15.768L13.768 17.182L12 15.414L10.232 17.182L8.818 15.768L10.586 14L8.818 12.232L10.232 10.818L12 12.586L13.768 10.818L15.182 12.232L13.414 14ZM9 4V6H15V4H9Z" fill="black" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="basket-total">
+        Усього:
+        <span class="basket-sum">550 грн</span>
+    </div>
+    <a class="btn btn-orange" href="./checkout.html">Перейти до оформлення</a>
+    <div class="basket-info">
+        <p class="basket-delivery">
+            Добери <span>134 грн</span> до безкоштовної доставки
+        </p>
+        <p class="basket-sale">
+            Загальна знижка: <span>120 грн</span>
+        </p>
+    </div>
+</div>
+
+
+    <div class="error">
+        <div class="container">
+            <div class="error-inner">
+                <div class="error-img">
+                    <img src="./img/base/error.png" alt="error image">
+                </div>
+                <h1 class="error-title">
+                    Сторінка не знайдена!
+                </h1>
+                <p class="error-text">
+                    На жаль, запитувана Вами сторінка не знайдена. Ймовірно, Ви вказали неіснуючу адресу, сторінка була вилучена,
+                    переміщена або зараз вона тимчасово недоступна!
+                </p>
+                <a class="error-btn btn btn-orange" href="./index.html">На головну</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/vendor/gsap.min.js"></script>
+<script src="./js/vendor/scrollTrigger.min.js"></script>
+<script src="./js/vendor/swiper.min.js"></script>
+<script src="./js/sliders.min.js"></script>
+<script src="./js/animation.min.js"></script>
+<script src="./js/main.min.js"></script>
+
+</body>
+
+</html>
