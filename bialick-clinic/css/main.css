@@ -626,11 +626,11 @@ select:focus {
 @media (max-width: 767px) {
   .hero__img {
     position: static;
-    margin-top: -28px;
+    margin-top: -8.75vw;
     display: block;
-    width: 320px;
-    margin-right: -13px;
-    height: 380px;
+    width: 100vw;
+    margin-right: -4.063vw;
+    height: 118.75vw;
   }
 }
 .hero__img img {
