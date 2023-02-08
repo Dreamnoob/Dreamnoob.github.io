@@ -724,7 +724,7 @@ select:focus {
   position: absolute;
   top: 0;
   bottom: 0.417vw;
-  right: -3.646vw;
+  right: -3.946vw;
 }
 .hero__item:first-child::before {
   display: none;
@@ -802,7 +802,7 @@ select:focus {
 }
 
 .doctors {
-  padding: 6.979vw 0 6.771vw;
+  padding: 7.279vw 0 6.771vw;
 }
 @media (max-width: 767px) {
   .doctors {
@@ -811,7 +811,7 @@ select:focus {
 }
 
 .doctors__title {
-  margin-bottom: 56.01px;
+  margin-bottom: 3.303vw;
 }
 @media (max-width: 767px) {
   .doctors__title {
@@ -836,7 +836,7 @@ select:focus {
 .doctors__item {
   display: flex;
   flex-direction: column;
-  gap: 2.935vw;
+  gap: 2.135vw;
 }
 @media (max-width: 767px) {
   .doctors__item {
@@ -883,6 +883,7 @@ select:focus {
 .doctors__info {
   display: flex;
   flex-direction: column;
+  gap: 0.677vw;
 }
 
 .doctors__name {
@@ -917,7 +918,7 @@ select:focus {
 .doctors__btn {
   width: 14.115vw;
   height: 2.604vw;
-  margin-top: 36.998px;
+  margin-top: 5.052vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1016,7 +1017,7 @@ select:focus {
 }
 
 .contact__list {
-  margin-bottom: 1.406vw;
+  margin-bottom: 1.806vw;
 }
 @media (max-width: 767px) {
   .contact__list {
@@ -1134,7 +1135,7 @@ select:focus {
 }
 
 .callback {
-  margin-bottom: 6.25vw;
+  margin-bottom: 5.65vw;
 }
 @media (max-width: 767px) {
   .callback {
@@ -1162,7 +1163,7 @@ select:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5.833vw 5.885vw;
+  padding: 6.233vw 5.885vw;
   background: #E9FFFD;
 }
 @media (max-width: 767px) {
@@ -1262,11 +1263,11 @@ select:focus {
 }
 
 .reviews__wrapper {
-  margin-bottom: 6.615vw;
+  margin-bottom: 5.615vw;
 }
 
 .reviews__text {
-  margin-bottom: 1.771vw;
+  margin-bottom: 2.271vw;
   padding-top: 4.063vw;
   font-weight: 400;
   color: #565656;
@@ -1281,14 +1282,14 @@ select:focus {
 }
 .reviews__text::before {
   content: "";
-  width: 1.458vw;
-  height: 2.865vw;
+  width: 1.158vw;
+  height: 1.565vw;
   background-image: url("../img/quotation-mark.svg");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0.521vw;
+  right: 0.208vw;
 }
 @media (max-width: 767px) {
   .reviews__text::before {
