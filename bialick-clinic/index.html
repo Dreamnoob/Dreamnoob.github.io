@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Inter&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+    <div class="page-wrapper page-home">
+        <header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo" href="/">
+                <img src="img/logo.png" alt="">
+            </a>
+
+            <nav class="header__nav">
+                <ul>
+                    <li>
+                        <a href="#">
+                            מטפלים
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            שאלות נפוצות
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            סוגי כאב / טכניקות טיפול
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            מהתקשורת
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            סוגי כאב / טכניקות טיפול
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            צור קשר
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="header__burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+        <main>
+            <div class="subheader">
+                <div class="container">
+                    <div class="subheader__inner">
+                        <p class="subheader__text fs16">
+                            לקביעת ייעוץ עם מומחה כאב השאירו פרטים ונחזור אליכם
+                        </p>
+                        <form action="#">
+                            <div class="subheader__wrap">
+                                <div class="subheader__input fs16">
+                                    <input type="text" placeholder="שם מלא" name="full-name">
+                                </div>
+                                <div class="subheader__input fs16">
+                                    <input type="tel" placeholder="טלפון" name="phone">
+                                </div>
+                                <div class="subheader__select fs16">
+                                    <select name="select">
+                                        <option value="מעוניין ב" selected>מעוניין ב</option>
+                                        <option value="מעוניין ב">מעוניין ב</option>
+                                        <option value="מעוניין ב">מעוניין ב</option>
+                                    </select>
+                                </div>
+                                <button class="subheader__btn btn fs16" type="submit">
+                                    שלח
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero__inner">
+                        <div class="hero__wrapper">
+                            <h1>
+                                ברוכים הבאים
+                                למרפאת ביאליק
+                            </h1>
+                            <p class="fs16">
+                                סובלים מכאבי גב? מעוניינים להקל על כאבים ללא תרופות? טיפולי אוסטאופתיה מספקים מענה למטופלים שהרפואה השמרנית לא מצאה פתרון לבעיותיהם ולמי שרוצים לחזק את גופם באמצעות טיפול אלטרנטיבי נגד כאבים.
+                            </p>
+                        </div>
+
+                        <picture class="hero__img">
+                            <source media="(max-width: 767px)" srcset="img/hero-bg-mob.png">
+                            <img src="img/hero-bg.png" alt="">
+                        </picture>
+                    </div>
+                </div>
+                <div class="hero__info">
+                    <div class="container">
+                        <p class="hero__text fs24">
+                            טיפול הוליסטי בכאב
+                        </p>
+
+                        <ul class="hero__list">
+                            <li class="hero__item">
+                                <p class="hero__number fs54">
+                                    80%
+                                </p>
+                                <p class="hero__name fs14">
+                                    מטפלים
+                                </p>
+                            </li>
+                            <li class="hero__item">
+                                <p class="hero__number fs54">
+                                    +1k
+                                </p>
+                                <p class="hero__name fs14">
+                                    רופאים
+                                </p>
+                            </li>
+                            <li class="hero__item">
+                                <p class="hero__number fs54">
+                                    290
+                                </p>
+                                <p class="hero__name fs14">
+                                    פסיכולוגים
+                                </p>
+                            </li>
+                            <li class="hero__item">
+                                <p class="hero__number fs54">
+                                    +500
+                                </p>
+                                <p class="hero__name fs14">
+                                    התמחויות
+                                </p>
+                            </li>
+                            <li class="hero__item">
+                                <p class="hero__number fs54">
+                                    124
+                                </p>
+                                <p class="hero__name fs14">
+                                    לקוחות מרוצים
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="doctors">
+                <div class="container">
+                    <div class="doctors__inner">
+                        <h2 class="doctors__title fs55">
+                            המומחים שלנו
+                        </h2>
+                        <ul class="doctors__list">
+                            <li class="doctors__item">
+                                <div class="doctors__wrapper">
+                                    <div class="doctors__info">
+                                        <p class="doctors__name fs24">
+                                            דני שמואל -
+                                        </p>
+                                        <p class="doctors__profession fs14">
+                                            אוסתאופת
+                                        </p>
+                                    </div>
+                                    <div class="doctors__img">
+                                        <img src="img/doctors-2.png" alt="">
+                                    </div>
+                                </div>
+                                <p class="doctor__text fs14">
+                                    אוסטאופת מוסמך ומדריך בחברה לרפואת שריר שלד. בעקבות הנסיון הרב שצבר בעבודה עם רופאים ומטופלים, דני מוכר בתחום כמומחה של הקלה בכאבי ראש, כתפיים, גב וברכיים. הוא ידוע בכישוריו למצוא את מקור הבעיה, לטפל בשורש הכאב וללוות את המטופל עד לחזרה לאורח חיים תקין. את חייו הוא מקדיש לתחום הטיפול כבר 25 שנה ומלבד הטיפול האוסטאופתי הוא מומחה ברפואת חירום ומתנדב ברשת איחוד הצלה
+                                </p>
+                            </li>
+                            <li class="doctors__item">
+                                <div class="doctors__wrapper">
+                                    <div class="doctors__info">
+                                        <p class="doctors__name fs24">
+                                            ליאור אשכנזי -
+                                        </p>
+                                        <p class="doctors__profession fs14">
+                                            אוסתאופת
+                                        </p>
+                                    </div>
+                                    <div class="doctors__img">
+                                        <img src="img/doctors-1.png" alt="">
+                                    </div>
+                                </div>
+                                <p class="doctors__text fs14">
+                                    אוסטאופת מוסמך בעל נסיון רב בעבודה עם תינוקות ונשים הרות המביא עימו רוח צעירה וחדשה לטיפול האוסטאופתי. ליאור מומחה לטיפול בכאבים מבניים הנובעים ממערכת השלד או כתוצאה מפציעות ספורט, מומחה למצבי חירום רפואיים, מרכז קורסים של נאמני כאב כחלק מתכנית לימודי ההמשך לרופאי משפחה של אוניברסיטת תל אביב ומדריך בחברה לרפואת שריר שלד
+                                </p>
+                            </li>
+                        </ul>
+                        <a class="doctors__btn btn fs16" href="team.html">
+                            לכל המטפלים שלנו
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="contact">
+                <div class="container">
+                    <div class="contact__inner">
+                        <h2 class="contact__title">פרטי התקשרות</h2>
+                        <div class="contact__wrapper">
+                            <div class="contact__map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.821796520386!2d34.770173698125184!3d32.0740683073701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4c7fe5ddecd5%3A0xcc28b131b8e865f5!2zVGNoZXJuaWNob3Zza3kgMjYsIFRlbCBBdml2LVlhZm8sINCY0LfRgNCw0LjQu9GM!5e0!3m2!1sru!2sua!4v1675257365853!5m2!1sru!2sua" style="border:0;" allowfullscreen="" width="100%" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="contact__info">
+                                <p class="contact__address fs24">
+                                    טשרניחובסקי 26, קומה מינוס 1
+                                </p>
+                                <p class="contact__city fs16">
+                                    תל אביב
+                                </p>
+
+                                <ul class="contact__list">
+                                    <li>
+                                        <a class="contact__tel fs16" href="tel:058-580-4009">
+                                            058-580-4009
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="contact__tel fs16" href="tel:058-580-4009">
+                                            058-580-4009
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="contact__mail fs16" href="mailto:bialikclinic@gmail.com">
+                                            bialikclinic@gmail.com
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="contact__link fs16" href="mailto:www.bialikclinic.co.il">
+                                            www.bialikclinic.co.il
+                                        </a>
+                                    </li>
+                                </ul>
+                                <p class="contact__hours fs16">
+                                    שעות פתיחה
+                                    <span>
+                                        א- ה 8-20
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="callback">
+                <div class="container">
+                    <div class="callback__inner">
+                        <h2 class="callback__title">
+                            צור קשר
+                        </h2>
+                        <p class="callback__text">
+                            מתעניין אודות הטיפול ? קרא עוד לגבי טיפולים אוסטאופתים !
+                        </p>
+                        <form action="#">
+                            <div class="callback__wrapper">
+                                <div class="callback__input fs16">
+                                    <input type="text" placeholder="שם מלא" name="full-name">
+                                </div>
+                                <div class="callback__input fs16">
+                                    <input type="tel" placeholder="טלפון" name="phone">
+                                </div>
+                                <div class="callback__input fs16">
+                                    <input type="email" placeholder="כתובת אימייל" name="mail">
+                                </div>
+                            </div>
+                            <button class="callback__btn btn fs16" type="submit">
+                                שלח
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="reviews">
+                <div class="container">
+                    <div class="reviews__inner">
+                        <h2 class="reviews__title">
+                            לקוחות ממליצים
+                        </h2>
+                        <div class="reviews__slider swiper">
+                            <ul class="reviews__wrapper swiper-wrapper">
+                                <li class="reviews__item swiper-slide">
+                                    <p class="reviews__text fs14">
+                                        רוב היום אני יושב במשרד, ליד המזגן, הייתי בטוח שהתקררתי הכתף כאבה, העורף כאב. לאט לאט התחלתי להבחין שיש לי הירדמות ביד, אני מנסה לשנות תנוחה עם היד אך ההירדמות נשארת. לעיתים זה נימול אבל באופן קבוע היד ממש " לא שלי" . לאחר מספר טיפולים, עדינים התחושה ליד חזרה ואיתה נעלמו הנימולים וההירדמות.
+                                    </p>
+                                    <div class="reviews__info">
+                                        <div class="reviews__avatar">
+                                            <img src="img/avatar-3.png" alt="">
+                                        </div>
+                                        <p class="reviews__name fs14">
+                                            - נטע
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="reviews__item swiper-slide">
+                                    <p class="reviews__text fs14">
+                                        שנים של סחרחורות, כל הבדיקות וצילומים לא הצליחו לגלות למה. למה אני סובלת, כל שינוי תנוחה גורם לסחרחורת, אני לא יכולה לשכב על הגב עם הראש על כרית אחת , אלא בצורה מוגבהת מאוד כמעט ישיבה. בייתי סקפטית, לא האמנתי שמישהו בכלל יכול לעזור, אחרי שהניורולוג, רופאיא.א.ג. ורופאי עיניים לא עזרו. בפגישות הראשונות אצל דני, הקפדתי לשכב עם הגבהה לראש, ולאחר שלוש פגישות שמתי לב שאני שוכבת על כרית אחת
+                                    </p>
+                                    <div class="reviews__info">
+                                        <div class="reviews__avatar">
+                                            <img src="img/avatar-2.png" alt="">
+                                        </div>
+                                        <p class="reviews__name fs14">
+                                            - חנן
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="reviews__item swiper-slide">
+                                    <p class="reviews__text fs14">
+                                        רוב היום אני יושב במשרד, ליד המזגן, הייתי בטוח שהתקררתי הכתף כאבה, העורף כאב. לאט לאט התחלתי להבחין שיש לי הירדמות ביד, אני מנסה לשנות תנוחה עם היד אך ההירדמות נשארת. לעיתים זה נימול אבל באופן קבוע היד ממש " לא שלי" . לאחר מספר טיפולים, עדינים התחושה ליד חזרה ואיתה נעלמו הנימולים וההירדמות.
+                                    </p>
+                                    <div class="reviews__info">
+                                        <div class="reviews__avatar">
+                                            <img src="img/avatar-1.png" alt="">
+                                        </div>
+                                        <p class="reviews__name fs14">
+                                            - חנן
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="reviews__item swiper-slide">
+                                    <p class="reviews__text fs14">
+                                        רוב היום אני יושב במשרד, ליד המזגן, הייתי בטוח שהתקררתי הכתף כאבה, העורף כאב. לאט לאט התחלתי להבחין שיש לי הירדמות ביד, אני מנסה לשנות תנוחה עם היד אך ההירדמות נשארת. לעיתים זה נימול אבל באופן קבוע היד ממש " לא שלי" . לאחר מספר טיפולים, עדינים התחושה ליד חזרה ואיתה נעלמו הנימולים וההירדמות.
+                                    </p>
+                                    <div class="reviews__info">
+                                        <div class="reviews__avatar">
+                                            <img src="img/avatar-3.png" alt="">
+                                        </div>
+                                        <p class="reviews__name fs14">
+                                            - נטע
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="reviews__item swiper-slide">
+                                    <p class="reviews__text fs14">
+                                        שנים של סחרחורות, כל הבדיקות וצילומים לא הצליחו לגלות למה. למה אני סובלת, כל שינוי תנוחה גורם לסחרחורת, אני לא יכולה לשכב על הגב עם הראש על כרית אחת , אלא בצורה מוגבהת מאוד כמעט ישיבה. בייתי סקפטית, לא האמנתי שמישהו בכלל יכול לעזור, אחרי שהניורולוג, רופאיא.א.ג. ורופאי עיניים לא עזרו. בפגישות הראשונות אצל דני, הקפדתי לשכב עם הגבהה לראש, ולאחר שלוש פגישות שמתי לב שאני שוכבת על כרית אחת
+                                    </p>
+                                    <div class="reviews__info">
+                                        <div class="reviews__avatar">
+                                            <img src="img/avatar-2.png" alt="">
+                                        </div>
+                                        <p class="reviews__name fs14">
+                                            - חנן
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="reviews__item swiper-slide">
+                                    <p class="reviews__text fs14">
+                                        רוב היום אני יושב במשרד, ליד המזגן, הייתי בטוח שהתקררתי הכתף כאבה, העורף כאב. לאט לאט התחלתי להבחין שיש לי הירדמות ביד, אני מנסה לשנות תנוחה עם היד אך ההירדמות נשארת. לעיתים זה נימול אבל באופן קבוע היד ממש " לא שלי" . לאחר מספר טיפולים, עדינים התחושה ליד חזרה ואיתה נעלמו הנימולים וההירדמות.
+                                    </p>
+                                    <div class="reviews__info">
+                                        <div class="reviews__avatar">
+                                            <img src="img/avatar-1.png" alt="">
+                                        </div>
+                                        <p class="reviews__name fs14">
+                                            - חנן
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__top">
+				<div class="footer__logo">
+					<a href="#">
+						<img src="img/logo.png" alt="">
+					</a>
+				</div>
+				<nav class="footer__nav fs14">
+					<ul>
+						<li>
+							<a href="#">
+								צור קשר
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								סוגי כאב / טכניקות טיפול
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								מהתקשורת
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								סוגי כאב / טכניקות טיפול
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								שאלות נפוצות
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								מטפלים
+							</a>`
+						</li>
+					</ul>
+				</nav>
+				<div class="footer__info fs14">
+					<ul>
+						<li>
+							<a href="#">
+								כאבי גב
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								דלקת אזנים הפנימית בילדים
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								פריצת דיסק
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								אוסטאופתיה בהריון
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								מיגרנה, כאבי ראש, סחרחורת
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								מרפק טניס
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								דורבן, נקעים חוזרים
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								מערכת העיכול, כאבי בטן
+							</a>
+						</li>
+					</ul>
+				</div>
+				<ul class="footer__contacts">
+					<li>
+						<a class="fs16" href="tel:058-580-4009">058-580-4009</a>
+					</li>
+					<li>
+						<a class="fs16" href="tel:058-580-4009">058-580-4009</a>
+						<span class="fs12">(Whatsapp)</span>
+					</li>
+					<li>
+						<a class="fs16" href="mailto:bialikclinic@gmail.com">bialikclinic@gmail.com</a>
+					</li>
+					<li>
+						<a class="fs16" href="www.bialikclinic.co.il">www.bialikclinic.co.il</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__copyright fs12">
+				© | כל הזכיות שמורות למרפאת ביאליק מרפאה אוסטאופתית
+			</div>
+		</div>
+	</div>
+</footer>
+
+    </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
