@@ -396,7 +396,7 @@ select:focus {
 }
 @media (max-width: 767px) {
   .header__nav ul {
-    gap: 20px;
+    gap: 6.25vw;
     flex-direction: column-reverse;
     align-items: flex-start;
     justify-content: flex-end;
@@ -578,7 +578,7 @@ select:focus {
 }
 
 .hero__inner {
-  padding: 208.003px 0 208.992px;
+  padding: 10.833vw 0 10.885vw;
   position: relative;
   z-index: 2;
 }
@@ -1375,7 +1375,7 @@ select:focus {
 @media (max-width: 767px) {
   .services__title {
     text-align: center;
-    margin-bottom: 78px;
+    margin-bottom: 24.375vw;
   }
 }
 
@@ -1990,7 +1990,7 @@ select:focus {
   .footer__nav ul,
   .footer__info ul {
     text-align: center;
-    gap: 18px;
+    gap: 5.625vw;
     line-height: 119%;
   }
 }
@@ -2055,7 +2055,7 @@ select:focus {
   .footer__copyright::before {
     content: "";
     width: 100vw;
-    height: 1px;
+    height: 0.313vw;
     background-color: #A9ECE6;
     position: absolute;
     top: 0;
